@@ -3,7 +3,7 @@
 <%
    String username = request.getParameter("username");
    String password = request.getParameter("password");
-   String insertInfo = "SELECT * FROM STUDENT WHERE email = ? AND password = ?";
+   String insertInfo = "SELECT * FROM students WHERE email = ? AND pword = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -18,12 +18,12 @@
    ps.setString(2, password);
 	
 	ResultSet rs=ps.executeQuery();
-   if(rs = null)
+   if(!rs.next())
    {
         out.println("Error: incorrect username or password");
    }
    else{
-        response.sendRedirect("student.html");
+        response.sendRedirect("http://localhost:8080/SoftProj/html/student.html");   //or whatever the directory for student.html is
    }
    } 
    catch (SQLException e)
