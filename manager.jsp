@@ -2,26 +2,27 @@
 <html lang = "en">
 <head>
     <meta charset = "utf-8">
-    <title>Main</title>
-    
+    <title>Lakehead University Residence</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 </head>
 <body>
-    <a href="index.html">Log Out</a>
-    <h1>Manager Home Page</h1>
-    
-
-<%
-   HttpSession sess = request.getSession();
-   out.println("Welcome, "+(String)sess.getAttribute("name")+"!<br>");
-   %>
-    
-    <a href="insertRoom.jsp">Add room</a>
-    <a href="deleteRoom.html">Delete room</a>
-    <a href="enterEditInfo.jsp">Edit room</a>
-    <a href="viewPendingApplications.jsp">View pending applications</a>
-    <a href="viewPendingWorkOrders.jsp">View pending work orders</a>
-    <a href="selectRooms.jsp">View rooms</a>
-    
+    <center><h2>Manager Portal</h1></center>
+	<div class = "login-card">
+	Administrative Options<br><br>
+	<%
+	   HttpSession sess = request.getSession();
+	   out.println("Welcome, "+(String)sess.getAttribute("name")+"!<br>");
+	   %>
+		
+		<a href="insertRoom.jsp">Add room</a><br>
+		<a href="deleteRoom.html">Delete room</a><br>
+		<a href="enterEditInfo.jsp">Edit room</a><br>
+		<a href="viewPendingApplications.jsp">View pending applications</a><br>
+		<a href="viewPendingWorkOrders.jsp">View pending work orders</a><br>
+		<a href="selectRooms.jsp">View rooms</a><br>
+		<a href="index.html">Log Out</a>
+	</div>
 </body>
     
 </html>

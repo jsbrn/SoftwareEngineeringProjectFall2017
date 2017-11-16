@@ -10,11 +10,10 @@
     
     <center><h2>Student Portal</h2></center>
     
-	<div class = "detail-card">
+	<div class = "login-card">
 	<%
 	   HttpSession sess = request.getSession();
-	   out.println("<h3>Welcome, "+(String)sess.getAttribute("name")+"!</h3><br>");
-	   out.println("<br><center>");
+	   out.println("Resident Options");
 	   if(sess.getAttribute("studentType").equals("yes"))
 	   {
 			out.println("<a href='enterWorkOrder.html'>Submit Work order</a><br>");
@@ -26,7 +25,6 @@
 	   %>
 		<a href="search.html">Search</a><br>
 		<a href="index.html">Log Out</a>
-		</center>
     </div>
 </body>
     
