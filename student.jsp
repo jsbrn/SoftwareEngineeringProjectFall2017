@@ -8,12 +8,11 @@
 </head>
 <body>
     
-    <center><h2>Student Portal</h2></center>
-    
-	<div class = "login-card">
 	<%
 	   HttpSession sess = request.getSession();
-	   out.println("Resident Options");
+	   out.println(out.println("<center><h2>Welcome, "+(String)sess.getAttribute("name")+"!</h2></center><br><br>");
+	   out.println("<div class = 'login-card'>");
+	   out.println("Resident Options<br><br>");
 	   if(sess.getAttribute("studentType").equals("yes"))
 	   {
 			out.println("<a href='enterWorkOrder.html'>Submit Work order</a><br>");
