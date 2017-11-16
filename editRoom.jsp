@@ -5,7 +5,8 @@
    String newBuilding = request.getParameter("newBuilding");
    String newStyle = request.getParameter("newStyle");
    String newResident = request.getParameter("newResident");
-   String [] currentRoomInfo = {"Deer Lake Ridge", "1"};
+	String oldRoom = request.getParameter("oldRoom");
+	String oldBuilding = request.getParameter("oldBuilding");
    String deleteInfo = "UPDATE rooms SET roomNum = ?, building = ?, resident_id = ?, roomStyle = ? WHERE roomNum = ? AND building = ?";
    String getOldInfo = "SELECT * FROM rooms WHERE roomNum = ? AND building = ?";
    
@@ -21,7 +22,7 @@
    try
 {
 	Class.forName("com.mysql.jdbc.Driver"); 
-	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/residencedatabase","root","Pointe2006"); 
+	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
    
    oldRoom = con.prepareStatement(getOldInfo);
    oldRoom.setString(1, "1");
