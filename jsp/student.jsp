@@ -15,7 +15,7 @@
 	   out.println("Resident Options<br><br>");
 	   if(sess.getAttribute("studentType").equals("yes"))
 	   {
-			out.println("<a href='enterWorkOrder.html'>Submit Work order</a><br>");
+			out.println("<a href='../html/enterWorkOrder.html'>Submit Work order</a><br>");
 	   }
 	   else
 	   {
