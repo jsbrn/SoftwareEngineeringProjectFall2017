@@ -19,11 +19,13 @@
 			Select application to review:<select name = "appID">
 			<%
 				String getApplications = "SELECT applicationNum FROM applications WHERE currentStatus = 'pending'";
-
+               java.sql.Connection con = null;
 				PreparedStatement getApps = null;
 			
 		try{
 			
+               Class.forName("com.mysql.jdbc.Driver"); 
+	       con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");
 			getApps = con.prepareStatement(getApplications);
 			
 			ResultSet rs=getApps.executeQuery(); 
@@ -42,8 +44,6 @@
 		{
 			if(getApps != null)
 				getApps.close();
-			if(con != null)
-				con.close();
 		}
 		   %>
 			
@@ -56,7 +56,6 @@
 				<%
 				   String getInfo = "Select * FROM applications WHERE currentStatus = 'pending'";
 				   
-				   java.sql.Connection con = null;
 				   PreparedStatement ps = null;
 				   
 				   try
@@ -68,7 +67,7 @@
 					
 					ResultSet rs=ps.executeQuery(); 
 					
-				   out.println("<table class = 'gridtable' style = 'width: 100%'>");
+				   out.println("<table class = "gridtable" style = "width: 100%">");
 				   out.println("<tr> <th>Student ID</th> <th>Application #</th> <th>Requested Style</th> <th>Requested Building</th> <th>Room Number</th></tr>");
 				   while(rs.next())
 				   {
@@ -90,6 +89,8 @@
 				{
 					if(ps != null)
 						ps.close();
+                   if(con!=null)
+                        con.close();
 					
 				}
 				%>
