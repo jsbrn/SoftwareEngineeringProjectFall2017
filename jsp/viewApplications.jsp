@@ -32,7 +32,7 @@
 		
 		ResultSet rs=ps.executeQuery(); 
 		
-	   out.println("<table class = "gridtable" style = "width: 100%">");
+	   out.println("<table class = 'gridtable' style = 'width: 100%'>");
 		out.println("<tr> <th>Application #</th> <th>Status</th></tr>");
 	   while(rs.next())
 	   {
