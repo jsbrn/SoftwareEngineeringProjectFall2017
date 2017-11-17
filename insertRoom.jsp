@@ -4,7 +4,8 @@
 <html>
 <body>
 
-    
+
+<div class = "    
 <form action="addRoom.jsp" method="post">
 
 Room Number:<input type="text" name="roomNum" />

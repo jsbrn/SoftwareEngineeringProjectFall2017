@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<center><h2>Applications</h2></center>
+<center><h2>Your Applications</h2></center>
 <div class = "detail-card">
 
 	<%
