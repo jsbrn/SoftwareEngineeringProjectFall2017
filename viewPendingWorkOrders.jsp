@@ -39,6 +39,7 @@
 
 				out.println("<tr> <td>"+num+"</td><td>"+studentID+"</td> <td>"+text+"</td></tr>");
 		   }
+		   out.println("</table>");
 		} 
 		   catch (SQLException e)
 		{

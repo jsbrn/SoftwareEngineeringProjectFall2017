@@ -78,8 +78,9 @@
 						String building = rs.getString("requested_building");
 						String num = rs.getString("requested_num");
 
-						out.println("<tr> <td>"+studentID+"</td><td>"+applicationNum+"</td> <td>"+style+"</td> <td>"+building+"</td><td>"+num+"</td></tr></table>");
+						out.println("<tr> <td>"+studentID+"</td><td>"+applicationNum+"</td> <td>"+style+"</td> <td>"+building+"</td><td>"+num+"</td></tr>");
 				   }
+				   out.println("</table>");
 				} 
 				   catch (SQLException e)
 				{
