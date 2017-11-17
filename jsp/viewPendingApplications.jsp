@@ -67,7 +67,7 @@
 					
 					ResultSet rs=ps.executeQuery(); 
 					
-				   out.println("<table class = "gridtable" style = "width: 100%">");
+				   out.println("<table class = 'gridtable' style = 'width: 100%'>");
 				   out.println("<tr> <th>Student ID</th> <th>Application #</th> <th>Requested Style</th> <th>Requested Building</th> <th>Room Number</th></tr>");
 				   while(rs.next())
 				   {
