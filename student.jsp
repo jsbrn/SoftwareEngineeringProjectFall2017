@@ -10,7 +10,7 @@
     
 	<%
 	   HttpSession sess = request.getSession();
-	   out.println(out.println("<center><h2>Welcome, "+(String)sess.getAttribute("name")+"!</h2></center><br><br>");
+	   out.println("<center><h2>Welcome, "+(String)sess.getAttribute("name")+"!</h2></center><br><br>");
 	   out.println("<div class = 'login-card'>");
 	   out.println("Resident Options<br><br>");
 	   if(sess.getAttribute("studentType").equals("yes"))
