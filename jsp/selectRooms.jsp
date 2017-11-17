@@ -8,7 +8,10 @@
 </head>
 <body>
 
-	<center><h2>View Rooms</h2><br></center>
+	<center>
+	<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
+	<h2>View Rooms</h2><br>
+	</center>
 
 	<div class = "login-card">
     <form action = "viewRooms.jsp">

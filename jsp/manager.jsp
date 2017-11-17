@@ -7,7 +7,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 </head>
 <body>
-    <center><h2>Manager Portal</h1></center>
+    <center>
+	<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
+	<h2>Manager Portal</h1></center>
 	<div class = "login-card">
 		Administrative Options<br><br>
 		<a href="insertRoom.jsp">Add room</a><br>

@@ -11,7 +11,10 @@
 
 	<body>
 	
-	<center><h2>Apply to Residence</h2></center>
+	<center>
+	<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
+	<h2>Apply to Residence</h2>
+	</center>
 
 	<div class = "login-card">
 		<form action="createApplication.jsp" method="post">

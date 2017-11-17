@@ -2,7 +2,7 @@
 <html lang = "en">
 <head>
     <meta charset = "utf-8">
-    <title>Main</title>
+    <title>Lakehead University Residence</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 </head>
@@ -10,7 +10,7 @@
     
 	<%
 	   HttpSession sess = request.getSession();
-	   out.println("<center><h2>Welcome, "+(String)sess.getAttribute("name")+"!</h2></center><br><br>");
+	   out.println("<center><br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br><h2>Welcome, "+(String)sess.getAttribute("name")+"!</h2></center>");
 	   out.println("<div class = 'login-card'>");
 	   out.println("Resident Options<br><br>");
 	   if(sess.getAttribute("studentType").equals("yes"))

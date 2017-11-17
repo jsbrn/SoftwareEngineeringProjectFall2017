@@ -11,7 +11,9 @@
 </head>
 <body>
 
-<center><h2>Your Applications</h2></center>
+<center>
+<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
+<h2>Your Applications</h2></center>
 <div class = "detail-card">
 
 	<%
