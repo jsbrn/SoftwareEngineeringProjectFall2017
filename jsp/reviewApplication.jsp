@@ -52,6 +52,7 @@
         assignRoom = con.prepareStatement(setResident);
         assignRoom.setString(1, studentID);
         
+	assignRoom.executeUpdate();
         add.executeUpdate();
    }
    
