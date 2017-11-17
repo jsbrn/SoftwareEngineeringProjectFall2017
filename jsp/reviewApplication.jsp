@@ -10,7 +10,7 @@
         status = "accepted";
         addToRoom = "UPDATE rooms SET resident_id = ? WHERE roomNum = ? AND building = ?";
         getStudent = "SELECT * FROM applications WHERE applicationNum = ?";
-        setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?"
+        setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
         accepted = true;
    }
    else
