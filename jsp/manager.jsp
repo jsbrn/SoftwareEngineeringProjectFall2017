@@ -9,12 +9,7 @@
 <body>
     <center><h2>Manager Portal</h1></center>
 	<div class = "login-card">
-	Administrative Options<br><br>
-	<%
-	   HttpSession sess = request.getSession();
-	   out.println("Welcome, "+(String)sess.getAttribute("name")+"!<br>");
-	   %>
-		
+		Administrative Options<br><br>
 		<a href="insertRoom.jsp">Add room</a><br>
 		<a href="deleteRoom.html">Delete room</a><br>
 		<a href="enterEditInfo.jsp">Edit room</a><br>
