@@ -22,7 +22,6 @@
 			out.println("<a href='enterApplicationInfo.jsp'>Register</a><br><a href='viewApplications.jsp'>View Applications</a><br>");
 	   }
 	   %>
-		<a href="../html/search.html">Search</a><br>
 		<a href="../index.html">Log Out</a>
     </div>
 </body>
