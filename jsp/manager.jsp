@@ -18,7 +18,7 @@
 		<a href="viewPendingApplications.jsp">View pending applications</a><br>
 		<a href="viewPendingWorkOrders.jsp">View pending work orders</a><br>
 		<a href="selectRooms.jsp">View rooms</a><br>
-		<a href="index.html">Log Out</a>
+		<a href="../index.html">Log Out</a>
 	</div>
 </body>
     
