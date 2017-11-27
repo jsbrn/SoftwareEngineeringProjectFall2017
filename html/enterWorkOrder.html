@@ -7,30 +7,49 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 </head>
 
-	<body>
-	
-	<center>
-	<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
-	<h2>Submit a Work Order</h2>
-	</center>
+<body>
 
-	<div class = "login-card">
-		<form action="../jsp/createWorkOrder.jsp" method="post">
+	<div class = 'container nobg'>
+		<center><img src = "../css/logo.png"></img></center>
+	</div>
 
-		Subject: <input style = "width: 98%" type="text" name="subject" /><br><br>
-		Message: <input type = "text" style = "width: 98%" name = "noteText"/><br><br>
-		Priority: <select style = "width: 100%" name = "priority">
-				<option>Low</option>
-				<option>Normal</option>
-				<option>High</option>
-				</select><br><br>
-
-		<center><input style = "width: 100%" type="submit" /></center>
-
+	<div class = "container" style = "padding: 20px 40px 20px 40px">
+		<div class = "row">
+			<div class = "six columns">
+				<h5>Signed in as Jeremy Braun</h5>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "twelve columns u-pull-right">
+				<button>Student Portal</button>
+				<button>My Applications</button>
+				<button>My Work Orders</button>
+				<button>Sign out</button>
+			</div>
+		</div>
+	</div>
+	<div class = "container" style = "margin-top: 40px;">
+		<h4>Submit a work order</h4>
+		<form action="../jsp/createWorkOrder.jsp>
+			<div class="row">
+				<div class="u-full-width">
+					<label for="subject">Subject</label>
+					<input class="u-full-width" placeholder="What's wrong?" id="subject" type="text" name = "subject">
+					<label for="priority">Priority</label>
+					<select class="u-full-width" id="priority" name="priority">
+						<option>Low</option>
+						<option>Normal</option>
+						<option>High</option>
+					</select>
+					<label for="noteText">Additional Notes</label>
+					<textarea class="u-full-width" placeholder="Describe the problem..." id="noteText" name="noteText"></textarea>
+					<input class="button-primary" value="Submit request" type="submit">
+				</div>
+			</div>
 		</form>
 	</div>
-		
+	
 
-	</body>
+</body>
 
 </html>

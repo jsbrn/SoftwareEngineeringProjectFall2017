@@ -8,12 +8,12 @@
 </head>
 
 <body>
-	<div class = 'container nobg' style = 'margin-top: 40px;'>
+	<div class = 'container nobg'>
 		<center><img src = "css/logo.png"></img></center>
 	</div>
 	<div class = 'container' style = 'margin-top: 40px;'>
 		<h2>Residence Login</h2>
-		<form>
+		<form action="jsp/loginPage.jsp">
 		  <div class="row">
 			<div class="six columns">
 			  <label for="exampleEmailInput">Email</label>
@@ -25,8 +25,8 @@
 			</div>
 		  </div>
 		  <input class = "button-primary" type="submit" name = "s_login" value="Student Login">
+		  <input class = "u-pull-right" type="submit" name = "m_login" value="Manager Login">
 		  <input type="submit" name = "s_register" value="Register (as Student)">
-		  <input type="submit" name = "m_login" value="Manager Login">
 		  
 		</form>
 	</div>
