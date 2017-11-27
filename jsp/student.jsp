@@ -8,22 +8,36 @@
 </head>
 <body>
     
-	<%
-	   HttpSession sess = request.getSession();
-	   out.println("<center><br><div class = 'login-card'><img src = '../css/logo.png'></img></div><br><br><br><h2>Welcome, "+(String)sess.getAttribute("name")+"!</h2></center>");
-	   out.println("<div class = 'login-card'>");
-	   out.println("Resident Options<br><br>");
-	   if(sess.getAttribute("studentType").equals("yes"))
-	   {
-			out.println("<a href='../html/enterWorkOrder.html'>Submit Work order</a><br>");
-	   }
-	   else
-	   {
-			out.println("<a href='enterApplicationInfo.jsp'>Register</a><br><a href='viewApplications.jsp'>View Applications</a><br>");
-	   }
-	   %>
-		<a href="../index.html">Log Out</a>
-    </div>
+	<!--UNIVERSITY LOGO-->
+	<div class = 'container nobg'>
+		<center><img src = "../css/logo.png"></img></center>
+	</div>
+
+	<!--NAVIGATION BAR-->
+	<div class = "container" style = "padding: 20px 40px 20px 40px">
+		<div class = "row">
+			<div class = "six columns">
+				<% HttpSession sess = request.getSession(); out.println("<h5>Signed in as "+(String)sess.getAttribute("name")+"</h2>"); %>
+			</div>
+			<div class = "u-pull-right">
+				<h5>Student</h5>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "twelve columns u-pull-right">
+				<button class = "button-primary">Apply to Residence</button>
+				<button>News Feed</button>
+				<button>Pending Applications</button>
+				<button>Work Orders</button>
+				<button>Sign out</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class = "container" style = "margin-top: 40px;">
+		<h4>News Feed</h4>
+	</div>
+
 </body>
     
 </html>
