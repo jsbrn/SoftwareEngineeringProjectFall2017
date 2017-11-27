@@ -11,53 +11,61 @@
 
 	<body>
 	
-	<center>
-	<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
-	<h2>Apply to Residence</h2>
-	</center>
+	<div class = 'container nobg'>
+		<center><img src = "../css/logo.png"></img></center>
+	</div>
 
-	<div class = "login-card">
-		<form action="createApplication.jsp" method="post">
-
-		Room Number: <input style = "width: 98%" type="text" name="roomNum" /><br><br>
-		Building Name: <input type = "text" style = "width: 98%" name = "building"/><br><br>
-		Room Style: <select style = "width: 100%" name = "style"><br><br>
-			<%
-				String getStyles = "SELECT roomStyle FROM style";
-				java.sql.Connection con = null;
-				PreparedStatement ps = null;
-			
-		try{
-			   Class.forName("com.mysql.jdbc.Driver"); 
-			   con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
-			
-			ps = con.prepareStatement(getStyles);
-			
-			ResultSet rs=ps.executeQuery(); 
-		   
-		   while(rs.next())
-		   {
-				String style = rs.getString("roomStyle");
-				out.println("<option value='"+style+"'>"+style+"</option>");
-		   }
-		} 
-		   catch (SQLException e)
-		{
-			out.println("ERROR:"+e.getMessage());
-		}
-		finally
-		{
-			if(ps != null)
-				ps.close();
-			if(con != null)
-				con.close();
-		}
-		   %>
-			
-			</select><br><br>
-
-		<center><input style = "width: 100%" type="submit" /></center>
-
+	<div class = "container" style = "margin-top: 40px;">
+		<h4>Apply to Residence</h4>
+		<form action="../jsp/createWorkOrder.jsp>
+			<div class="row">
+				<div class="u-full-width">
+				
+					<label for="priority">Roommate?</label>
+					<select class="u-full-width" id="priority" name="priority">
+						<option>Doesn't matter.</option>
+						<option>Yes, I want a roommate.</option>
+						<option>No, I want to live alone.</option>
+					</select>
+					
+					<label for="priority">Room style?</label>
+					<select class="u-full-width" id="priority" name="priority">
+						<%
+								String getStyles = "SELECT roomStyle FROM style";
+								java.sql.Connection con = null;
+								PreparedStatement ps = null;
+							
+						try{
+							   Class.forName("com.mysql.jdbc.Driver"); 
+							   con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+							
+							ps = con.prepareStatement(getStyles);
+							
+							ResultSet rs=ps.executeQuery(); 
+						   
+						   while(rs.next())
+						   {
+								String style = rs.getString("roomStyle");
+								out.println("<option value='"+style+"'>"+style+"</option>");
+						   }
+						} 
+						   catch (SQLException e)
+						{
+							out.println("ERROR:"+e.getMessage());
+						}
+						finally
+						{
+							if(ps != null)
+								ps.close();
+							if(con != null)
+								con.close();
+						}
+						   %>
+					</select>
+					
+					<input class="button-primary" value="Apply" type="submit">
+				</div>
+			</div>
 		</form>
 	</div>
 		
