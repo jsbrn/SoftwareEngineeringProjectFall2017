@@ -11,11 +11,34 @@
 </head>
 <body>
 
-<center>
-<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
-</center>
-	<div class = "container" style = "margin-top: 40px;" >
-		<h2>Your Applications</h2>
+	<!--UNIVERSITY LOGO-->
+	<div class = 'container nobg'>
+		<center><img src = "../css/logo.png"></img></center>
+	</div>
+
+	<!--NAVIGATION BAR-->
+	<div class = "container" style = "padding: 20px 40px 20px 40px">
+		<div class = "row">
+			<div class = "six columns">
+				<h5>Signed in as Jeremy Braun</h5>
+			</div>
+			<div class = "u-pull-right">
+				<h5>Student</h5>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "twelve columns u-pull-right">
+				<button class = "button-primary">Apply to Residence</button>
+				<button>News Feed</button>
+				<button>Pending Applications</button>
+				<button>Work Orders</button>
+				<button>Sign out</button>
+			</div>
+		</div>
+	</div>
+
+	<div class = "container" style = "margin-top: 40px;">
+		<h4>Your Applications</h4>
 		<%
 		   HttpSession sess = request.getSession();
 		   String ID = (String)sess.getAttribute("ID");
@@ -58,6 +81,8 @@
 				con.close();
 		}
 		%>
+		
+		<button>Submit new application</button>
 
 	</div>
 
