@@ -61,7 +61,7 @@
    ps.setString(2, ID);
 	
 	ps.executeUpdate();
-	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/pages/manager.jsp"); 
+	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/index.jsp"); 
    } 
    catch (SQLException e)
 {

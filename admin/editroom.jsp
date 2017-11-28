@@ -41,7 +41,7 @@ finally
     <html>
     <body>
         <p>Leave any fields you do not wish to change blank</p>
-        <form action = "editRoom.jsp">
+        <form action = "../scripts/editRoom.jsp">
             Room number: <input type = "text" name = "newRoomNum"/>
             Building: <input type = "text" name = "newBuilding"/>
             Resident's ID <input type = "text" name = "newResident"/>

@@ -6,7 +6,7 @@
 
 
 <div class>  
-<form action="addRoom.jsp" method="post">
+<form action="../scripts/addRoom.jsp" method="post">
 
 Room Number: <input type="text" name="roomNum" />
 Building Name:<input type = "text" name="building"/>

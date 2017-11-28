@@ -26,8 +26,8 @@
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
 				<a href = "" class = "button">Building Directory</a>
-				<a href = "" class = "button">Student Applications</a>
-				<a href = "" class = "button">Work Orders</a>
+				<a href = "applications.jsp" class = "button">Student Applications</a>
+				<a href = "workorders.jsp" class = "button">Work Orders</a>
 				<a href = "../index.html" class = "button">Sign Out</a>
 			</div>
 		</div>

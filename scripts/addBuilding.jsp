@@ -16,7 +16,7 @@
    ps.setString(1, building);
 	
 	ps.executeUpdate(); 
-   	response.sendRedirect("http://localhost:8080/SoftProj/pages/manager.jsp");   
+   	response.sendRedirect("http://localhost:8080/SoftProj/admin/index.jsp");   
 } 
    catch (SQLException e)
 {
