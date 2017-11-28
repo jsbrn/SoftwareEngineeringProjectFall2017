@@ -36,15 +36,7 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>News Feed</h4>
 	</div>
-
-
-	<!--<a href="insertRoom.jsp">Add room</a><br>
-	<a href="deleteRoom.html">Delete room</a><br>
-	<a href="enterEditInfo.jsp">Edit room</a><br>
-	<a href="viewPendingApplications.jsp">View pending applications</a><br>
-	<a href="viewPendingWorkOrders.jsp">View pending work orders</a><br>
-	<a href="selectRooms.jsp">View rooms</a><br>
-	<a href="../index.html">Log Out</a>-->
+	
 </body>
     
 </html>
