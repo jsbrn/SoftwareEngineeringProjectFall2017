@@ -80,7 +80,7 @@
 		}
 		%>
 		
-		<a href = "newapplication.jsp" class = "button-primary">Submit new application</a>
+		<a href = "newapplication.jsp" class = "button">Submit new application</a>
 
 	</div>
 

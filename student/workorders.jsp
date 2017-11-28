@@ -39,7 +39,7 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Your Work Orders</h4>
 		
-		<a href = "newapplication.jsp" class = "button">Submit new work order</a>
+		<a href = "newworkorder.html" class = "button">Submit new work order</a>
 
 	</div>
 
