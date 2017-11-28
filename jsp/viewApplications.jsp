@@ -39,7 +39,6 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Your Applications</h4>
 		<%
-		   HttpSession sess = request.getSession();
 		   String ID = (String)sess.getAttribute("ID");
 		   String getInfo = "Select applicationNum, ID, currentStatus FROM applications WHERE ID = ?";
 		   
