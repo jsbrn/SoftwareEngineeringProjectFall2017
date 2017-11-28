@@ -25,7 +25,7 @@
 		</div>
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
-				<button>Room Manager</button>
+				<a href = "http://google.ca" class = "button">Room Manager</a>
 				<button>Student Applications</button>
 				<button>Work Orders</button>
 				<button>Sign out</button>
@@ -38,13 +38,13 @@
 	</div>
 
 
-<!--<a href="insertRoom.jsp">Add room</a><br>
-		<a href="deleteRoom.html">Delete room</a><br>
-		<a href="enterEditInfo.jsp">Edit room</a><br>
-		<a href="viewPendingApplications.jsp">View pending applications</a><br>
-		<a href="viewPendingWorkOrders.jsp">View pending work orders</a><br>
-		<a href="selectRooms.jsp">View rooms</a><br>
-		<a href="../index.html">Log Out</a>-->
+	<!--<a href="insertRoom.jsp">Add room</a><br>
+	<a href="deleteRoom.html">Delete room</a><br>
+	<a href="enterEditInfo.jsp">Edit room</a><br>
+	<a href="viewPendingApplications.jsp">View pending applications</a><br>
+	<a href="viewPendingWorkOrders.jsp">View pending work orders</a><br>
+	<a href="selectRooms.jsp">View rooms</a><br>
+	<a href="../index.html">Log Out</a>-->
 </body>
     
 </html>
