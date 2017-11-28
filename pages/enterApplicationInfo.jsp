@@ -38,7 +38,7 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Apply to Residence</h4>
-		<form action="../jsp/createWorkOrder.jsp>
+		<form action="../scripts/createWorkOrder.jsp>
 			<div class="row">
 				<div class="u-full-width">
 				

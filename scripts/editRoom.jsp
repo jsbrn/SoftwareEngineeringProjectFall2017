@@ -47,7 +47,7 @@
    out.println(newResident.length());
 	
 	ps.executeUpdate(); 
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/jsp/manager.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/pages/manager.jsp");   
 } 
    catch (SQLException e)
 {

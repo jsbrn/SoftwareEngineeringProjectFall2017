@@ -23,7 +23,7 @@
    ps.setString(3, text);
 	
    ps.executeUpdate();
-   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/jsp/student.jsp");
+   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/pages/student.jsp");
 } 
    catch (SQLException e)
 {

@@ -8,13 +8,13 @@
    {
     userType = "students";
     idField = "s_id";
-    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/jsp/student.jsp";
+    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/pages/student.jsp";
    }
    else if (request.getParameter("m_login")!=null)
    {
     userType = "managers";
     idField = "ID";
-    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/jsp/manager.jsp";
+    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/pages/manager.jsp";
    }
    String username = request.getParameter("username");
    String password = request.getParameter("password");
