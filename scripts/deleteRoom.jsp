@@ -1,8 +1,9 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
-   String buildingName = request.getParameter("building");
-   String insertInfo = "INSERT INTO buildings VALUES (?)";
+   String roomNum = request.getParameter("roomNum");
+   String building = request.getParameter("building");
+   String deleteInfo = "DELETE FROM rooms WHERE roomNum = ? AND building = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -13,10 +14,11 @@
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 	
    ps = con.prepareStatement(deleteInfo);
-   ps.setString(1, building);
+   ps.setString(1, roomNum);
+   ps.setString(2, building);
 	
 	ps.executeUpdate(); 
-   	response.sendRedirect("http://localhost:8080/SoftProj/jsp/manager.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/index.jsp");   
 } 
    catch (SQLException e)
 {
