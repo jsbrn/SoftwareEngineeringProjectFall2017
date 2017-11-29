@@ -13,7 +13,7 @@
 
 	<!--UNIVERSITY LOGO-->
 	<div class = 'container nobg'>
-		<center><img src = "../css/logo.png"></img></center>
+		<center><img src = "../../css/logo.png"></img></center>
 	</div>
 
 	<!--MANAGER NAVIGATION BAR-->
@@ -28,10 +28,10 @@
 		</div>
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
-				<a href = "" class = "button">Building Directory</a>
-				<a href = "applications.jsp" class = "button">Student Applications</a>
+				<a href = "applications.jsp" class = "button">Applications</a>
 				<a href = "workorders.jsp" class = "button">Work Orders</a>
-				<a href = "../index.html" class = "button">Sign Out</a>
+				<a href = "config/index.jsp" class = "button">Configuration</a>
+				<a href = "../index.html" class = "button u-pull-right">Sign Out</a>
 			</div>
 		</div>
 	</div>
