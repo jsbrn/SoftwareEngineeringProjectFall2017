@@ -6,7 +6,7 @@
 <head>
     <meta charset = "utf-8">
     <title>Lakehead University Residence</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 </head>
 <body>
@@ -28,19 +28,21 @@
 		</div>
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
-				<a href = "applications.jsp" class = "button">Applications</a>
-				<a href = "workorders.jsp" class = "button">Work Orders</a>
-				<a href = "configuration.jsp" class = "button">Configuration</a>
-				<a href = "../index.html" class = "button u-pull-right">Sign Out</a>
+				<a href = "../applications.jsp" class = "button">Applications</a>
+				<a href = "../workorders.jsp" class = "button">Work Orders</a>
+				<a href = "../configuration.jsp" class = "button">Configuration</a>
+				<a href = "../../index.html" class = "button u-pull-right">Sign Out</a>
 			</div>
 		</div>
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>Configuration</h5>
-		<a class = "button">Rooms</a>
-		<a class = "button">Buildings</a>
-		<a class = "button">Users</a>
+		<table class = "u-full-width">
+			<tr><td><a href = "rooms.jsp" class = "button u-full-width">Rooms</a></td><td><p class = "u-pull-right">Add, edit, move and delete rooms.</p></td></tr>
+			<tr><td><a href = "buildings.jsp" class = "button u-full-width">Buildings</a></td><td><p class = "u-pull-right">Add, edit, move and delete buildings.</p></td></tr>
+			<tr><td><a href = "users.jsp" class = "button u-full-width">Users</a></td><td><p class = "u-pull-right">Add or remove managers.</p></td></tr>
+		</table>
 	</div>
 	
 </body>
