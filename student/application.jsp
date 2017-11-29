@@ -36,7 +36,7 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h4>Your Applications</h4>
+		<h4>Application Details</h4>
 		<%
            String ID = request.getParameter("ID");
 		   String getInfo = "Select applicationNum, ID, currentStatus FROM applications WHERE ID = ?";
@@ -54,6 +54,12 @@
 			
 			ResultSet rs=ps.executeQuery(); 
 			
+           
+           String applicationNum = rs.getString("applicationNum");
+           String status = rs.getString("currentStatus");
+           
+           out.println("<p><b>ApplicationNum:</b>"+applicationNum+"</p><p><b>ID: </b>"+ID+"</p></a>");
+           
 		   out.println("<table class = 'u-full-width'>");
            out.println("<tr> <th>Application #</th> <th>Status</th> <th></th></tr>");
 		   while(rs.next())
