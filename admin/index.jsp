@@ -33,8 +33,33 @@
 		</div>
 	</div>
 	
-	<div class = "container" style = "margin-top: 40px;">
+	<div class = "container" style = "margin-top: 40px; padding-bottom: 0px;">
 		<h4>News Feed</h4>
+		<!--conversation-->
+		<table class = "u-full-width">
+			<tr>
+				<td><img src = "../css/admin.png"></img></td>
+				<td>
+					<p>
+						<b>[NEWS FEED ENTRY TITLE]</b> - <i>[timestamp]</i><br>
+						There will be scheduled maintenance. It's just the wei things go.
+					</p>
+				</td>
+				<td>
+					<button class = "button">Delete</button>
+				</td>
+			</tr>
+		</table>
+		<!--submit new news feed item-->
+		<form>
+			<div class="row">
+				<div class="u-full-width">
+					<label for="msg">Post a news feed entry...</label>
+					<textarea class="u-full-width" placeholder="Enter your message..." id="msg" name="msg"></textarea>
+					<input class="button-primary" value="Post new entry" type="submit">
+				</div>
+			</div>
+		</form>
 	</div>
 	
 </body>
