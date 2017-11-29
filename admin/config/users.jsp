@@ -38,6 +38,16 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>System Users</h5>
+		<table class = "u-full-width">
+			<tr><td><b>ID</b></td><td><b>Name</b></td></tr>
+			<tr>
+				<td>234255</td><td>Bobby Anon</td>
+				<td>
+					<a href = "../student/application.jsp" class = "button u-pull-right">Remove</button> 
+				</td>
+			</tr>
+		</table>
+		<button class = "button">Add User</button>
 	</div>
 	
 </body>
