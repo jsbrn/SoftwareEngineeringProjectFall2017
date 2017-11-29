@@ -39,7 +39,7 @@
 		<h4>Application Details</h4>
 		<%
            String ID = request.getParameter("ID");
-		   String getInfo = "Select applicationNum, ID, currentStatus FROM applications WHERE ID = ?";
+		   String getInfo = "Select * FROM applications WHERE ID = ?";
 		   
 		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
@@ -54,11 +54,12 @@
 			
 			ResultSet rs=ps.executeQuery(); 
 			
-           
+           rs.next();
            String applicationNum = rs.getString("applicationNum");
-           String status = rs.getString("currentStatus");
+           String requested_style = rs.getString("requested_style");
+           String currentStatus = rs.getString("currentStatus");
            
-           out.println("<p><b>ApplicationNum:</b>"+applicationNum+"</p><p><b>ID: </b>"+ID+"</p></a>");
+           out.println("<p><b>Application Number:</b>"+applicationNum+"</p><p><b>ID: </b>"+ID+"</p><p><b>Requested Style:</b>"+requested_style+"</p><p><b>Current Status:</b>"+currentStatus+"</p></a>");
 		} 
 		   catch (SQLException e)
 		{
