@@ -13,7 +13,7 @@
 
 	<!--UNIVERSITY LOGO-->
 	<div class = 'container nobg'>
-		<center><img src = "../css/logo.png"></img></center>
+		<center><img src = "../../css/logo.png"></img></center>
 	</div>
 
 	<!--MANAGER NAVIGATION BAR-->

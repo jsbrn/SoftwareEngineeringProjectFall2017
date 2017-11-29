@@ -13,7 +13,7 @@
 
 	<!--UNIVERSITY LOGO-->
 	<div class = 'container nobg'>
-		<center><img src = "../css/logo.png"></img></center>
+		<center><img src = "../../css/logo.png"></img></center>
 	</div>
 
 	<!--MANAGER NAVIGATION BAR-->
@@ -30,7 +30,7 @@
 			<div class = "twelve columns u-pull-right">
 				<a href = "../applications.jsp" class = "button">Applications</a>
 				<a href = "../workorders.jsp" class = "button">Work Orders</a>
-				<a href = "../configuration.jsp" class = "button">Configuration</a>
+				<a href = "index.jsp" class = "button">Configuration</a>
 				<a href = "../../index.html" class = "button u-pull-right">Sign Out</a>
 			</div>
 		</div>
