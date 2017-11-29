@@ -2,10 +2,10 @@
 <%@ page import ="javax.sql.*" %>
 <%
    String roomID = request.getParameter("roomID");
-   String checkForResident = "SELECT residentID FROM residents WHERE room_id = ?;
+   String checkForResident = "SELECT residentID FROM residents WHERE room_id = ?";
    String deleteInfo = "DELETE FROM rooms WHERE roomID = ?";
-   String removeResident = "DELETE FROM residents WHERE residentID = ?;
-   String updateStudent = "UPDATE students SET assigned_room = 'no' WHERE s_id = ?;
+   String removeResident = "DELETE FROM residents WHERE residentID = ?";
+   String updateStudent = "UPDATE students SET assigned_room = 'no' WHERE s_id = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
