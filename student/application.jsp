@@ -59,17 +59,6 @@
            String status = rs.getString("currentStatus");
            
            out.println("<p><b>ApplicationNum:</b>"+applicationNum+"</p><p><b>ID: </b>"+ID+"</p></a>");
-           
-		   out.println("<table class = 'u-full-width'>");
-           out.println("<tr> <th>Application #</th> <th>Status</th> <th></th></tr>");
-		   while(rs.next())
-		   {
-				String applicationNum = rs.getString("applicationNum");
-				String status = rs.getString("currentStatus");
-
-				out.println("<tr> <td>"+applicationNum+"</td> <td>"+status+"</td> <a href = "application.jsp" class = 'button'>View</a> </tr>");
-		   }
-		   out.println("</table>");
 		} 
 		   catch (SQLException e)
 		{
