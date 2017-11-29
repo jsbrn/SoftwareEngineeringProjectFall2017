@@ -42,10 +42,7 @@
 			<tr><td><b>Subject</b></td><td><b>Priority</b></td><td><b>Status</b></td><td></td></tr>
 			<tr>
 				<td>Please help me [example work order]</td><td>High</td><td>Unresolved</td>
-				<td>
-					<button class = 'button'>View</button>
-					<button class = 'button'>Cancel</button>
-				</td>
+				<td><a href = "" class = 'button'>View</a></td>
 			</tr>
 		</table>
 		<a href = "newworkorder.html" class = "button">Submit new work order</a>

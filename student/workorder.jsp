@@ -41,7 +41,7 @@
 		<p><b>Subject:</b> Please help me :(</p>
 		<p><b>ID:</b> 34534675</p>
 		<p><b>Description:</b> my sink broke what else is there to say</p>
-		<a class = "button">Cancel work order</a>
+		<a class = "button">Mark as resolved</a>
 	</div>
 	
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 10px;">
