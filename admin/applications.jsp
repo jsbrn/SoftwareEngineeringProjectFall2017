@@ -11,12 +11,32 @@
 </head>
 <body>
 
-	<center>
-	<br><div class = "login-card"><img src = "../css/logo.png"></img></div><br><br><br>
-	<h2>Student Applications</h2>
-	</center>
+	<!--UNIVERSITY LOGO-->
+	<div class = 'container nobg'>
+		<center><img src = "../css/logo.png"></img></center>
+	</div>
 
-	<div class = "detail-card">
+	<!--MANAGER NAVIGATION BAR-->
+	<div class = "container" style = "padding: 20px 40px 20px 40px">
+		<div class = "row">
+			<div class = "six columns">
+				<% HttpSession sess = request.getSession(); out.println("<h5>Signed in as "+(String)sess.getAttribute("name")+"</h2>"); %>
+			</div>
+			<div class = "u-pull-right">
+				<h5>Admin</h5>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "twelve columns u-pull-right">
+				<a href = "" class = "button">Building Directory</a>
+				<a href = "applications.jsp" class = "button">Student Applications</a>
+				<a href = "workorders.jsp" class = "button">Work Orders</a>
+				<a href = "../index.html" class = "button">Sign Out</a>
+			</div>
+		</div>
+	</div>
+
+	<div class = "container" style = "margin-top: 40px;">
 		
 		<form action = "../scripts/reviewApplication.jsp">
 			Select application to review:<select name = "appID">
@@ -71,7 +91,7 @@
 					ResultSet rs=ps.executeQuery(); 
 					
 				   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-				   out.println("<tr> <th>Student ID</th> <th>Application #</th> <th>Requested Style</th> <th>Requested Building</th> <th>Room Number</th></tr>");
+				   out.println("<tr> <th>Student ID</th> <th>Application #</th> <th>Room Type</th> <th>Requested Building</th> <th>Room Number</th></tr>");
 				   while(rs.next())
 				   {
 						String studentID = rs.getString("ID");
