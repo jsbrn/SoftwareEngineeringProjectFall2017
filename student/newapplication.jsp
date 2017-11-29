@@ -38,18 +38,27 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Apply to Residence</h4>
+		<h6>Please fill out the following form. It contains some questions to help ensure you are given
+			a room that works best for you.</h6>
 		<form action="../scripts/createWorkOrder.jsp>
 			<div class="row">
 				<div class="u-full-width">
 				
-					<label for="priority">Roommate?</label>
+					<label for="priority">Do you want a roommate?</label>
 					<select class="u-full-width" id="priority" name="priority">
 						<option>Doesn't matter.</option>
 						<option>Yes, I want a roommate.</option>
 						<option>No, I want to live alone.</option>
 					</select>
 					
-					<label for="priority">Room style?</label>
+					<label for="year">Do you need peace and quiet to study?</label>
+					<select class = "u-full-width">
+						<option>Doesn't matter.</option>
+						<option>Yes, definitely.</option>
+						<option>No.</option>
+					</select>
+					
+					<label for="priority">Which type of room would you prefer?</label>
 					<select class="u-full-width" id="priority" name="priority">
 						<%
 								String getStyles = "SELECT roomStyle FROM style";
@@ -84,7 +93,15 @@
 						   %>
 					</select>
 					
-					<input class="button-primary" value="Apply" type="submit">
+					<label for="year">What year are you going into?</label>
+					<select class = "u-full-width">
+						<option>First Year</option>
+						<option>Second Year</option>
+						<option>Third Year</option>
+						<option>Fourth Year</option>
+					</select>
+					
+					<input class="button-primary" value="Submit your application" type="submit">
 				</div>
 			</div>
 		</form>
