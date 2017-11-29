@@ -55,8 +55,8 @@
 			
 			ResultSet rs=ps.executeQuery(); 
 			
-		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-			out.println("<tr> <th>Application #</th> <th>Status</th></tr>");
+		   out.println("<table class = 'u-full-width'>");
+		   out.println("<tr> <th>Application #</th> <th>Status</th></tr>");
 		   while(rs.next())
 		   {
 				String applicationNum = rs.getString("applicationNum");

@@ -38,9 +38,11 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Your Work Orders</h4>
-		
+		<table class = 'u-full-width'>
+			<tr><td><b>Subject</b></td><td><b>Priority</b></td><td><b>Status</b></td><td></td></tr>
+			<tr><td>Please help me [example work order]</td><td>High</td><td>Unresolved</td><td><button class = 'button'>Cancel</button></td></tr>
+		</table>
 		<a href = "newworkorder.html" class = "button">Submit new work order</a>
-
 	</div>
 
 </body>
