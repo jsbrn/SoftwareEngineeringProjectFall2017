@@ -21,7 +21,7 @@
    {
         String text = messages.getString("messageText");
         String author = messages.getString("author");
-        String time = messages.getString("time");
+       	TimeStamp time = messages.getTimeStamp("timeSent");
         
         //input display stuff here
    }
