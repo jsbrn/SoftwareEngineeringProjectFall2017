@@ -43,7 +43,7 @@
 			<tr>
 				<td>233</td><td>That one building with the bricks</td><td>0/2</td>
 				<td>
-					<a href = "../student/application.jsp" class = "button">View</button> 
+					<a href = "" class = "button">View</button> 
 				</td>
 			</tr>
 		</table>
