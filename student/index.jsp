@@ -33,8 +33,21 @@
 		</div>
 	</div>
 	
-	<div class = "container" style = "margin-top: 40px;">
+	<div class = "container" style = "margin-top: 40px; padding-bottom: 0px;">
 		<h4>News Feed</h4>
+		<!--conversation-->
+		<table class = "u-full-width">
+			<tr>
+				<td><img src = "../css/admin.png"></img></td>
+				<td>
+					<p>
+						<b>[NEWS FEED ENTRY TITLE]</b> - <i>[timestamp]</i><br>
+						There will be scheduled maintenance. It's just the wei things go.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
 	</div>
 
 </body>
