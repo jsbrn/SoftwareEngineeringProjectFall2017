@@ -59,7 +59,7 @@
            String requested_style = rs.getString("requested_style");
            String currentStatus = rs.getString("currentStatus");
            
-           out.println("<p><b>Application Number:</b>"+applicationNum+"</p><p><b>ID: </b>"+ID+"</p><p><b>Requested Style:</b>"+requested_style+"</p><p><b>Current Status:</b>"+currentStatus+"</p></a>");
+           out.println("<p><b>Application Number:</b>"+applicationNum+"<br><b>ID: </b>"+ID+"<b>Requested Style:</b>"+requested_style+"<br><b>Current Status:</b>"+currentStatus+"</p></a>");
 		} 
 		   catch (SQLException e)
 		{

@@ -43,7 +43,7 @@
 			<tr>
 				<td>234255</td><td>Bobby Anon</td>
 				<td>
-					<a href = "../student/application.jsp" class = "button u-pull-right">Remove</button> 
+					<a href = "" class = "button u-pull-right">Remove</button> 
 				</td>
 			</tr>
 		</table>

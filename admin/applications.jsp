@@ -41,7 +41,7 @@
 		<table class = "u-full-width">
 			<tr><td><b>ID</b></td><td><b>Student</b></td><td><b>Special Requirements</b></td></tr>
 			<tr><td>345345345</td><td>Billy Joel (ID: 34234324)</td><td>I want a pony.</td>
-				<td><a href = "../student/application.jsp" class = "button">View</button></td></tr>
+				<td><a href = "" class = "button">View</button></td></tr>
 		</table>
 	</div>
 	
