@@ -56,13 +56,14 @@
 			ResultSet rs=ps.executeQuery(); 
 			
 		   out.println("<table class = 'u-full-width'>");
-		   out.println("<tr> <th>Application #</th> <th>Status</th></tr>");
+           out.println("<tr> <th>Application #</th> <th>Status</th> <th></th></tr>");
 		   while(rs.next())
 		   {
+                String ID = rs.getString("ID");
 				String applicationNum = rs.getString("applicationNum");
 				String status = rs.getString("currentStatus");
 
-				out.println("<tr> <td>"+applicationNum+"</td> <td>"+status+"</td></tr>");
+				out.println("<tr> <td>"+applicationNum+"</td> <td>"+status+"</td> <a href = "application.jsp?ID=ID" class = 'button'>View</a> </tr>");
 		   }
 		   out.println("</table>");
 		} 
