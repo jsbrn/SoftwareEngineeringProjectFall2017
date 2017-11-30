@@ -30,7 +30,7 @@
 			<div class = "twelve columns u-pull-right">
 				<a href = "index.jsp" class = "button">News Feed</a>
 				<a href = "applications.jsp" class = "button">Your Application</a>
-				<a href = "" class = "button">Your Work Orders</a>
+				<a href = "workorders.jsp" class = "button">Your Work Orders</a>
 				<a href = "../index.html" class = "button">Sign out</a>
 			</div>
 		</div>
@@ -55,14 +55,16 @@
 			
 			ResultSet rs=ps.executeQuery(); 
 			
-		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-			out.println("<tr> <th>Application #</th> <th>Status</th></tr>");
+		   out.println("<table class = 'u-full-width'>");
+           out.println("<tr> <th>Application #</th> <th>Status</th> <th></th></tr>");
 		   while(rs.next())
 		   {
+                String studentID = rs.getString("ID");
 				String applicationNum = rs.getString("applicationNum");
 				String status = rs.getString("currentStatus");
+           
 
-				out.println("<tr> <td>"+applicationNum+"</td> <td>"+status+"</td></tr>");
+				out.println("<tr> <td>"+applicationNum+"</td> <td>"+status+"</td> <td><a href = 'application.jsp?ID="+studentID+"' class = 'button'>View</a> </td></tr>");
 		   }
 		   out.println("</table>");
 		} 
@@ -80,7 +82,7 @@
 		}
 		%>
 		
-		<a href = "newapplication.jsp" class = "button-primary">Submit new application</a>
+		<a href = "newapplication.jsp" class = "button">Submit new application</a>
 
 	</div>
 

@@ -27,14 +27,27 @@
 			<div class = "twelve columns u-pull-right">
 				<a href = "index.jsp" class = "button">News Feed</a>
 				<a href = "applications.jsp" class = "button">Your Application</a>
-				<a href = "" class = "button">Your Work Orders</a>
+				<a href = "workorders.jsp" class = "button">Your Work Orders</a>
 				<a href = "../index.html" class = "button">Sign out</a>
 			</div>
 		</div>
 	</div>
 	
-	<div class = "container" style = "margin-top: 40px;">
+	<div class = "container" style = "margin-top: 40px; padding-bottom: 0px;">
 		<h4>News Feed</h4>
+		<!--conversation-->
+		<table class = "u-full-width">
+			<tr>
+				<td><img src = "../css/admin.png"></img></td>
+				<td>
+					<p>
+						<b>[NEWS FEED ENTRY TITLE]</b> - <i>[timestamp]</i><br>
+						There will be scheduled maintenance. It's just the wei things go.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
 	</div>
 
 </body>

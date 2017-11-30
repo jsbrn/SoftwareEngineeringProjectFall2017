@@ -25,26 +25,43 @@
 		</div>
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
-				<a href = "" class = "button">Building Directory</a>
-				<a href = "applications.jsp" class = "button">Student Applications</a>
+				<a href = "applications.jsp" class = "button">Applications</a>
 				<a href = "workorders.jsp" class = "button">Work Orders</a>
-				<a href = "../index.html" class = "button">Sign Out</a>
+				<a href = "config/index.jsp" class = "button">Configuration</a>
+				<a href = "../index.html" class = "button u-pull-right">Sign Out</a>
 			</div>
 		</div>
 	</div>
 	
-	<div class = "container" style = "margin-top: 40px;">
+	<div class = "container" style = "margin-top: 40px; padding-bottom: 0px;">
 		<h4>News Feed</h4>
+		<!--conversation-->
+		<table class = "u-full-width">
+			<tr>
+				<td><img src = "../css/admin.png"></img></td>
+				<td>
+					<p>
+						<b>[NEWS FEED ENTRY TITLE]</b> - <i>[timestamp]</i><br>
+						There will be scheduled maintenance. It's just the wei things go.
+					</p>
+				</td>
+				<td>
+					<button class = "button">Delete</button>
+				</td>
+			</tr>
+		</table>
+		<!--submit new news feed item-->
+		<form>
+			<div class="row">
+				<div class="u-full-width">
+					<label for="msg">Post a news feed entry...</label>
+					<textarea class="u-full-width" placeholder="Enter your message..." id="msg" name="msg"></textarea>
+					<input class="button-primary" value="Post new entry" type="submit">
+				</div>
+			</div>
+		</form>
 	</div>
-
-
-	<!--<a href="insertRoom.jsp">Add room</a><br>
-	<a href="deleteRoom.html">Delete room</a><br>
-	<a href="enterEditInfo.jsp">Edit room</a><br>
-	<a href="viewPendingApplications.jsp">View pending applications</a><br>
-	<a href="viewPendingWorkOrders.jsp">View pending work orders</a><br>
-	<a href="selectRooms.jsp">View rooms</a><br>
-	<a href="../index.html">Log Out</a>-->
+	
 </body>
     
 </html>
