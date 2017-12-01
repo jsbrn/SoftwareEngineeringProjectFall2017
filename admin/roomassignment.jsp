@@ -38,8 +38,9 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-	<form>
-        <% String id = request.getParameter("studentID"); %>
+        <% String id = request.getParameter("studentID"); 
+		out.println("<form action = '../scripts/assignRoom.jsp?student = '"+id+"' name = 'student>");
+	%>
 		<h5>Assign a room</h5>
         <select name = 'roomID'>
 		<% 
@@ -77,7 +78,7 @@
 		}
            %>
             </select>
-		<% out.println("<a href = '../scripts/assignRoom.jsp?student='"+id+"' name = 'student'> class = 'button'>Assign</a>"); %>
+		<input type = "submit" value = "Assign"/>
             </form>
 	</div>
 	
