@@ -85,7 +85,7 @@ finally
 				</td>
 			</tr>
 		</table>
-		<button class = "button">Add User</button>
+		<a href = 'newmanager.jsp' class = "button">Add User</a>
 	</div>
 	
 </body>
