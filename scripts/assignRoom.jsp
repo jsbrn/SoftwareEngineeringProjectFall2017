@@ -7,7 +7,7 @@
    int roomIDINT = Integer.parseInt(roomID);
    //creates prepared statements for inserting  students into the residents table, and updating the student's info in student table
    String insertInfo = "INSERT INTO residents VALUES (?, ?)";
-   setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
+   String setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    
    //creates conncetions
    java.sql.Connection con = null;
@@ -27,7 +27,7 @@
 
     //sets the student ID and room ID and inserts
     assignRoom = con.prepareStatement(insertInfo);
-    assignRoom.setString(1, sID);
+    assignRoom.setString(1, ID);
     assignRoom.setInt(2, roomID);
         
     assignRoom.executeUpdate();
