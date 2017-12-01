@@ -40,7 +40,7 @@
 				<label for="building">Building</label>
 				<select  class = "u-full-width" name = "building">
 					<%
-						String getStyles = "SELECT building_name FROM buildings";
+						String getBuildings = "SELECT building_name FROM buildings";
 						java.sql.Connection con = null;
 						PreparedStatement ps = null;
 							
@@ -48,7 +48,7 @@
 							   Class.forName("com.mysql.jdbc.Driver"); 
 							   con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 							
-							ps = con.prepareStatement(getStyles);
+							ps = con.prepareStatement(getBuildings);
 							
 							ResultSet rs=ps.executeQuery(); 
 						   
@@ -72,12 +72,12 @@
 				   %>
 				</select>
 				
-				<label for="st">Room Type</label>
+				<label for="style">Room Type</label>
 				<select  class = "u-full-width" name = "style">
 							<%
 								String getStyles = "SELECT roomStyle FROM style";
-								java.sql.Connection con = null;
-								PreparedStatement ps = null;
+								con = null;
+								ps = null;
 							
 						try{
 							   Class.forName("com.mysql.jdbc.Driver"); 
@@ -85,7 +85,7 @@
 							
 							ps = con.prepareStatement(getStyles);
 							
-							ResultSet rs=ps.executeQuery(); 
+							rs=ps.executeQuery(); 
 						   
 						   while(rs.next())
 						   {
