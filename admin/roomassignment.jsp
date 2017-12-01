@@ -77,6 +77,7 @@
 		}
            %>
             </select>
+		<input type = "submit" value = "Assign" />
             </form>
 	</div>
 	
