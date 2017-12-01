@@ -9,7 +9,7 @@
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
-   PreparedStatement assignRoom = null;
+   PreparedStatement deleteCall = null;
    
    try
 {
