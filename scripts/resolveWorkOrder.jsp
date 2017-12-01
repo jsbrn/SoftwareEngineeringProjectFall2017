@@ -3,6 +3,7 @@
 <%@ include file="removalFunctions.jsp" %>
 <%
    int workOrderID = Integer.parseInt(request.getParameter("workOrderID"));
+   boolean as_admin = Boolean.parseBoolean(request.getParameter("admin"));
    String setResolved = "UPDATE notes set status = ? noteNum = ?";
    
    java.sql.Connection con = null;
@@ -17,7 +18,7 @@
     ps.setString(1, "resolved");
     ps.setString(1, workOrderID);
 	
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/index.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/"+(as_admin ? "admin" : "student")+"/workorder.jsp?num=.jsp");   
 } 
    catch (SQLException e)
 {
