@@ -16,6 +16,7 @@
 		<h4>Application Details</h4>
 		<%
            String ID = request.getParameter("ID");
+	   int idINT = Integer.parseInt(ID);
 		   String getInfo = "Select * FROM applications WHERE ID = ?";
 		   
 		   java.sql.Connection con = null;
@@ -27,13 +28,13 @@
 			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
 		   ps = con.prepareStatement(getInfo);
-		   ps.setString(1, ID);
+		   ps.setInt(1, idINT);
 			
 			ResultSet rs=ps.executeQuery(); 
 			
            while(rs.next())
 	   {
-           String applicationNum = rs.getString("applicationNum");
+           int applicationNum = rs.getInt("applicationNum");
            String requested_style = rs.getString("requested_style");
            String currentStatus = rs.getString("currentStatus");
            
