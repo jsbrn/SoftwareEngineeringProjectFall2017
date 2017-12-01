@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 
