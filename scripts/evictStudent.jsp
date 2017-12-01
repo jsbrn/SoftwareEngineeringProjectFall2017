@@ -25,7 +25,7 @@
         
     deleteCall.executeUpdate();
    
-   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/index.jsp");
+   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/students.jsp");
  }  
    catch (SQLException e)
 {
