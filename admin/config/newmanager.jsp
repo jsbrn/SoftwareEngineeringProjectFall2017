@@ -47,11 +47,13 @@
 				
 				<label for="m_id">ID</label>
 				<input class = "u-full-width" name = "m_id" type = "text"></input>
-				<label for="fname">ID</label>
+				<label for="fname">First Name</label>
 				<input class = "u-full-width" name = "fname" type = "text"></input>
-				<label for="lname">ID</label>
+				<label for="lname">Last Name</label>
 				<input class = "u-full-width" name = "lname" type = "text"></input>
-				<label for="password">ID</label>
+				<label for="email">Email</label>
+				<input class = "u-full-width" name = "email" type = "text"></input>
+				<label for="password">Password</label>
 				<input class = "u-full-width" name = "password" type = "password"></input>
 				<input class="button-primary" value="Add room" type="submit">
 				
