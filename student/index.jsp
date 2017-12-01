@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
-<% include file="studentNavBar.jsp" %>
+<%jsp:include page ="studentNavBar.jsp" %>
 <html lang = "en">
 <head>
     <meta charset = "utf-8">
