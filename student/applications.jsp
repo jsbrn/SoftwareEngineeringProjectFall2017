@@ -37,11 +37,11 @@
 		   while(rs.next())
 		   {
                 String studentID = rs.getString("ID");
-				String applicationNum = rs.getString("applicationNum");
+				int applicationNum = rs.getInt("applicationNum");
 				String status = rs.getString("currentStatus");
            
 
-				out.println("<tr> <td>"+applicationNum+"</td> <td>"+status+"</td> <td><a href = 'application.jsp?ID="+studentID+"' class = 'button'>View</a> </td></tr>");
+				out.println("<tr> <td>"+applicationNum+"</td> <td>"+status+"</td> <td><a href = 'application.jsp?ID="+applicationNum+"' class = 'button'>View</a> </td></tr>");
 		   }
 		   out.println("</table>");
 		} 
