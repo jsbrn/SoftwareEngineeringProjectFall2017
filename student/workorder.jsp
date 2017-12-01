@@ -22,7 +22,7 @@
 		<a class = "button">Mark as resolved</a>
 	</div>
 	
-	<% String workOrderID = request.getParameter("workOrderID"); out.println(workOrderID);%>
+	<% String workOrderID = request.getParameter("workOrderID");%>
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 10px;">
 		<h4>Conversation</h4>
 		<!--submit new message-->
