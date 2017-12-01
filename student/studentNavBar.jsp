@@ -1,4 +1,8 @@
 <html>
+	<!--UNIVERSITY LOGO-->
+<div class = 'container nobg'>
+	<center><img src = "../css/logo.png"></img></center>
+</div>
 	<div class = "container" style = "padding: 20px 40px 20px 40px">
 		<div class = "row">
 			<div class = "six columns">
