@@ -64,7 +64,7 @@
    	String id = user.getString("ID");
         String fname = user.getString("fname");
         String lname = user.getString("lname");
-	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td><td><a href = '../../scripts/deleteManager.jsp?m_id = "+id+"' name = 'm_id' class = 'button u-pull-right'>Remove</a></td>");
+	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td><td><a href = '../../scripts/deleteManager.jsp?m_id = "+id+"' name = 'm_id' class = 'button u-pull-right'>Remove</button></td>");
    }
 } 
    catch (SQLException e)
