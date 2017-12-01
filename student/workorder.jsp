@@ -38,9 +38,10 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Work Order Details</h4>
-		<p><b>Subject:</b> Please help me :(</p>
-		<p><b>ID:</b> 34534675</p>
-		<p><b>Description:</b> my sink broke what else is there to say</p>
+		<p>
+		<b>Subject:</b> Please help me :(<br>
+		<b>ID:</b> 34534675<br>
+		<b>Description:</b> my sink broke what else is there to say</p>
 		<a class = "button">Mark as resolved</a>
 	</div>
 	
