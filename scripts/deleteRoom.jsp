@@ -15,7 +15,7 @@
 
    deleteRoom(con, roomID);
 	
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/buildings.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/config/buildings.jsp");   
 } 
    catch (SQLException e)
 {
