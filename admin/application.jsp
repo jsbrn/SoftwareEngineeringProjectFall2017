@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
-    
+
 <html lang = "en">
 <head>
     <meta charset = "utf-8">
@@ -38,10 +38,10 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h5>Pending Applications</h5>
+		<h4>Application Details</h4>
 		<%
-
-		   String getInfo = "Select * FROM applications WHERE currentStatus = 'pending'";
+           String ID = request.getParameter("ID");
+		   String getInfo = "Select * FROM applications WHERE ID = ?";
 		   
 		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
@@ -52,20 +52,16 @@
 			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
 		   ps = con.prepareStatement(getInfo);
+		   ps.setString(1, ID);
 			
 			ResultSet rs=ps.executeQuery(); 
 			
-		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-			out.println("<tr> <th>Application #</th> <th> Student ID </th> <th>Room Type</th> <th> Quiet Building</th> </tr>");
-		   while(rs.next())
-		   {
-				int num = rs.getInt("applicationNum");
-				String ID = rs.getString("ID");
-				String style = rs.getString("requested_style");
-				String building = rs.getString("quiet_house");
-				out.println("<tr> <td>"+num+"</td> <td>"+ID+"</td> <td>"+style+"</td> <td>"+building+"</td><td><a class = 'button' href = 'application.jsp?ID="+num+"'>View</a></td></tr>");
-		   }
-		   out.println("</table>");
+           rs.next();
+           String applicationNum = rs.getString("applicationNum");
+           String requested_style = rs.getString("requested_style");
+           String currentStatus = rs.getString("currentStatus");
+           
+           out.println("<p><b>Application Number:</b>"+applicationNum+"<br><b>ID: </b>"+ID+"<b>Requested Style:</b>"+requested_style+"<br><b>Current Status:</b>"+currentStatus+"</p></a>");
 		} 
 		   catch (SQLException e)
 		{
@@ -80,9 +76,10 @@
 				con.close();
 		}
 		%>
+		
+		<a href = "applications.jsp" class = "button">Back</a>
+
 	</div>
-	
+
 </body>
-</html>		
-
-
+</html>
