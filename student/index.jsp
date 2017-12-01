@@ -83,7 +83,6 @@
 			%>
 		</table>
 	</div>
-	</div>
 
 </body>
     

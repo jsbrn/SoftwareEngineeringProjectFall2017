@@ -56,14 +56,14 @@
 				ResultSet rs=ps.executeQuery(); 
 				
 			   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-				out.println("<tr> <th>Work Order #</th> <th> Subject </th> <th>Note Text</th> <th> Priority </th> </tr>");
+				out.println("<tr> <th>Work Order #</th> <th> Subject </th> <th>Note Text</th> <th> Priority </th> <th> </th> </tr>");
 			   while(rs.next())
 			   {
 					String num = rs.getString("noteNum");
 					String text = rs.getString("noteText");
 					String priority = rs.getString("priority");
 					String subject = rs.getString("subject");
-					out.println("<tr> <td>"+num+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td></tr>");
+					out.println("<tr> <td>"+num+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td><td><a class = 'button'>View</a></td></tr>");
 			   }
 			   out.println("</table>");
 			} 
