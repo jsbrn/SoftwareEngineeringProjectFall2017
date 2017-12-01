@@ -82,6 +82,7 @@ finally
 	
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>Rooms</h5>
+		<a href = '../addroom.jsp' class = 'button'>Add New Room</a>
 		<table class = "u-full-width">
 			<%
    String getRooms = "SELECT * FROM rooms WHERE building = ?";
@@ -103,7 +104,7 @@ finally
 	String building = rooms.getString("building");
 	String style = rooms.getString("roomStyle");
 	int id = rooms.getInt("roomID");
-        out.println("<tr> <td>"+id+"</td><td>"+roomNum+"</td><td>"+building+"</td><td>"+style+"</td><td><a href = '../newroom.jsp?roomID="+id+"' name = 'roomID' class = 'button'>+</a></td><td><a href = '../deleteroom.jsp?roomID="+id+"' name = 'roomID' class = 'button'>X</a></td></tr>");
+        out.println("<tr> <td>"+id+"</td><td>"+roomNum+"</td><td>"+building+"</td><td>"+style+"</td><td><a href = '../deleteroom.jsp?roomID="+id+"' name = 'roomID' class = 'button'>X</a></td></tr>");
    }
    
 } 
