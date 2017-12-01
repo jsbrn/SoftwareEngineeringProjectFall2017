@@ -31,7 +31,7 @@
 				<a href = "workorders.jsp" class = "button">Work Orders</a>
 				<a href = "students.jsp" class = "button">Students</a>
 				<a href = "config/index.jsp" class = "button">Configuration</a>
-				<a href = "../index.html" class = "button u-pull-right">Sign Out</a>
+				<a href = "../index.html" class = "button">Sign Out</a>
 			</div>
 		</div>
 	</div>
