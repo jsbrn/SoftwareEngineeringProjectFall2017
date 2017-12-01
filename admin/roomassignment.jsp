@@ -61,6 +61,7 @@
 		   {
 				int buildingName = rs.getInt("building");
 				out.println("<option value = '"+buildingName+"'>"+buildingName+"</option>");
+				out.println(buildingName);
 		   }
 		} 
 		   catch (SQLException e)
