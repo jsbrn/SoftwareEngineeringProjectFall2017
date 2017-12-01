@@ -39,7 +39,7 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Building Details</h4>
-		<%@ page import ="java.sql.*" %>
+<%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
    String bName = request.getParameter("buildingName");
@@ -85,6 +85,45 @@ finally
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>Rooms</h5>
 		<table class = "u-full-width">
+			<%
+   String getRooms = "SELECT * FROM rooms WHERE buildingName = ?";
+   
+   java.sql.Connection con = null;
+   PreparedStatement fr = null;
+   
+   try
+{
+	Class.forName("com.mysql.jdbc.Driver"); 
+	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+	
+   fr = con.prepareStatement(getRooms);
+   fr.setString(1, bName);
+	
+	ResultSet rooms = fr.executeQuery(); 
+   	
+   while(rooms.next())
+   {
+        int roomNum = rooms.getInt("roomNum");
+	String building = rooms.getString("building");
+	String style = rooms.getString("roomStyle");
+	int id = rooms.getInt("roomID");
+        out.println("");
+   }
+   
+} 
+   catch (SQLException e)
+{
+	out.println("ERROR:"+e.getMessage());
+}
+finally
+{
+	if(ps != null)
+		ps.close();
+	
+	if(con != null)
+		con.close();
+}
+%>
 			<tr><td><b>Number</b></td><td><b>Style</b></td><td><b></b></td></tr>
 			<tr><td>435</td><td>Extra Small</td></tr>
 		</table>
