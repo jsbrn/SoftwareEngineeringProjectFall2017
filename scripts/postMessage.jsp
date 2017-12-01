@@ -23,7 +23,7 @@
    ps.setTimestamp(3, currentTime);
 	
 	ps.executeUpdate(); 
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/manager/index.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/index.jsp");   
 } 
    catch (SQLException e)
 {
