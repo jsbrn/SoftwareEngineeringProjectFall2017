@@ -36,8 +36,8 @@ finally
 	if(ps != null)
 		ps.close();
    
-   if(assignRoom != null)
-        assignRoom.close();
+   if(deleteCall != null)
+        deleteCall.close();
 	
 	if(con != null)
 		con.close();
