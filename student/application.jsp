@@ -31,13 +31,15 @@
 			
 			ResultSet rs=ps.executeQuery(); 
 			
-           rs.next();
+           while(rs.next())
+	   {
            String applicationNum = rs.getString("applicationNum");
            String requested_style = rs.getString("requested_style");
            String currentStatus = rs.getString("currentStatus");
            
            out.println("<p><b>Application Number:</b>"+applicationNum+"<br><b>ID: </b>"+ID+"<b>Requested Style:</b>"+requested_style+"<br><b>Current Status:</b>"+currentStatus+"</p></a>");
-		} 
+	}
+	} 
 		   catch (SQLException e)
 		{
 			out.println("ERROR:"+e.getMessage());
