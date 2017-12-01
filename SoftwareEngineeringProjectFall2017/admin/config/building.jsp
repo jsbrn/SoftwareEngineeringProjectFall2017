@@ -38,52 +38,17 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h5>System Users</h5>
+		<h4>Building Details</h4>
+		<b>Name: </b><br>
+		<b>Quiet building: </b><br>
+	</div>
+	
+	<div class = "container" style = "margin-top: 40px;">
+		<h5>Rooms</h5>
 		<table class = "u-full-width">
-			<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th></th></tr>
-			<tr>
-				<%@ page import ="java.sql.*" %>
-<%@ page import ="javax.sql.*" %>
-<%
-   String getUsers = "SELECT * FROM managers";
-   
-   java.sql.Connection con = null;
-   PreparedStatement ps = null;
-   
-   try
-{
-	Class.forName("com.mysql.jdbc.Driver"); 
-	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
-	
-   ps = con.prepareStatement(getUsers);
-	
-	ResultSet user = ps.executeQuery(); 
-   	
-   while(user.next())
-   {
-   	String id = user.getString("ID");
-	String fname = user.getString("fname");
-	String lname = user.getString("lname");
-	String email = user.getString("email");
-	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td><td>"+email+"</td><td><a href = '../../scripts/deleteManager.jsp?m_id = '"+id+"' name = 'm_id' class = 'button u-pull-right'>Remove</a></td></tr>");
-   }
-} 
-   catch (SQLException e)
-{
-	out.println("ERROR:"+e.getMessage());
-}
-finally
-{
-	if(ps != null)
-		ps.close();
-	
-	if(con != null)
-		con.close();
-}
-%>
-			</tr>
+			<tr><td><b>Number</b></td><td><b>Style</b></td><td><b></b></td></tr>
+			<tr><td>435</td><td>Extra Small</td></tr>
 		</table>
-		<a href = 'newmanager.jsp' class = "button">Add User</a>
 	</div>
 	
 </body>

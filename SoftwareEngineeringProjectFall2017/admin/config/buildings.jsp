@@ -38,14 +38,25 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h5>System Users</h5>
+		<h5>All Buildings</h5>
 		<table class = "u-full-width">
-			<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th></th></tr>
+			<tr><td><b>Name</b></td></tr>
 			<tr>
-				<%@ page import ="java.sql.*" %>
+				<td>That one building with the bricks</td>
+				<td>
+					<a href = "building.jsp" class = "button u-pull-right">View</button> 
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>
+
+<%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
-   String getUsers = "SELECT * FROM managers";
+   String getBuildings = "SELECT * FROM buildings";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -55,17 +66,16 @@
 	Class.forName("com.mysql.jdbc.Driver"); 
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 	
-   ps = con.prepareStatement(getUsers);
+   ps = con.prepareStatement(getBuildings);
 	
-	ResultSet user = ps.executeQuery(); 
+	ResultSet messages = ps.executeQuery(); 
    	
-   while(user.next())
+   while(messages.next())
    {
-   	String id = user.getString("ID");
-	String fname = user.getString("fname");
-	String lname = user.getString("lname");
-	String email = user.getString("email");
-	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td><td>"+email+"</td><td><a href = '../../scripts/deleteManager.jsp?m_id = '"+id+"' name = 'm_id' class = 'button u-pull-right'>Remove</a></td></tr>");
+        String text = messages.getString("building_name");
+        String author = messages.getString("quietBuilding");
+        
+        //input display stuff here
    }
 } 
    catch (SQLException e)
@@ -81,10 +91,3 @@ finally
 		con.close();
 }
 %>
-			</tr>
-		</table>
-		<a href = 'newmanager.jsp' class = "button">Add User</a>
-	</div>
-	
-</body>
-</html>
