@@ -4,7 +4,7 @@
    String roomNum = request.getParameter("roomNum");
    String building = request.getParameter("building");
    String style = request.getParameter("style");
-   String deleteInfo = "INSERT INTO rooms VALUES (?, ?, ?, ?)";
+   String deleteInfo = "INSERT INTO rooms (roomNum, building, roomStyle) VALUES (?, ?, ?)";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -18,7 +18,6 @@
    ps.setString(1, roomNum);
    ps.setString(2, building);
    ps.setString(3, style);
-   ps.setString(4, "none");
 	
 	ps.executeUpdate(); 
    	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/config/buildings.jsp");   

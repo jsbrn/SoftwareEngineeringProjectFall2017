@@ -18,7 +18,7 @@
    }
    else if (type.equals("managers"))
    {
-    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/workorder.jsp?workOrderID="+ID;
+    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/workorder.jsp?num="+ID;
    }
    
    java.sql.Connection con = null;
