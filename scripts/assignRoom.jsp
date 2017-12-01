@@ -2,7 +2,7 @@
 <%@ page import ="javax.sql.*" %>
 <%
    //gets the student ID and room ID
-   String ID = request.getParameter("studentID");
+   String SID = request.getParameter("student");
    String roomID = request.getParameter("roomID");
    int roomIDINT = Integer.parseInt(roomID);
    //creates prepared statements for inserting  students into the residents table, and updating the student's info in student table
@@ -21,14 +21,14 @@
 
     ps = con.prepareStatement(setResident);
     //sets to the student ID and executes
-    ps.setString(1, ID);
+    ps.setString(1, SID);
     
     ps.executeUpdate();
 
     //sets the student ID and room ID and inserts
     assignRoom = con.prepareStatement(insertInfo);
     assignRoom.setInt(1, roomIDINT);
-    assignRoom.setString(2, ID);
+    assignRoom.setString(2, SID);
         
     assignRoom.executeUpdate();
    
