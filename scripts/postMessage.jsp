@@ -1,10 +1,11 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
+<%@ page import = "java.util.Date" %>
 <%
    HttpSession sess = request.getSession();
    String name = (String)sess.getAttribute("name");
    String msg = request.getParameter("message");
-   String deleteInfo = "INSERT INTO messages (workOrderID, messageText, author, timeSent) VALUES (?, ?, ?, ?)";
+   String deleteInfo = "INSERT INTO messages (messageText, author, timeSent) VALUES (?, ?, ?)";
    Timestamp currentTime = new Timestamp(new Date().getTime());
    
    java.sql.Connection con = null;
@@ -16,13 +17,13 @@
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 	
    ps = con.prepareStatement(deleteInfo);
-   ps.setString(1, "global");
-   ps.setString(2, msg);
-   ps.setString(3, name);
-   ps.setString(4, currentTime);
+
+   ps.setString(1, msg);
+   ps.setString(2, name);
+   ps.setTimestamp(3, currentTime);
 	
 	ps.executeUpdate(); 
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/manager/index.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/index.jsp");   
 } 
    catch (SQLException e)
 {
