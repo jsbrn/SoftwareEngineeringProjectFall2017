@@ -40,7 +40,7 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Work Orders</h4>
 		<%
-		   String getInfo = "Select * FROM notes";
+		   String getInfo = "Select * FROM notes WHERE status = ?";
 		   
 		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
@@ -50,9 +50,10 @@
 			Class.forName("com.mysql.jdbc.Driver"); 
 			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
-		   ps = con.prepareStatement(getInfo);
+		   	ps = con.prepareStatement(getInfo);
+			ps.setString(1, "pending");
 			
-			ResultSet rs=ps.executeQuery(); 
+			ResultSet rs=ps.executeQuery();
 			
 		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
 			out.println("<tr> <th>Work Order #</th> <th>Student ID</th> <th> Subject </th> <th>Note Text</th> <th> Priority </th> </tr>");
