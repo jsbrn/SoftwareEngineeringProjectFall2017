@@ -5,7 +5,7 @@
    String ID = request.getParameter("studentID");
    //prepared statements to delete student from residents table and changes the assigned status in student's table
    String deleteStudent = "DELETE FROM residents WHERE residentID = ?";
-   String changeResident = "UPDATE students SET assigned_room = 'no' WHERE s_id = ?"
+   String changeResident = "UPDATE students SET assigned_room = 'no' WHERE s_id = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
