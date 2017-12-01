@@ -51,10 +51,46 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Work Order Details</h4>
 		<p>
-		<b>Subject:</b> Please help me :(<br>
-		<b>ID:</b> 34534675<br>
-		<b>Description:</b> my sink broke what else is there to say</p>
-		<a class = "button">Mark as resolved</a>
+			<%
+		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ? ORDER BY DESC";
+		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
+		   
+		   
+		   PreparedStatement pr = null;
+		   PreparedStatement orders = null;
+		   
+		   try
+		{
+			
+		   pr = con.prepareStatement(getMessages);
+		   pr.setString(1, workOrderID);
+		   
+		   orders = con.prepareStatement(getWorkOrders);
+		   orders.setString(1, workOrderID);
+		   
+		   ResultSet workOrders = orders.executeQuery();
+		   
+		   while(workOrders.next())
+		{
+			String subject = workOrders.getString("subject");
+			int num = workOrders.getInt("noteNum");
+			String desc = workOrders.getString("noteText");
+			out.println("<b>Subject:</b> "+subject+"<br> <b>ID: </b>"+num+"<br> <b>Description: </b>"+desc+"</p>");
+		}
+		   
+		} 
+		   catch (SQLException e)
+		{
+			out.println("ERROR:"+e.getMessage());
+		}
+		finally
+		{
+			
+			if(con != null)
+				con.close();
+		}
+		%>
+	<a class = "button">Mark as resolved</a>
 	</div>
 	
 	<% String workOrderID = request.getParameter("workOrderID");%>
@@ -70,24 +106,8 @@
 				</div>
 			</div>
 		</form>
-		
 		<%
-		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ?";
-		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
-		   
-		   
-		   PreparedStatement pr = null;
-		   PreparedStatement orders = null;
-		   
-		   try
-		{
-			
-		   pr = con.prepareStatement(getMessages);
-		   pr.setString(1, workOrderID);
-		   
-		   orders = con.prepareStatement(getWorkOrders);
-		   orders.setString(1, workOrderID);
-			
+					
 			ResultSet messages = pr.executeQuery(); 
 			
 		   while(messages.next())
@@ -101,30 +121,7 @@
 				out.println("<tr><td></td><td><p><b>"+author+"</b>: "+text+"</p></td><td>"+time+"</td></tr>");
 				out.println("</table>");
 		   }
-		   
-		   ResultSet workOrders = orders.executeQuery();
-		   
-		   while(workOrders.next())
-		{
-			String subject = workOrders.getString("subject");
-			int num = workOrders.getInt("noteNum");
-			String desc = workOrders.getString("noteText");
-		}
-		   
-		} 
-		   catch (SQLException e)
-		{
-			out.println("ERROR:"+e.getMessage());
-		}
-		finally
-		{
-			if(ps != null)
-				ps.close();
-			
-			if(con != null)
-				con.close();
-		}
-		%>
+		   %>
 		
 	</div>
 
