@@ -6,7 +6,7 @@
    String roomID = request.getParameter("roomID");
    //creates prepared statements for inserting  students into the residents table, and updating the student's info in student table
    String insertInfo = "INSERT INTO residents VALUES (?, ?)";
-   setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?"
+   setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    
    //creates conncetions
    java.sql.Connection con = null;
