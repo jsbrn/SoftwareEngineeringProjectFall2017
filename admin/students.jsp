@@ -72,7 +72,7 @@
 		while(residentRoom.next())
 		{
 			int currentRoom = residentRoom.getInt("roomID");
-			out.println("<td>"+currentRoom+"</td><a href = '../scripts/evictStudent.jsp?studentID="+id+"' name = 'studentID' class = 'button'>Evict</a> </td>");
+			out.println("<td>"+currentRoom+"</td><td><a href = '../scripts/evictStudent.jsp?studentID="+id+"' name = 'studentID' class = 'button'>Evict</a> </td>");
 		}
 	}
 	else
