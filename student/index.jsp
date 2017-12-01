@@ -41,7 +41,7 @@
 		<table class = "u-full-width">
 			<!--GENERATE THE NEWS FEED ENTRIES-->
 			<%
-			   String getMessages = "SELECT messageText, author, timeSent FROM messages WHERE NOT EXISTS workOrderID";
+			   String getMessages = "SELECT messageText, author, timeSent FROM messages WHERE workOrderID IS NULL";
 			   
 			   java.sql.Connection con = null;
 			   PreparedStatement ps = null;
