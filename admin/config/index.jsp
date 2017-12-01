@@ -40,7 +40,6 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>Configuration</h5>
 		<table class = "u-full-width">
-			<tr><td><a href = "rooms.jsp" class = "button u-full-width">Rooms</a></td><td><p class = "u-pull-right">Add, edit, move and delete rooms.</p></td></tr>
 			<tr><td><a href = "buildings.jsp" class = "button u-full-width">Buildings</a></td><td><p class = "u-pull-right">Add, edit, move and delete buildings.</p></td></tr>
 			<tr><td><a href = "users.jsp" class = "button u-full-width">Users</a></td><td><p class = "u-pull-right">Add or remove managers.</p></td></tr>
 		</table>
