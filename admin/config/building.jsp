@@ -84,7 +84,7 @@ finally
 		<h5>Rooms</h5>
 		<table class = "u-full-width">
 			<%
-   String getRooms = "SELECT * FROM rooms WHERE buildingName = ?";
+   String getRooms = "SELECT * FROM rooms WHERE building = ?";
    
    PreparedStatement fr = null;
    
