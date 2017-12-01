@@ -3,7 +3,7 @@
 <%
    HttpSession sess = request.getSession();
    String name = (String)sess.getAttribute("name");
-   String msg = request.getParameter("msg");
+   String msg = request.getParameter("message");
    String deleteInfo = "INSERT INTO messages (workOrderID, messageText, author, timeSent) VALUES (?, ?, ?, ?)";
    Timestamp currentTime = new Timestamp(new Date().getTime());
    
@@ -17,7 +17,7 @@
 	
    ps = con.prepareStatement(deleteInfo);
    ps.setString(1, "global");
-   ps.setString(2, message);
+   ps.setString(2, msg);
    ps.setString(3, name);
    ps.setString(4, currentTime);
 	
