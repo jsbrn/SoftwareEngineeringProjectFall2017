@@ -22,12 +22,14 @@
 		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ? ORDER BY timeSent DESC";
 		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
 		   
-		   
+		   java.sql.Connection con = null;
 		   PreparedStatement pr = null;
 		   PreparedStatement orders = null;
 		   
 		   try
 		{
+		Class.forName("com.mysql.jdbc.Driver"); 
+	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");
 			
 		   pr = con.prepareStatement(getMessages);
 		   pr.setString(1, workOrderID);
