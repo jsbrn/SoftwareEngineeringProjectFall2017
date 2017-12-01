@@ -100,7 +100,8 @@ finally
    fr.setString(1, bName);
 	
 	ResultSet rooms = fr.executeQuery(); 
-   	
+   
+   out.println("<th> <tr> Room ID </tr> <tr> Room # </tr> <tr> Building </tr> <tr> Style </tr> </th>");
    while(rooms.next())
    {
         int roomNum = rooms.getInt("roomNum");
