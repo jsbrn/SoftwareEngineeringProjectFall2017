@@ -45,7 +45,7 @@
 				<%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
-   String getMessages = "SELECT * FROM managers";
+   String getUsers = "SELECT * FROM managers";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -57,9 +57,9 @@
 	
    ps = con.prepareStatement(getUsers);
 	
-	ResultSet messages = ps.executeQuery(); 
+	ResultSet user = ps.executeQuery(); 
    	
-   while(messages.next())
+   while(user.next())
    {
    	String id = user.getString("m_id");
         String fname = user.getString("fname");
