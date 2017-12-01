@@ -51,7 +51,7 @@
 
 <%
 
-		   String getInfo = "Select * FROM notes WHERE currentStatus = 'pending'";
+		   String getInfo = "Select * FROM applications WHERE currentStatus = 'pending'";
 		   
 		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
