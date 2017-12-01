@@ -59,7 +59,7 @@
 			
 		   while(rs.next())
 		   {
-			Int room = rs.getInt("roomID");
+			int room = rs.getInt("roomID");
 				out.println("<option value = '"+room+"'>"+room+"</option>");
 		   }
 		} 
