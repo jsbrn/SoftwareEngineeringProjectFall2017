@@ -39,19 +39,6 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>All Buildings</h5>
-		<table class = "u-full-width">
-			<tr><td><b>Name</b></td></tr>
-			<tr>
-				<td>That one building with the bricks</td>
-				<td>
-					<a href = "building.jsp" class = "button u-pull-right">View</button> 
-				</td>
-			</tr>
-		</table>
-	</div>
-	
-</body>
-</html>
 
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
@@ -66,17 +53,19 @@
 	Class.forName("com.mysql.jdbc.Driver"); 
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 	
-   ps = con.prepareStatement(getRooms);
+   ps = con.prepareStatement(getBuildings);
 	
-	ResultSet messages = ps.executeQuery(); 
+	ResultSet building = ps.executeQuery(); 
    	
-   while(messages.next())
+out.println("<table class = 'gridtable' style = 'width: 100%'>");
+out.println("<tr> <th>Name</th></tr>");
+   while(building.next())
    {
-        String text = messages.getString("building_name");
-        String author = messages.getString("quietBuilding");
-        
-        //input display stuff here
+        String name = building.getString("building_name");
+        out.println("<tr> <td>"+name+"</td><td><a href = 'building.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>View</a></td><td><a href = 'addbuilding.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>+</a></td><td><a href = '../../scripts/deleteBuilding.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>X</a></td></tr>");
    }
+   
+out.println("</table>");
 } 
    catch (SQLException e)
 {
@@ -91,3 +80,8 @@ finally
 		con.close();
 }
 %>
+		
+			</div>
+	
+</body>
+</html>

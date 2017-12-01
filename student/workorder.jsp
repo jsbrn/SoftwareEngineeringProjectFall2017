@@ -13,29 +13,41 @@
 <body>
 
 	<!--GET WORK ORDER DETAILS-->
-	<%
-           String ID = request.getParameter("ID");
-		   String getInfo = "Select * FROM applications WHERE ID = ?";
+	<% String workOrderID = request.getParameter("workOrderID");%>
+
+	<div class = "container" style = "margin-top: 40px;">
+		<h4>Work Order Details</h4>
+		<p>
+			<%
+		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ? ORDER BY timeSent DESC";
+		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
 		   
 		   java.sql.Connection con = null;
-		   PreparedStatement ps = null;
+		   PreparedStatement pr = null;
+		   PreparedStatement orders = null;
 		   
 		   try
 		{
-			Class.forName("com.mysql.jdbc.Driver"); 
-			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
+		Class.forName("com.mysql.jdbc.Driver"); 
+	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");
 			
-		   ps = con.prepareStatement(getInfo);
-		   ps.setString(1, ID);
-			
-			ResultSet rs=ps.executeQuery(); 
-			
-           rs.next();
-           String applicationNum = rs.getString("applicationNum");
-           String requested_style = rs.getString("requested_style");
-           String currentStatus = rs.getString("currentStatus");
-           
-           out.println("<p><b>Application Number:</b>"+applicationNum+"<br><b>ID: </b>"+ID+"<b>Requested Style:</b>"+requested_style+"<br><b>Current Status:</b>"+currentStatus+"</p></a>");
+		   pr = con.prepareStatement(getMessages);
+		   pr.setString(1, workOrderID);
+		   
+		   orders = con.prepareStatement(getWorkOrders);
+		   orders.setString(1, workOrderID);
+		   
+		   ResultSet workOrders = orders.executeQuery();
+		   
+		   workOrders.next();
+			String subject = workOrders.getString("subject");
+			int num = workOrders.getInt("noteNum");
+			String desc = workOrders.getString("noteText");
+            String status = workOrders.getString("status");
+            String ID = workOrders.getString("ID");
+            String priority = workOrders.getString("priority");
+               out.println("<b>Student ID: </b>"+ID+"<br><b>Subject:</b> "+subject+"<br> <b>ID: </b>"+num+"<br> <b>Description: </b>"+desc+"<br><b>Status: </b>"+status+"<br><b>Priority: </b>"+priority+"</p>");
+		   
 		} 
 		   catch (SQLException e)
 		{
@@ -43,24 +55,12 @@
 		}
 		finally
 		{
-			if(ps != null)
-				ps.close();
 			
-			if(con != null)
-				con.close();
 		}
 		%>
-
-	<div class = "container" style = "margin-top: 40px;">
-		<h4>Work Order Details</h4>
-		<p>
-		<b>Subject:</b> Please help me :(<br>
-		<b>ID:</b> 34534675<br>
-		<b>Description:</b> my sink broke what else is there to say</p>
-		<a class = "button">Mark as resolved</a>
+	<a class = "button">Mark as resolved</a>
 	</div>
 	
-	<% String workOrderID = request.getParameter("workOrderID");%>
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 10px;">
 		<h4>Conversation</h4>
 		<!--submit new message-->
@@ -73,29 +73,9 @@
 				</div>
 			</div>
 		</form>
-		
 		<%
-		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ?";
-		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
-		   
-		   
-		   
-		   java.sql.Connection con = null;
-		   PreparedStatement ps = null;
-		   PreparedStatement orders = null;
-		   
-		   try
-		{
-			Class.forName("com.mysql.jdbc.Driver"); 
-			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
-			
-		   ps = con.prepareStatement(getMessages);
-		   ps.setString(1, workOrderID);
-		   
-		   orders = con.prepareStatement(getWorkOrders);
-		   orders.setString(1, workOrderID);
-			
-			ResultSet messages = ps.executeQuery(); 
+					
+			ResultSet messages = pr.executeQuery(); 
 			
 		   while(messages.next())
 		   {
@@ -108,30 +88,7 @@
 				out.println("<tr><td></td><td><p><b>"+author+"</b>: "+text+"</p></td><td>"+time+"</td></tr>");
 				out.println("</table>");
 		   }
-		   
-		   ResultSet workOrders = orders.executeQuery();
-		   
-		   while(workOrders.next())
-		{
-			String subject = workOrders.getString("subject");
-			int num = workOrders.getInt("noteNum");
-			String desc = workOrders.getString("noteText");
-		}
-		   
-		} 
-		   catch (SQLException e)
-		{
-			out.println("ERROR:"+e.getMessage());
-		}
-		finally
-		{
-			if(ps != null)
-				ps.close();
-			
-			if(con != null)
-				con.close();
-		}
-		%>
+		   %>
 		
 	</div>
 
