@@ -28,13 +28,13 @@
     //sets the student ID and room ID and inserts
     assignRoom = con.prepareStatement(insertInfo);
     assignRoom.setString(1, ID);
-    assignRoom.setInt(2, roomID);
+    assignRoom.setInt(2, roomIDINT);
         
     assignRoom.executeUpdate();
    
    //redirects to main page
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/scripts/manager.jsp");
-   
+   }
    catch (SQLException e)
 {
 	out.println("ERROR:"+e.getMessage());
