@@ -2,6 +2,7 @@
 <%@ page import ="javax.sql.*" %>
 <%
    String ID = request.getParameter("m_id");
+   out.println(ID);
    String deleteInfo = "DELETE FROM managers WHERE ID = ?";
    
    java.sql.Connection con = null;
@@ -16,7 +17,7 @@
    ps.setString(1, ID);
 	
 	ps.executeUpdate(); 
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/config/users.jsp");   
+   	//response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/config/users.jsp");   
 } 
    catch (SQLException e)
 {
