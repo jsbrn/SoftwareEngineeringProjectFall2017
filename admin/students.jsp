@@ -40,8 +40,57 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>Registered Students</h5>
 		<table class = "u-full-width">
-			<tr><td><b>ID</b></td><td><b>Name</b></td><td><b></b></td></tr>
-			<tr><td>65465</td><td>Billy Joel</td></tr>
+			<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Room ID</th></tr>
+<%@ page import ="java.sql.*" %>
+<%@ page import ="javax.sql.*" %>
+<%
+   String getStudents = "SELECT * FROM students";
+   
+   java.sql.Connection con = null;
+   PreparedStatement ps = null;
+   
+   try
+{
+	Class.forName("com.mysql.jdbc.Driver"); 
+	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+	
+   ps = con.prepareStatement(getStudents);
+	
+	ResultSet students = ps.executeQuery(); 
+   	out.println("<tr>");
+   while(students.next())
+   {
+        String id = students.getString("messageText");
+        String fname = students.getString("author");
+        String lname = students.getString("time");
+	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td>");
+	if( students.getString("assigned_room").equals("yes"))
+	{
+		PreparedStatement roomInfo = con.prepareStatement("SELECT roomID FROM residents WHERE residentID = ?");
+		roomInfo.setString(1, id);
+		ResultSet residentRoom = roomInfo.executeQuery();
+		while(residentRoom.next())
+		{
+			out.println("<td>"+residentRoom.getString("roomID")+"</td>");
+		}
+	}
+	out.println("</tr>");
+        
+   }
+} 
+   catch (SQLException e)
+{
+	out.println("ERROR:"+e.getMessage());
+}
+finally
+{
+	if(ps != null)
+		ps.close();
+	
+	if(con != null)
+		con.close();
+}
+%>
 		</table>
 	</div>
 	
