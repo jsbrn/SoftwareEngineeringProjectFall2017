@@ -45,9 +45,6 @@
 		{
 			if(ps != null)
 				ps.close();
-			
-			if(con != null)
-				con.close();
 		}
 		%>
 
@@ -79,23 +76,19 @@
 		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
 		   
 		   
-		   
-		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
 		   PreparedStatement orders = null;
 		   
 		   try
 		{
-			Class.forName("com.mysql.jdbc.Driver"); 
-			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 			
-		   ps = con.prepareStatement(getMessages);
-		   ps.setString(1, workOrderID);
+		   pr = con.prepareStatement(getMessages);
+		   pr.setString(1, workOrderID);
 		   
 		   orders = con.prepareStatement(getWorkOrders);
 		   orders.setString(1, workOrderID);
 			
-			ResultSet messages = ps.executeQuery(); 
+			ResultSet messages = pr.executeQuery(); 
 			
 		   while(messages.next())
 		   {
