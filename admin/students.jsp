@@ -72,12 +72,12 @@
 		while(residentRoom.next())
 		{
 			int currentRoom = residentRoom.getInt("roomID");
-			out.println("<td>"+currentRoom+"</td><a href = '../scripts/evictStudent.jsp?studentID="+id+"' name = 'studentID' value = 'Evict' class = 'button'></a> </td>");
+			out.println("<td>"+currentRoom+"</td><a href = '../scripts/evictStudent.jsp?studentID="+id+"' name = 'studentID' class = 'button'>Evict</a> </td>");
 		}
 	}
 	else
 	{
-		out.println("<td> <a href = 'roomassignment.jsp?studentID="+id+"'name = 'studentID' value = 'Assign to a room' class = 'button'></a> </td>");
+		out.println("<td> <a href = 'roomassignment.jsp?studentID="+id+"'name = 'studentID'  class = 'button'>Assign to a room</a></td>");
 	}
 	out.println("</tr>");
         
