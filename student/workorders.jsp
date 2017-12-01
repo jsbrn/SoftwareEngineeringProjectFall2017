@@ -31,7 +31,7 @@
 			   ps.setString(1, studentID);
 				
 				ResultSet rs=ps.executeQuery(); 
-				
+			   out.println("<form action = 'workorder.jsp>");
 			   out.println("<table class = 'gridtable' style = 'width: 100%'>");
 				out.println("<tr> <th>Work Order #</th> <th> Subject </th> <th>Note Text</th> <th> Priority </th> <th> </th> </tr>");
 			   while(rs.next())
@@ -40,9 +40,10 @@
 					String text = rs.getString("noteText");
 					String priority = rs.getString("priority");
 					String subject = rs.getString("subject");
-					out.println("<tr> <td>"+num+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td><td><a href = 'workorder.jsp' name = 'workOrderID' value = '"+num+"' class = 'button'>View</a></td></tr>");
+					out.println("<tr> <td>"+num+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td><td><submit name = 'workOrderID' value = '"+num+"' class = 'button'>View</submit></td></tr>");
 			   }
 			   out.println("</table>");
+			   out.println("</form>");
 			} 
 			   catch (SQLException e)
 			{
