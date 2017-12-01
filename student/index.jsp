@@ -76,7 +76,7 @@
    {
         String text = messages.getString("messageText");
         String author = messages.getString("author");
-        String time = messages.getString("time");
+        String time = messages.getString("timeSent");
    }
 } 
    catch (SQLException e)
