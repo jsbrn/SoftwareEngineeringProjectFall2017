@@ -64,7 +64,7 @@
    	String id = user.getString("ID");
         String fname = user.getString("fname");
         String lname = user.getString("lname");
-	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td>");
+	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td><td><a href = '../../scripts/deleteManager.jsp?m_id = '"+id+"' name = 'm_id' class = 'button u-pull-right'>Remove</button>");
    }
 } 
    catch (SQLException e)
@@ -80,9 +80,6 @@ finally
 		con.close();
 }
 %>
-				<td>
-					<a href = "" class = "button u-pull-right">Remove</button> 
-				</td>
 			</tr>
 		</table>
 		<a href = 'newmanager.jsp' class = "button">Add User</a>
