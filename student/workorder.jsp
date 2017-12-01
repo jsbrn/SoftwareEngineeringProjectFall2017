@@ -38,9 +38,13 @@
 		
 		<%
 		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ?";
+		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
+		   
+		   
 		   
 		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
+		   PreparedStatement orders = null;
 		   
 		   try
 		{
@@ -49,6 +53,9 @@
 			
 		   ps = con.prepareStatement(getMessages);
 		   ps.setString(1, workOrderID);
+		   
+		   orders = con.prepareStatement(getWorkOrders);
+		   orders.setString(1, workOrderID);
 			
 			ResultSet messages = ps.executeQuery(); 
 			
@@ -63,6 +70,16 @@
 				out.println("<tr><td></td><td><p><b>"+author+"</b>: "+text+"</p></td><td>"+time+"</td></tr>");
 				out.println("</table>");
 		   }
+		   
+		   ResultSet workOrders = orders.executeQuery();
+		   
+		   while(workOrders.next())
+		{
+			String subject = workOrders.getString("subject");
+			int num = workOrders.getInt("noteNum");
+			String desc = workOrders.getString("noteText");
+		}
+		   
 		} 
 		   catch (SQLException e)
 		{
