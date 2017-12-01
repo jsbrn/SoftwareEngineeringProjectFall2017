@@ -26,7 +26,7 @@
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 10px;">
 		<h4>Conversation</h4>
 		<!--submit new message-->
-		<form action="../scripts/postWorkOrderMessage.jsp">
+		<% out.println("<form action='../scripts/postWorkOrderMessage.jsp?workOrderID="+workOrderID+">");
 			<div class="row">
 				<div class="u-full-width">
 					<label for="msg">Send a message...</label>
