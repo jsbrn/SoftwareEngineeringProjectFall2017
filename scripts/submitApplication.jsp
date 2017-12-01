@@ -80,8 +80,8 @@
         }
    
         PreparedStatement insertIntoRoom = con.prepareStatement(assignRoom);
-	insertIntoRoom.setString(1, inputRoom);
-        insertIntoRoom.setString(2, ID)
+	insertIntoRoom.setInt(1, inputRoom);
+        insertIntoRoom.setString(2, ID);
         PreparedStatement update = con.prepareStatement(updateStudent);
             
         insertIntoRoom.executeUpdate();
