@@ -26,7 +26,7 @@
     deleteCall.executeUpdate();
    
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/scripts/manager.jsp");
-   
+ }  
    catch (SQLException e)
 {
 	out.println("ERROR:"+e.getMessage());
