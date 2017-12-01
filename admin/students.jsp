@@ -41,8 +41,7 @@
 		<h5>Registered Students</h5>
 		<table class = "u-full-width">
 			<tr><td><b>ID</b></td><td><b>Name</b></td><td><b></b></td></tr>
-			<tr><td>65465</td><td>Billy Joel</td>
-				<td><a href = "student.jsp" class = "button">View</button></td></tr>
+			<tr><td>65465</td><td>Billy Joel</td></tr>
 		</table>
 	</div>
 	
