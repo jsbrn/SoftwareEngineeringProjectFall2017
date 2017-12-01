@@ -39,17 +39,7 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>Pending Applications</h5>
-		<table class = "u-full-width">
-			<tr><td><b>ID</b></td><td><b>Student</b></td><td><b>Special Requirements</b></td></tr>
-			<tr><td>345345345</td><td>Billy Joel (ID: 34234324)</td><td>I want a pony.</td>
-				<td><a href = "" class = "button">View</button></td></tr>
-		</table>
-	</div>
-	
-</body>
-</html>		
-
-<%
+		<%
 
 		   String getInfo = "Select * FROM applications WHERE currentStatus = 'pending'";
 		   
@@ -90,3 +80,9 @@
 				con.close();
 		}
 		%>
+	</div>
+	
+</body>
+</html>		
+
+
