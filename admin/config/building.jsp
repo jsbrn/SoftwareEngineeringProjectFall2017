@@ -108,7 +108,7 @@ finally
 	String building = rooms.getString("building");
 	String style = rooms.getString("roomStyle");
 	int id = rooms.getInt("roomID");
-        out.println("");
+        out.println("<tr> <td>"+id+"</td><td>"+roomNum+"</td><td>"+building+"</td><td>"+style+"</td><td><a href = 'newroom.jsp?roomID="+id+"' name = 'roomID' class = 'button'>+</a></td><td><a href = 'deleteroom.jsp?roomID="+id+"' name = 'roomID' class = 'button'>X</a></td></tr>");
    }
    
 } 
