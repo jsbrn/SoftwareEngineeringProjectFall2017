@@ -52,7 +52,7 @@
 			</tr>
 		</table>
 		<!--submit new news feed item-->
-		<form action = "scripts/postMessage.jsp">
+		<form action = "../scripts/postMessage.jsp">
 			<div class="row">
 				<div class="u-full-width">
 					<label for="message">Post an announcement...</label>
