@@ -59,9 +59,8 @@
 			
 		   while(rs.next())
 		   {
-				int buildingName = rs.getInt("building");
+				String buildingName = rs.getString("building_name");
 				out.println("<option value = '"+buildingName+"'>"+buildingName+"</option>");
-				out.println(buildingName);
 		   }
 		} 
 		   catch (SQLException e)
