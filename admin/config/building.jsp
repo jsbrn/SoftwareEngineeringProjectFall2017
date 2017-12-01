@@ -76,8 +76,6 @@ finally
 	if(ps != null)
 		ps.close();
 	
-	if(con != null)
-		con.close();
 }
 %>
 	</div>
@@ -88,13 +86,10 @@ finally
 			<%
    String getRooms = "SELECT * FROM rooms WHERE buildingName = ?";
    
-   java.sql.Connection con = null;
    PreparedStatement fr = null;
    
    try
 {
-	Class.forName("com.mysql.jdbc.Driver"); 
-	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 	
    fr = con.prepareStatement(getRooms);
    fr.setString(1, bName);
@@ -118,15 +113,13 @@ finally
 }
 finally
 {
-	if(ps != null)
+	if(fr != null)
 		ps.close();
 	
 	if(con != null)
 		con.close();
 }
 %>
-			<tr><td><b>Number</b></td><td><b>Style</b></td><td><b></b></td></tr>
-			<tr><td>435</td><td>Extra Small</td></tr>
 		</table>
 	</div>
 	
