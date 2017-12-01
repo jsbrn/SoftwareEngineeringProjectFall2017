@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
-
+    
 <html lang = "en">
 <head>
     <meta charset = "utf-8">
@@ -13,7 +13,7 @@
 
 	<!--UNIVERSITY LOGO-->
 	<div class = 'container nobg'>
-		<center><img src = "../../css/logo.png"></img></center>
+		<center><img src = "../css/logo.png"></img></center>
 	</div>
 
 	<!--MANAGER NAVIGATION BAR-->
@@ -38,35 +38,31 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h4>Work Orders</h4>
-		<%
-		   String getInfo = "Select * FROM notes WHERE status = ?";
-		   
-		   java.sql.Connection con = null;
+        <% String id = request.getParameter("studentID"); 
+		out.println("<form action = '../scripts/assignRoom.jsp'>");
+	%>
+		<h5>Assign a room</h5>
+        <select name = 'roomID'>
+		<% 
+           String getOptions = "SELECT roomID FROM rooms";
+           
+           java.sql.Connection con = null;
 		   PreparedStatement ps = null;
-		   
-		   try
+           
+           try
 		{
 			Class.forName("com.mysql.jdbc.Driver"); 
 			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
-		   	ps = con.prepareStatement(getInfo);
-			ps.setString(1, "pending");
+		   ps = con.prepareStatement(getOptions);
 			
-			ResultSet rs=ps.executeQuery();
+			ResultSet rs=ps.executeQuery(); 
 			
-		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-			out.println("<tr> <th>Work Order #</th> <th>Student ID</th> <th> Subject </th> <th> Priority </th> </tr>");
 		   while(rs.next())
 		   {
-				String num = rs.getString("noteNum");
-				String studentID = rs.getString("ID");
-				String priority = rs.getString("priority");
-				String subject = rs.getString("subject");
-
-				out.println("<tr> <td>"+num+"</td><td>"+studentID+"</td> <td>"+subject+"</td> <td>"+priority+"</td><td><a href = 'workorder.jsp?num="+num+"' name = 'workOrderID' class = 'button'>View</submit></td></tr>");
+			int room = rs.getInt("roomID");
+				out.println("<option value = '"+room+"'>"+room+"</option>");
 		   }
-		   out.println("</table>");
 		} 
 		   catch (SQLException e)
 		{
@@ -80,7 +76,11 @@
 			if(con != null)
 				con.close();
 		}
-		%>
+           %>
+            </select>
+		<% out.println("<input type = 'submit' name = 'student' value = '"+id+"'/>"); %>
+            </form>
 	</div>
+	
 </body>
-</html>
+</html>	

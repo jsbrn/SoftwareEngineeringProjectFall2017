@@ -40,15 +40,52 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>System Users</h5>
 		<table class = "u-full-width">
-			<tr><td><b>ID</b></td><td><b>Name</b></td></tr>
+			<tr><th>ID</th><th>First Name</th><th>Last Name</th></tr>
 			<tr>
-				<td>234255</td><td>Bobby Anon</td>
+				<%@ page import ="java.sql.*" %>
+<%@ page import ="javax.sql.*" %>
+<%
+   String getUsers = "SELECT * FROM managers";
+   
+   java.sql.Connection con = null;
+   PreparedStatement ps = null;
+   
+   try
+{
+	Class.forName("com.mysql.jdbc.Driver"); 
+	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+	
+   ps = con.prepareStatement(getUsers);
+	
+	ResultSet user = ps.executeQuery(); 
+   	
+   while(user.next())
+   {
+   	String id = user.getString("ID");
+        String fname = user.getString("fname");
+        String lname = user.getString("lname");
+	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td>");
+   }
+} 
+   catch (SQLException e)
+{
+	out.println("ERROR:"+e.getMessage());
+}
+finally
+{
+	if(ps != null)
+		ps.close();
+	
+	if(con != null)
+		con.close();
+}
+%>
 				<td>
 					<a href = "" class = "button u-pull-right">Remove</button> 
 				</td>
 			</tr>
 		</table>
-		<button class = "button">Add User</button>
+		<a href = 'newmanager.jsp' class = "button">Add User</a>
 	</div>
 	
 </body>

@@ -2,11 +2,12 @@
 <%@ page import ="javax.sql.*" %>
 <%
    //gets the student ID and room ID
-   String ID = request.getParameter("studentID");
+   String SID = request.getParameter("student");
    String roomID = request.getParameter("roomID");
+   int roomIDINT = Integer.parseInt(roomID);
    //creates prepared statements for inserting  students into the residents table, and updating the student's info in student table
    String insertInfo = "INSERT INTO residents VALUES (?, ?)";
-   setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?"
+   String setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    
    //creates conncetions
    java.sql.Connection con = null;
@@ -20,20 +21,20 @@
 
     ps = con.prepareStatement(setResident);
     //sets to the student ID and executes
-    ps.setString(1, ID);
+    ps.setString(1, SID);
     
     ps.executeUpdate();
 
     //sets the student ID and room ID and inserts
     assignRoom = con.prepareStatement(insertInfo);
-    assignRoom.setString(1, sID);
-    assignRoom.setString(2, roomID);
+    assignRoom.setInt(1, roomIDINT);
+    assignRoom.setString(2, SID);
         
     assignRoom.executeUpdate();
    
    //redirects to main page
-   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/scripts/manager.jsp");
-   
+   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/students.jsp");
+   }
    catch (SQLException e)
 {
 	out.println("ERROR:"+e.getMessage());

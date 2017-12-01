@@ -24,7 +24,7 @@
    ps.setString(5, password);
 	
 	ps.executeUpdate(); 
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/index.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/config/users.jsp");   
 } 
    catch (SQLException e)
 {

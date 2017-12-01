@@ -1,21 +1,22 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
-<%@ include file="removalFunctions.jsp" %>
 <%
-   int roomID = Integer.parseInt(request.getParameter("roomID"));
+   String ID = request.getParameter("m_id");
+   String deleteInfo = "DELETE FROM managers WHERE ID = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
-   PreparedStatement findResident = null;
    
    try
 {
 	Class.forName("com.mysql.jdbc.Driver"); 
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
-
-   deleteRoom(con, roomID);
 	
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/buildings.jsp");   
+   ps = con.prepareStatement(deleteInfo);
+   ps.setString(1, ID);
+	
+	ps.executeUpdate(); 
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/manager.jsp");   
 } 
    catch (SQLException e)
 {

@@ -39,15 +39,88 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Building Details</h4>
-		<b>Name: </b><br>
-		<b>Quiet building: </b><br>
+<%@ page import ="java.sql.*" %>
+<%@ page import ="javax.sql.*" %>
+<%
+   String bName = request.getParameter("buildingName");
+   String getBuildings = "SELECT * FROM buildings WHERE building_name = ?";
+   
+   java.sql.Connection con = null;
+   PreparedStatement ps = null;
+   
+   try
+{
+	Class.forName("com.mysql.jdbc.Driver"); 
+	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+	
+   ps = con.prepareStatement(getBuildings);
+   ps.setString(1, bName);
+	
+	ResultSet building = ps.executeQuery(); 
+   	
+   while(building.next())
+   {
+        String name = building.getString("building_name");
+	String type = building.getString("quietBuilding");
+        out.println("<b>Name: "+name+"</b><br>");
+	out.println("<b>Quiet building:"+type+" </b><br>");
+   }
+   
+} 
+   catch (SQLException e)
+{
+	out.println("ERROR:"+e.getMessage());
+}
+finally
+{
+	if(ps != null)
+		ps.close();
+	
+}
+%>
 	</div>
 	
 	<div class = "container" style = "margin-top: 40px;">
+		<a href = 'newroom.jsp' class = 'button'>Add New Room</a>
 		<h5>Rooms</h5>
 		<table class = "u-full-width">
-			<tr><td><b>Number</b></td><td><b>Style</b></td><td><b></b></td></tr>
-			<tr><td>435</td><td>Extra Small</td></tr>
+		<th> <tr> Room ID </tr> <tr> Room # </tr> <tr> Building </tr> <tr> Style </tr> </th>
+			<%
+   String getRooms = "SELECT * FROM rooms WHERE building = ?";
+   
+   PreparedStatement fr = null;
+   
+   try
+{
+	
+   fr = con.prepareStatement(getRooms);
+   fr.setString(1, bName);
+	
+	ResultSet rooms = fr.executeQuery(); 
+   
+   while(rooms.next())
+   {
+        int roomNum = rooms.getInt("roomNum");
+	String building = rooms.getString("building");
+	String style = rooms.getString("roomStyle");
+	int id = rooms.getInt("roomID");
+        out.println("<tr> <td>"+id+"</td><td>"+roomNum+"</td><td>"+building+"</td><td>"+style+"</td><td><a href = '../../scripts/deleteRoom.jsp?roomID="+id+"' name = 'roomID' class = 'button'>X</a></td></tr>");
+   }
+   
+} 
+   catch (SQLException e)
+{
+	out.println("ERROR:"+e.getMessage());
+}
+finally
+{
+	if(fr != null)
+		ps.close();
+	
+	if(con != null)
+		con.close();
+}
+%>
 		</table>
 	</div>
 	
