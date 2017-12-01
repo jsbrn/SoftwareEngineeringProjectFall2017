@@ -59,7 +59,6 @@
 			%>
 		</table>
 	</div>
-	</div>
 
 </body>
     
