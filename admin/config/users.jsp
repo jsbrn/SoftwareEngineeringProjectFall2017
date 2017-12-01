@@ -61,7 +61,7 @@
    	
    while(user.next())
    {
-   	String id = user.getString("m_id");
+   	String id = user.getString("ID");
         String fname = user.getString("fname");
         String lname = user.getString("lname");
 	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td>");
