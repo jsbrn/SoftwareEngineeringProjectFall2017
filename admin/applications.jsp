@@ -69,7 +69,7 @@
 			out.println("<tr> <th>Application #</th> <th> Student ID </th> <th>Room Type</th> <th> Quiet Building</th> </tr>");
 		   while(rs.next())
 		   {
-				String num = rs.getString("applicationNum");
+				int num = rs.getString("applicationNum");
 				String ID = rs.getString("ID");
 				String style = rs.getString("requested_style");
 				String building = rs.getString("quiet_house");
