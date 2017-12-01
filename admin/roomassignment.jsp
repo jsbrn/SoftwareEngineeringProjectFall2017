@@ -43,7 +43,7 @@
 		<h5>Assign a room</h5>
         <select name = 'building'>
 		<% 
-           String getOptions = "SELECT building FROM rooms";
+           String getOptions = "SELECT building_name FROM buildings";
            
            java.sql.Connection con = null;
 		   PreparedStatement ps = null;
