@@ -7,16 +7,16 @@
    String buildingType = request.getParameter("buildingType");
    String style = request.getParameter("style");
    String specialRequest = request.getParameter("customField");
-   int inYear = null;
-   int inputRoom = null;
+   int inYear = 0;
+   int inputRoom = 0;
    String status = "pending";
    
-   String insertInfo = "INSERT INTO applications VALUES (?, ?, ?, ?, ?, ?)";
+   String insertInfo = "INSERT INTO applications (ID, requested_style, currentStatus, customRequest, quiet_house) VALUES (?, ?, ?, ?, ?)";
    String assignRoom = "INSERT INTO residents VALUES(?, ?)";
-   String updateStudent = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?"
+   String updateStudent = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    String findBuilding = "SELECT building_name WHERE quietBuilding = ?";
    String findRoom = "SELECT roomID FROM rooms WHERE style = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
-   String getYearLevel = "SELECT in_year FROM students WHERE s_id = ?"
+   String getYearLevel = "SELECT in_year FROM students WHERE s_id = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -40,7 +40,7 @@
    
         if(inYear == 1)
         {
-            style = "Basic Single"
+            style = "Basic Single";
         }
    
         PreparedStatement emptyRooms = null;
@@ -48,7 +48,7 @@
    
         if(buildingType == "yes" || buildingType == "no")
         {
-            PreparedStatement kindOfBuilding = con.prepareSatement(findBuilding);
+            PreparedStatement kindOfBuilding = con.prepareStatement(findBuilding);
             kindOfBuilding.setString(1, buildingType);
             
             ResultSet building = kindOfBuilding.executeQuery();
@@ -62,7 +62,7 @@
         
         
    
-        emptyRooms = con.prepareStatement(findRooms);
+        emptyRooms = con.prepareStatement(findRoom);
         emptyRooms.setString(1, style);
    
         if(buildingName != null)
@@ -74,7 +74,7 @@
         
         while(rooms.next())
         {
-            inputRoom = rooms.getInt(roomID);
+            inputRoom = rooms.getInt("roomID");
         }
    
          PreparedStatement insertIntoRoom = con.prepareStatement(assignRoom);
@@ -86,12 +86,11 @@
    
 	
    ps = con.prepareStatement(insertInfo);
-   ps.setString(1, appNumber);
-   ps.setString(2, ID);
-   ps.setString(3, style);
-   ps.setString(4, roomNum);
-   ps.setString(5, building);
-   ps.setString(6, status);
+   ps.setString(1, ID);
+   ps.setString(2, style);
+   ps.setString(3, status);
+   ps.setString(4, specialRequest);
+   ps.setString(6, buildingType);
    ps.executeUpdate();
    
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/index.jsp");

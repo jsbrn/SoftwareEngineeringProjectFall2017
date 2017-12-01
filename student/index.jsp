@@ -58,7 +58,7 @@
 <%@ page import ="javax.sql.*" %>
 <%
    String workOrderID = request.getParameter("workOrderID");
-   String getMessages = "SELECT messageText, author, time WHERE w_id = 'global'";
+   String getMessages = "SELECT messageText, author, time FROM messages WHERE w_id = 'global'";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -76,7 +76,7 @@
    {
         String text = messages.getString("messageText");
         String author = messages.getString("author");
-        String time = messages.getString("time");
+        String time = messages.getString("timeSent");
    }
 } 
    catch (SQLException e)
