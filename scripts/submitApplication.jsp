@@ -95,7 +95,7 @@
    ps.setString(2, style);
    ps.setString(3, status);
    //ps.setString(4, specialRequest);
-   ps.setString(5, buildingType);
+   ps.setString(4, buildingType);
    ps.executeUpdate();
    
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/index.jsp");
