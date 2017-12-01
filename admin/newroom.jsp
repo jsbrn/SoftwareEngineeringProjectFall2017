@@ -85,7 +85,7 @@
 							
 							ps = con.prepareStatement(getStyles);
 							
-							rs=ps.executeQuery(); 
+							ResultSet rs=ps.executeQuery(); 
 						   
 						   while(rs.next())
 						   {
