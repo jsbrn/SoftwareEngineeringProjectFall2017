@@ -38,6 +38,18 @@
 	
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 0px;">
 		<h4>News Feed</h4>
+		
+		<!--submit new news feed item-->
+		<form action = "../scripts/postMessage.jsp">
+			<div class="row">
+				<div class="u-full-width">
+					<label for="message">Post an announcement...</label>
+					<textarea class="u-full-width" placeholder="" id="message" name="message"></textarea>
+					<input class="button-primary" value="Post announcement" type="submit">
+				</div>
+			</div>
+		</form>
+		
 		<!--conversation-->
 		<table class = "u-full-width">
 			<!--GENERATE THE NEWS FEED ENTRIES-->
@@ -84,16 +96,6 @@
 			%>
 		</table>
 
-		<!--submit new news feed item-->
-		<form action = "../scripts/postMessage.jsp">
-			<div class="row">
-				<div class="u-full-width">
-					<label for="message">Post an announcement...</label>
-					<textarea class="u-full-width" placeholder="" id="message" name="message"></textarea>
-					<input class="button-primary" value="Post announcement" type="submit">
-				</div>
-			</div>
-		</form>
 	</div>
 	
 </body>
