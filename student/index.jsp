@@ -56,6 +56,7 @@
 				
 				ResultSet messages = ps.executeQuery(); 
 				
+				int size = 0;
 			   while(messages.next())
 			   {
 					String text = messages.getString("messageText");
@@ -64,7 +65,9 @@
 					out.println("<tr><td><img src = '../css/admin.png'></img></td>");
 					out.println("<td><p>"+text+"<br><i>Posted by <b>"+author+"</b> at "+time+"</i></p></td>");
 					out.println("</tr>");
+					size++;
 			   }
+			   if (size == 0) out.println("Nothing to see here.");
 			} 
 			   catch (SQLException e)
 			{
