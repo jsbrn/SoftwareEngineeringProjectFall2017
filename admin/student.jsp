@@ -38,12 +38,11 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h5>Registered Students</h5>
-		<table class = "u-full-width">
-			<tr><td><b>ID</b></td><td><b>Name</b></td><td><b></b></td></tr>
-			<tr><td>65465</td><td>Billy Joel</td>
-				<td><a href = "student.jsp" class = "button">View</button></td></tr>
-		</table>
+		<h5>Student Details</h5>
+		<b>ID: </b>4534904<br>
+		<b>Name: </b>Billy Joel<br>
+		<a href = "" class = "button button-primary">Evict</a>
+		<a href = "" class = "button">Move to... [will be a proper form soon]</a>
 	</div>
 	
 </body>
