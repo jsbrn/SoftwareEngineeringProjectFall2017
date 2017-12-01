@@ -28,6 +28,7 @@
 		</div>
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
+				<a href = "index.jsp" class = "button">News Feed</a>
 				<a href = "applications.jsp" class = "button">Applications</a>
 				<a href = "workorders.jsp" class = "button">Work Orders</a>
 				<a href = "students.jsp" class = "button">Students</a>
