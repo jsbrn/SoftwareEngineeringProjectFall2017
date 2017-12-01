@@ -78,7 +78,7 @@
 		}
            %>
             </select>
-		<% out.println("<input type = 'submit' value = '"+id+"'/>"); %>
+		<% out.println("<input type = 'submit' name = 'student' value = '"+id+"'/>"); %>
             </form>
 	</div>
 	
