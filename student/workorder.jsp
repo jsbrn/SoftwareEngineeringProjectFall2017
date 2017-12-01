@@ -69,7 +69,7 @@
    {
         String text = messages.getString("messageText");
         String author = messages.getString("author");
-       	TimeStamp time = messages.getTimeStamp("timeSent");
+       	Strint time = messages.getTimestamp("timeSent");
         
         //input display stuff here
    }
