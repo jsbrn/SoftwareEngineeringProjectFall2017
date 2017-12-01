@@ -32,7 +32,7 @@
 					<label for="msg">Send a message...</label>
 					<textarea class="u-full-width" placeholder="Enter your message..." id="msg" name="msg"></textarea>
 					<input class="button-primary" value="Send message" type="submit">
-					<% out.println("<input name = 'idHolder' value = "+workOrderID+"/>");
+					<% out.println("<input name = 'idHolder' value = "+workOrderID+"/>"); %>
 				</div>
 			</div>
 		</form>
