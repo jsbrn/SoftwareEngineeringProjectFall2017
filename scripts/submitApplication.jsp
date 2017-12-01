@@ -83,6 +83,7 @@
 	insertIntoRoom.setInt(1, inputRoom);
         insertIntoRoom.setString(2, ID);
         PreparedStatement update = con.prepareStatement(updateStudent);
+	update.setString(1,ID);
             
         insertIntoRoom.executeUpdate();
         update.executeUpdate();
