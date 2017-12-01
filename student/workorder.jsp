@@ -47,7 +47,7 @@
             String ID = workOrders.getString("ID");
             String priority = workOrders.getString("priority");
                out.println("<b>Student ID: </b>"+ID+"<br><b>Subject:</b> "+subject+"<br> <b>ID: </b>"+num+"<br> <b>Description: </b>"+desc+"<br><b>Status: </b>"+status+"<br><b>Priority: </b>"+priority+"</p>");
-			out.println("<a href = 'workorder?workOrderID="+noteNum+"&admin=false' class = 'button'>Mark as resolved</a>");
+			out.println("<a href = 'workorder.jsp?workOrderID="+noteNum+"&admin=false' class = 'button'>Mark as resolved</a>");
 		} 
 		   catch (SQLException e)
 		{

@@ -67,7 +67,7 @@
            String status = rs.getString("status");
            
        out.println("<p><b>Work Order Number:</b>"+noteNum+"<br><b>Student ID: </b>"+ID+"<br><b>Message: </b>"+noteText+"<br><b>Priority:</b>"+priority+"<br><b>Subject: </b>"+subject+"<br><b>Status: </b>"+status+"<br></p></a>");
-		out.println("<a href = 'workorder?workOrderID="+noteNum+"&admin=true' class = 'button'>Mark as resolved</a>");
+		out.println("<a href = 'workorder.jsp?workOrderID="+noteNum+"&admin=true' class = 'button'>Mark as resolved</a>");
 		} 
 		   catch (SQLException e)
 		{
