@@ -64,7 +64,7 @@
 				String ID = rs.getString("ID");
 				String style = rs.getString("requested_style");
 				String building = rs.getString("quiet_house");
-				out.println("<tr> <td>"+num+"</td> <td>"+ID+"</td> <td>"+style+"</td> <td>"+building+"</td><td><a class = 'button' href = 'application.jsp?ID="+num+"'>View</a></td></tr>");
+				out.println("<tr> <td>"+num+"</td> <td>"+ID+"</td> <td>"+style+"</td> <td>"+building+"</td><td><a class = 'button' href = 'application.jsp?ID="+num+"' name='ID'>View</a></td></tr>");
 		   }
 		   out.println("</table>");
 		} 
