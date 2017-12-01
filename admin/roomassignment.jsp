@@ -43,7 +43,7 @@
 		<h5>Assign a room</h5>
         <select name = 'building'>
 		<% 
-           String getOptions = "SELECT building_name FROM buildings";
+           String getOptions = "SELECT roomID FROM rooms";
            
            java.sql.Connection con = null;
 		   PreparedStatement ps = null;
@@ -59,8 +59,8 @@
 			
 		   while(rs.next())
 		   {
-				String buildingName = rs.getString("building_name");
-				out.println("<option value = '"+buildingName+"'>"+buildingName+"</option>");
+			Int room = rs.getInt("roomID");
+				out.println("<option value = '"+room+"'>"+room+"</option>");
 		   }
 		} 
 		   catch (SQLException e)
