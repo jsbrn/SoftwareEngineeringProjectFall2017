@@ -15,7 +15,7 @@
    String assignRoom = "INSERT INTO residents VALUES(?, ?)";
    String updateStudent = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    String findBuilding = "SELECT building_name WHERE quietBuilding = ?";
-   String findRoom = "SELECT roomID FROM rooms WHERE style = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
+   String findRoom = "SELECT roomID FROM rooms WHERE roomStyle = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
    String getYearLevel = "SELECT in_year FROM students WHERE s_id = ?";
    
    java.sql.Connection con = null;
