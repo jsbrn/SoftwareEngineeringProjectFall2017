@@ -71,8 +71,13 @@
 		ResultSet residentRoom = roomInfo.executeQuery();
 		while(residentRoom.next())
 		{
-			out.println("<td>"+residentRoom.getString("roomID")+"</td>");
+			int currentRoom = residentRoom.getInt("roomID");
+			out.println("<td>"+currentRoom+"</td><td><a href = '../scripts/evictStudent.jsp?studentID="+id+"' name = 'studentID' class = 'button'>Evict</a> </td>");
 		}
+	}
+	else
+	{
+		out.println("<td> <a href = 'roomassignment.jsp?studentID="+id+"'name = 'studentID'  class = 'button'>Assign to a room</a></td>");
 	}
 	out.println("</tr>");
         

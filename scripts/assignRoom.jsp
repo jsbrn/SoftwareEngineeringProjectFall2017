@@ -4,9 +4,10 @@
    //gets the student ID and room ID
    String ID = request.getParameter("studentID");
    String roomID = request.getParameter("roomID");
+   int roomIDINT = Integer.parseInt(roomID);
    //creates prepared statements for inserting  students into the residents table, and updating the student's info in student table
    String insertInfo = "INSERT INTO residents VALUES (?, ?)";
-   setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?"
+   String setResident = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    
    //creates conncetions
    java.sql.Connection con = null;
@@ -26,14 +27,14 @@
 
     //sets the student ID and room ID and inserts
     assignRoom = con.prepareStatement(insertInfo);
-    assignRoom.setString(1, sID);
-    assignRoom.setString(2, roomID);
+    assignRoom.setString(1, roomIDINT);
+    assignRoom.setInt(2, ID);
         
     assignRoom.executeUpdate();
    
    //redirects to main page
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/scripts/manager.jsp");
-   
+   }
    catch (SQLException e)
 {
 	out.println("ERROR:"+e.getMessage());
