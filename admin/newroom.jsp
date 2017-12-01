@@ -41,7 +41,7 @@
 	
 	<div class = "container" style = "margin-top: 40px">
 		<h4>Add a room</h4>
-		<form action="../scripts/addroom.jsp">
+		<form action="../scripts/addRoom.jsp">
 			<div class="row">
 				<div class="u-full-width">
 				
