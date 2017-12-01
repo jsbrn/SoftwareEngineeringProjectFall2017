@@ -57,9 +57,12 @@
 			if(con != null)
 				con.close();
 		}
+		
+		if((String)sess.getAttribute("assigned_room") == "no")
+			out.println("<a href = 'newapplication.jsp' class = 'button'>Submit new application</a>");
 		%>
 		
-		<a href = "newapplication.jsp" class = "button">Submit new application</a>
+		
 
 	</div>
 
