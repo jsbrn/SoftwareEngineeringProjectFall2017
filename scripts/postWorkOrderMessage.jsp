@@ -6,7 +6,6 @@
    String name = (String)sess.getAttribute("name");
    String type = (String)sess.getAttribute("userType");
    String idString = request.getParameter("idHolder");
-   int ID = Integer.parseInt(idString);
    String message = request.getParameter("msg");
    String deleteInfo = "INSERT INTO messages (workOrderID, messageText, author, timeSent) VALUES (?, ?, ?, ?)";
    String redirectURL = null;
