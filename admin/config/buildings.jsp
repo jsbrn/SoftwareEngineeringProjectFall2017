@@ -39,6 +39,7 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>All Buildings</h5>
+        <a href = 'newroom.jsp' class = 'button'>Add New Room</a>
 
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
