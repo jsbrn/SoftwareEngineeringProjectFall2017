@@ -60,7 +60,7 @@
 		   while(rs.next())
 		   {
 				int buildingName = rs.getInt("building");
-				out.println("<option value = '"+buildingName+"'/>");
+				out.println("<option value = '"+buildingName+"'>"+buildingName+"</option>");
 		   }
 		} 
 		   catch (SQLException e)
