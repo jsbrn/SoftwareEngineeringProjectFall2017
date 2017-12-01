@@ -52,16 +52,18 @@
 			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
 		   ps = con.prepareStatement(getInfo);
-		   ps.setString(1, ID);
+		   ps.setInt(1, ID);
 			
 			ResultSet rs=ps.executeQuery(); 
 			
-           rs.next();
-           int applicationNum = rs.getInt("applicationNum");
+           while(rs.next());
+           {
+	   int applicationNum = rs.getInt("applicationNum");
            String requested_style = rs.getString("requested_style");
            String currentStatus = rs.getString("currentStatus");
            
            out.println("<p><b>Application Number:</b>"+applicationNum+"<br><b>ID: </b>"+ID+"<b><br>Requested Style:</b>"+requested_style+"<br><b><br>Current Status:</b>"+currentStatus+"</p></a>");
+		}
 		} 
 		   catch (SQLException e)
 		{
