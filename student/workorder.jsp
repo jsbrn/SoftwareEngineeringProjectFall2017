@@ -53,7 +53,7 @@
 		<h4>Work Order Details</h4>
 		<p>
 			<%
-		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ? ORDER BY DESC";
+		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ? ORDER BY timeSent DESC";
 		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
 		   
 		   
