@@ -38,7 +38,6 @@
 		</form>
 		
 		<%
-		   String workOrderID = request.getParameter("workOrderID");
 		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ?";
 		   
 		   java.sql.Connection con = null;
