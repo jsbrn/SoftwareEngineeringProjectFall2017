@@ -40,7 +40,7 @@
 		<h4>Apply to Residence</h4>
 		<h6>Please fill out the following form. It contains some questions to help ensure you are given
 			a room that works best for you.</h6>
-		<form action="../scripts/createWorkOrder.jsp>
+		<form action="../scripts/submitApplication.jsp>
 			<div class="row">
 				<div class="u-full-width">
 				
