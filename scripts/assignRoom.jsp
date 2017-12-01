@@ -33,7 +33,7 @@
     assignRoom.executeUpdate();
    
    //redirects to main page
-   //response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/students.jsp");
+   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/students.jsp");
    }
    catch (SQLException e)
 {
