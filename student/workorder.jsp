@@ -24,13 +24,6 @@
 	
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 10px;">
 		<h4>Conversation</h4>
-		<!--conversation-->
-		<table class = "u-full-width">
-			<tr><td><img src = "../css/you.png"></img></td><td><p><b>[person 1]</b>: Can you please hurry?</p></td></tr>
-			<tr><td><img src = "../css/admin.png"></img></td><td><p><b>[person 1]</b>: Your sink will be fixed by Saturday.</p></td></tr>
-			<tr><td><img src = "../css/you.png"></img></td><td><p><b>[person 1]</b>: I'm having a huge party in my dorm on Friday I can't have a broken sink.</p></td></tr>
-			<tr><td><img src = "../css/admin.png"></img></td><td><p><b>[person 1]</b>: Very sorry, sir or madame, but we cannot fix your sink that early.</p></td></tr>
-		</table>
 		<!--submit new message-->
 		<form action="../scripts/postWorkOrderMessage.jsp">
 			<div class="row">
@@ -41,6 +34,50 @@
 				</div>
 			</div>
 		</form>
+		
+		<%
+		   String workOrderID = request.getParameter("workOrderID");
+		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ?";
+		   
+		   java.sql.Connection con = null;
+		   PreparedStatement ps = null;
+		   
+		   try
+		{
+			Class.forName("com.mysql.jdbc.Driver"); 
+			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+			
+		   ps = con.prepareStatement(getMessages);
+		   ps.setString(1, workOrderID);
+			
+			ResultSet messages = ps.executeQuery(); 
+			
+		   while(messages.next())
+		   {
+				String text = messages.getString("messageText");
+				String author = messages.getString("author");
+				String time = messages.getString("timeSent");
+				
+				//input display stuff here
+				out.println("<table class = "u-full-width">");
+				out.println("<tr><td></td><td><p><b>"+author+"</b>: "+text+"</p></td><td>"+time+"</td></tr>");
+				out.println("</table>");
+		   }
+		} 
+		   catch (SQLException e)
+		{
+			out.println("ERROR:"+e.getMessage());
+		}
+		finally
+		{
+			if(ps != null)
+				ps.close();
+			
+			if(con != null)
+				con.close();
+		}
+		%>
+		
 	</div>
 
 </body>
@@ -48,42 +85,3 @@
 
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
-<%
-   String workOrderID = request.getParameter("workOrderID");
-   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ?";
-   
-   java.sql.Connection con = null;
-   PreparedStatement ps = null;
-   
-   try
-{
-	Class.forName("com.mysql.jdbc.Driver"); 
-	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
-	
-   ps = con.prepareStatement(getMessages);
-   ps.setString(1, workOrderID);
-	
-	ResultSet messages = ps.executeQuery(); 
-   	
-   while(messages.next())
-   {
-        String text = messages.getString("messageText");
-        String author = messages.getString("author");
-       	String time = messages.getString("timeSent");
-        
-        //input display stuff here
-   }
-} 
-   catch (SQLException e)
-{
-	out.println("ERROR:"+e.getMessage());
-}
-finally
-{
-	if(ps != null)
-		ps.close();
-	
-	if(con != null)
-		con.close();
-}
-%>
