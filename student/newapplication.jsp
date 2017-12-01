@@ -52,14 +52,14 @@
 					</select>
 					
 					<label for="year">Do you need peace and quiet to study?</label>
-					<select class = "u-full-width">
+					<select class = "u-full-width" name = "buildingType" >
 						<option>Doesn't matter.</option>
 						<option>Yes, definitely.</option>
 						<option>No.</option>
 					</select>
 					
 					<label for="priority">Which type of room would you prefer?</label>
-					<select class="u-full-width" id="priority" name="priority">
+					<select class="u-full-width" id="style" name="style">
 						<%
 								String getStyles = "SELECT roomStyle FROM style";
 								java.sql.Connection con = null;

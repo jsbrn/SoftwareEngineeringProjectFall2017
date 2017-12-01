@@ -3,7 +3,6 @@
 <%
    HttpSession sess = request.getSession();
    String ID = (String)sess.getAttribute("ID");
-   String roomNum = request.getParameter("roomNum");
    String buildingType = request.getParameter("buildingType");
    String style = request.getParameter("style");
    //String specialRequest = request.getParameter("customField");
@@ -11,11 +10,14 @@
    int inputRoom = 0;
    String status = "pending";
    
+   out.println(ID + " " + buildingType + " " + style);
+   
+   
    String insertInfo = "INSERT INTO applications (ID, requested_style, currentStatus, quiet_house) VALUES (?, ?, ?, ?)";
    String assignRoom = "INSERT INTO residents VALUES(?, ?)";
    String updateStudent = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    String findBuilding = "SELECT building_name WHERE quietBuilding = ?";
-   String findRoom = "SELECT roomID FROM rooms WHERE style = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
+   String findRoom = "SELECT roomID FROM rooms WHERE roomStyle = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
    String getYearLevel = "SELECT in_year FROM students WHERE s_id = ?";
    
    java.sql.Connection con = null;
@@ -77,8 +79,11 @@
             inputRoom = rooms.getInt("roomID");
         }
    
-         PreparedStatement insertIntoRoom = con.prepareStatement(assignRoom);
+        PreparedStatement insertIntoRoom = con.prepareStatement(assignRoom);
+	insertIntoRoom.setInt(1, inputRoom);
+        insertIntoRoom.setString(2, ID);
         PreparedStatement update = con.prepareStatement(updateStudent);
+	update.setString(1,ID);
             
         insertIntoRoom.executeUpdate();
         update.executeUpdate();
@@ -90,7 +95,7 @@
    ps.setString(2, style);
    ps.setString(3, status);
    //ps.setString(4, specialRequest);
-   ps.setString(5, buildingType);
+   ps.setString(4, buildingType);
    ps.executeUpdate();
    
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/index.jsp");
