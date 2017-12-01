@@ -14,11 +14,11 @@
    
       if(type.equals("students"))
    {
-    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/workOrder.jsp";
+    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/workorder.jsp";
    }
    else if (type.equals("managers"))
    {
-    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/workOrder.jsp";
+    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/workorder.jsp";
    }
    
    java.sql.Connection con = null;
