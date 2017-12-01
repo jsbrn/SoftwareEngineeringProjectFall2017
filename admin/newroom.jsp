@@ -3,6 +3,14 @@
 <%@ page import ="javax.sql.*" %>
 
 <html>
+
+<head>
+    <meta charset = "utf-8">
+    <title>Lakehead University Residence</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+</head>
+
 <body>
 
 	<!--UNIVERSITY LOGO-->
