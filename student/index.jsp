@@ -42,7 +42,7 @@
 			<!--GENERATE THE NEWS FEED ENTRIES-->
 			<%
 			   String workOrderID = request.getParameter("workOrderID");
-			   String getMessages = "SELECT messageText, author, timeSent FROM messages WHERE workOrderID = 'global'";
+			   String getMessages = "SELECT messageText, author, timeSent FROM messages WHERE workOrderID = -1";
 			   
 			   java.sql.Connection con = null;
 			   PreparedStatement ps = null;
