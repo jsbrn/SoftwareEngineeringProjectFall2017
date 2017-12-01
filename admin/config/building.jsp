@@ -81,7 +81,7 @@ finally
 	</div>
 	
 	<div class = "container" style = "margin-top: 40px;">
-		<a href = '../newroom.jsp' class = 'button'>Add New Room</a>
+		<a href = 'newroom.jsp' class = 'button'>Add New Room</a>
 		<h5>Rooms</h5>
 		<table class = "u-full-width">
 		<th> <tr> Room ID </tr> <tr> Room # </tr> <tr> Building </tr> <tr> Style </tr> </th>

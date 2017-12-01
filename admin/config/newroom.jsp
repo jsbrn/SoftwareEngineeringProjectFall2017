@@ -7,7 +7,7 @@
 <head>
     <meta charset = "utf-8">
     <title>Lakehead University Residence</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../css/stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 </head>
 
@@ -15,7 +15,7 @@
 
 	<!--UNIVERSITY LOGO-->
 	<div class = 'container nobg'>
-		<center><img src = "../css/logo.png"></img></center>
+		<center><img src = "../../css/logo.png"></img></center>
 	</div>
 
 	<!--MANAGER NAVIGATION BAR-->
@@ -30,18 +30,18 @@
 		</div>
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
-				<a href = "applications.jsp" class = "button">Applications</a>
-				<a href = "workorders.jsp" class = "button">Work Orders</a>
-				<a href = "students.jsp" class = "button">Students</a>
-				<a href = "config/index.jsp" class = "button">Configuration</a>
-				<a href = "../index.html" class = "button u-pull-right">Sign Out</a>
+				<a href = "../applications.jsp" class = "button">Applications</a>
+				<a href = "../workorders.jsp" class = "button">Work Orders</a>
+				<a href = "../students.jsp" class = "button">Students</a>
+				<a href = "../config/index.jsp" class = "button">Configuration</a>
+				<a href = "../../index.html" class = "button u-pull-right">Sign Out</a>
 			</div>
 		</div>
 	</div>
 	
 	<div class = "container" style = "margin-top: 40px">
 		<h4>Add a room</h4>
-		<form action="../scripts/addRoom.jsp">
+		<form action="../../scripts/addRoom.jsp">
 			<div class="row">
 				<div class="u-full-width">
 				
@@ -116,7 +116,7 @@
 				</select>
 				
 				<label for="roomnumber">Room Type</label>
-				<input class = "u-full-width" name = "roomnumber" type = "text"></input>
+				<input class = "u-full-width" name = "roomNum" type = "text"></input>
 				<input class="button-primary" value="Add room" type="submit">
 				
 		</form>
