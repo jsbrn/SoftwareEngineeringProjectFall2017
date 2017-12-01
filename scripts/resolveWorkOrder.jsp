@@ -4,7 +4,7 @@
 <%
    int workOrderID = Integer.parseInt(request.getParameter("workOrderID"));
    boolean as_admin = Boolean.parseBoolean(request.getParameter("admin"));
-   String setResolved = "UPDATE notes set status = ? noteNum = ?";
+   String setResolved = "UPDATE notes set status = ? WHERE noteNum = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -16,7 +16,7 @@
 
     ps = con.prepareStatement(setResolved);
     ps.setString(1, "resolved");
-    ps.setString(1, workOrderID);
+    ps.setInt(1, workOrderID);
     ps.executeUpdate();
 	
    	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/"+(as_admin ? "admin" : "student")+"/workorder.jsp?num="+workOrderID");   
