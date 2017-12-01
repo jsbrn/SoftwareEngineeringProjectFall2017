@@ -39,19 +39,6 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>All Buildings</h5>
-		<table class = "u-full-width">
-			<tr><td><b>Name</b></td></tr>
-			<tr>
-				<td>That one building with the bricks</td>
-				<td>
-					<a href = "building.jsp" class = "button u-pull-right">View</button> 
-				</td>
-			</tr>
-		</table>
-	</div>
-	
-</body>
-</html>
 
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
@@ -93,3 +80,8 @@ finally
 		con.close();
 }
 %>
+		
+			</div>
+	
+</body>
+</html>
