@@ -27,8 +27,8 @@
 
     //sets the student ID and room ID and inserts
     assignRoom = con.prepareStatement(insertInfo);
-    assignRoom.setString(1, roomIDINT);
-    assignRoom.setInt(2, ID);
+    assignRoom.setINT(1, roomIDINT);
+    assignRoom.setString(2, ID);
         
     assignRoom.executeUpdate();
    
