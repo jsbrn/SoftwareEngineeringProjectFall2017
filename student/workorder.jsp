@@ -54,7 +54,7 @@
 			<tr><td><img src = "../css/admin.png"></img></td><td><p><b>[person 1]</b>: Very sorry, sir or madame, but we cannot fix your sink that early.</p></td></tr>
 		</table>
 		<!--submit new message-->
-		<form action="../scripts/createWorkOrder.jsp>
+		<form action="../scripts/submitWorkOrder.jsp">
 			<div class="row">
 				<div class="u-full-width">
 					<label for="msg">Send a message...</label>
