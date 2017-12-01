@@ -115,6 +115,8 @@
 						   %>
 				</select>
 				
+				<label for="roomnumber">Room Type</label>
+				<input class = "u-full-width" name = "roomnumber" type = "text"></input>
 				<input class="button-primary" value="Add room" type="submit">
 				
 		</form>
