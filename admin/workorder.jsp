@@ -41,7 +41,7 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Work Orders</h4>
 		<%
-           int noteNum = Integer.parseInt(request.getParameter("workOrderID"));
+           int noteNum = Integer.parseInt(request.getParameter("num"));
 		   String getInfo = "Select * FROM notes WHERE noteNum = ?";
 		   
 		   java.sql.Connection con = null;
