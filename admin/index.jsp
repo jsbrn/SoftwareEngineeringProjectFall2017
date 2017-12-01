@@ -52,12 +52,12 @@
 			</tr>
 		</table>
 		<!--submit new news feed item-->
-		<form>
+		<form action = "scripts/postMessage.jsp">
 			<div class="row">
 				<div class="u-full-width">
-					<label for="msg">Post a news feed entry...</label>
-					<textarea class="u-full-width" placeholder="Enter your message..." id="msg" name="msg"></textarea>
-					<input class="button-primary" value="Post new entry" type="submit">
+					<label for="message">Post an announcement...</label>
+					<textarea class="u-full-width" placeholder="" id="message" name="message"></textarea>
+					<input class="button-primary" value="Post announcement" type="submit">
 				</div>
 			</div>
 		</form>
