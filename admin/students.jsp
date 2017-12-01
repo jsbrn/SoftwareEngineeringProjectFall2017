@@ -78,7 +78,7 @@
 	}
 	else
 	{
-		out.println("<td> <a href = 'roomassignment.jsp?studentID="+id+"'name = 'studentID'  class = 'button'>Assign to a room</a></td>");
+		out.println("<td> <a href = 'roomassignment.jsp?studentID="+id+"'name = 'studentID'  class = 'button u-pull-right'>Assign to a room</a></td>");
 	}
 	out.println("</tr>");
         
