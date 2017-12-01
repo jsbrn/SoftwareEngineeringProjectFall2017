@@ -42,7 +42,8 @@
 		<%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
-   String getBuildings = "SELECT * FROM buildings";
+   String bName = request.getParameter("buildingName");
+   String getBuildings = "SELECT * FROM buildings WHERE building_name = ?";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -53,6 +54,7 @@
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 	
    ps = con.prepareStatement(getBuildings);
+   ps.setString(1, bName);
 	
 	ResultSet building = ps.executeQuery(); 
    	
