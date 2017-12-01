@@ -6,12 +6,12 @@
    String roomNum = request.getParameter("roomNum");
    String buildingType = request.getParameter("buildingType");
    String style = request.getParameter("style");
-   String specialRequest = request.getParameter("customField");
+   //String specialRequest = request.getParameter("customField");
    int inYear = 0;
    int inputRoom = 0;
    String status = "pending";
    
-   String insertInfo = "INSERT INTO applications (ID, requested_style, currentStatus, customRequest, quiet_house) VALUES (?, ?, ?, ?, ?)";
+   String insertInfo = "INSERT INTO applications (ID, requested_style, currentStatus, quiet_house) VALUES (?, ?, ?, ?)";
    String assignRoom = "INSERT INTO residents VALUES(?, ?)";
    String updateStudent = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
    String findBuilding = "SELECT building_name WHERE quietBuilding = ?";
@@ -28,15 +28,15 @@
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");
 	
    
-   if(specialRequest.isEmpty())
-   {
+   //if(specialRequest.isEmpty())
+   //{
         PreparedStatement year = con.prepareStatement(getYearLevel);
         year.setString(1, ID);
         ResultSet results = year.executeQuery();
         while(results.next())
         {
             inYear = results.getInt("in_year");
-        }
+        //}
    
         if(inYear == 1)
         {
@@ -89,8 +89,8 @@
    ps.setString(1, ID);
    ps.setString(2, style);
    ps.setString(3, status);
-   ps.setString(4, specialRequest);
-   ps.setString(6, buildingType);
+   //ps.setString(4, specialRequest);
+   ps.setString(5, buildingType);
    ps.executeUpdate();
    
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/index.jsp");
