@@ -17,7 +17,7 @@
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 	
    ps = con.prepareStatement(deleteInfo);
-   ps.setString(1, "global");
+   ps.setInt(1, -1);
    ps.setString(2, msg);
    ps.setString(3, name);
    ps.setTimestamp(4, currentTime);
