@@ -45,7 +45,7 @@
 				<td><a href = "" class = 'button'>View</a></td>
 			</tr>
 		</table>
-		<a href = "newworkorder.html" class = "button">Submit new work order</a>
+		<a href = "newworkorder.jsp" class = "button">Submit new work order</a>
 	</div>
 
 </body>
