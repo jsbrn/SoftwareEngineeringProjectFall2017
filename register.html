@@ -7,6 +7,17 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
     
     <script>
+        var ycheck = function(){
+            if (document.getElementById('year').value > 4 || document.getElementById('year').value <= 0){
+                document.getElementById("ymessage").style.color = 'red';
+                document.getElementById("ymessage").innerHTML = 'Year needs to be between 1 and 4';
+            }
+            else
+                document.getElementById("ymessage").innerHTML = '';
+        }
+    </script>
+    
+    <script>
         var check = function() {
             if (document.getElementById('password').value ==
                 document.getElementById('confirm_password').value) {
@@ -22,11 +33,11 @@
     <script>
         var validateForm = function(){
             if (document.getElementById('password').value ==
-                document.getElementById('confirm_password').value) {
+                document.getElementById('confirm_password').value && document.getElementById('year').value <= 4 && document.getElementById('year').value > 0) {
                 return true;
             } else {
                 document.getElementById('cmessage').style.color = 'red';
-                document.getElementById('cmessage').innerHTML = 'Passwords need to be matching';
+                document.getElementById('cmessage').innerHTML = 'View Errors Above';
                 return false;
             }
         }
@@ -57,7 +68,12 @@
                 
               <label for="exampleRecipientInput">Last Name</label>
 			  <input class="u-full-width" placeholder="" name="lname" type="text">
+                
+              <span id="ymessage"></span>
+              <label for="exampleRecipientInput">Year (1 - 4)</label>
+              <input class="u-full-width" placeholder="" name="year" type="number" id = "year" onkeyup='ycheck()'>
               <span id='cmessage'></span>
+              
 			</div>
 		  </div>
 		  <input class = "button-primary" type="submit" name = "register" value="Submit">
@@ -69,4 +85,3 @@
 </body>
     
 </html>
-
