@@ -3,7 +3,7 @@
 <%@ include file="removalFunctions.jsp" %>
 <%
    int roomID = Integer.parseInt(request.getParameter("roomID"));
-   
+   String buildingName = request.getParameter("buildingName");
    java.sql.Connection con = null;
    PreparedStatement ps = null;
    PreparedStatement findResident = null;
@@ -15,7 +15,7 @@
 
    deleteRoom(con, roomID);
 	
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/buildings.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/config/building.jsp?buildingName="+buildingName);   
 } 
    catch (SQLException e)
 {
