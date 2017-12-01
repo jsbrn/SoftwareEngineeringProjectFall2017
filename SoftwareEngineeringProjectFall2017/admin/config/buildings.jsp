@@ -68,17 +68,15 @@
 	
    ps = con.prepareStatement(getBuildings);
 	
-	ResultSet building = ps.executeQuery(); 
+	ResultSet messages = ps.executeQuery(); 
    	
-out.println("<table class = 'gridtable' style = 'width: 100%'>");
-out.println("<tr> <th>Name</th></tr>");
-   while(building.next())
+   while(messages.next())
    {
-        String name = building.getString("building_name");
-        out.println("<tr> <td>"+name+"</td><a href = 'building.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>View</a></td></tr>");
+        String text = messages.getString("building_name");
+        String author = messages.getString("quietBuilding");
+        
+        //input display stuff here
    }
-   
-out.println("</table>");
 } 
    catch (SQLException e)
 {

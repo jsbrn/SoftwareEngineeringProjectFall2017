@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "utf-8">
+    <title>Lakehead University Residence</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+    
+    <script>
+        var ycheck = function(){
+            if (document.getElementById('year').value > 4 || document.getElementById('year').value <= 0){
+                document.getElementById("ymessage").style.color = 'red';
+                document.getElementById("ymessage").innerHTML = 'Year needs to be between 1 and 4';
+            }
+            else
+                document.getElementById("ymessage").innerHTML = '';
+        }
+    </script>
+    
+    <script>
+        var check = function() {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirm_password').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Passwords are matching';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'Passwords are not matching';
+            }
+        }
+    </script>
+    
+    <script>
+        var validateForm = function(){
+            if (document.getElementById('password').value ==
+                document.getElementById('confirm_password').value && document.getElementById('year').value <= 4 && document.getElementById('year').value > 0) {
+                return true;
+            } else {
+                document.getElementById('cmessage').style.color = 'red';
+                document.getElementById('cmessage').innerHTML = 'View Errors Above';
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+	<div class = 'container nobg'>
+		<center><img src = "css/logo.png"></img></center>
+	</div>
+	<div class = 'container' style = 'margin-top: 40px;'>
+		<h2>Register</h2>
+		<form action="scripts/register_as_student.jsp" onsubmit="return validateForm()">
+		  <div class="row">
+			<div class="six columns">
+			  <label for="exampleEmailInput">Email</label>
+			  <input class="u-full-width" placeholder="example@lakeheadu.ca" name="email_address" type="email">
+                
+			  <label for="exampleRecipientInput">Password</label>
+			  <input class="u-full-width" placeholder="" name="password" type="password" id = "password" onkeyup='check();'>
+                
+              <span id='message'></span>
+              <label for="exampleRecipientInput">Confirm Password</label>
+			  <input class="u-full-width" placeholder="" name="confirm_password" type="password" id = "confirm_password" onkeyup='check()'>
+                
+              <label for="exampleRecipientInput">First Name</label>
+			  <input class="u-full-width" placeholder="" name="fname" type="text">
+                
+              <label for="exampleRecipientInput">Last Name</label>
+			  <input class="u-full-width" placeholder="" name="lname" type="text">
+                
+              <span id="ymessage"></span>
+              <label for="exampleRecipientInput">Year (1 - 4)</label>
+              <input class="u-full-width" placeholder="" name="year" type="number" id = "year" onkeyup='ycheck()'>
+              <span id='cmessage'></span>
+              
+			</div>
+		  </div>
+		  <input class = "button-primary" type="submit" name = "register" value="Submit">
+          <a class="button" href="index.html">Back</a>
+            
+		  
+		</form>
+	</div>
+</body>
+    
+</html>
+

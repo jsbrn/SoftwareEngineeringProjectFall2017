@@ -38,58 +38,18 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h5>All Buildings</h5>
+		<h4>Building Details</h4>
+		<b>Name: </b><br>
+		<b>Quiet building: </b><br>
+	</div>
+	
+	<div class = "container" style = "margin-top: 40px;">
+		<h5>Rooms</h5>
 		<table class = "u-full-width">
-			<tr><td><b>Name</b></td></tr>
-			<tr>
-				<td>That one building with the bricks</td>
-				<td>
-					<a href = "building.jsp" class = "button u-pull-right">View</button> 
-				</td>
-			</tr>
+			<tr><td><b>Number</b></td><td><b>Style</b></td><td><b></b></td></tr>
+			<tr><td>435</td><td>Extra Small</td></tr>
 		</table>
 	</div>
 	
 </body>
 </html>
-
-<%@ page import ="java.sql.*" %>
-<%@ page import ="javax.sql.*" %>
-<%
-   String getBuildings = "SELECT * FROM buildings";
-   
-   java.sql.Connection con = null;
-   PreparedStatement ps = null;
-   
-   try
-{
-	Class.forName("com.mysql.jdbc.Driver"); 
-	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
-	
-   ps = con.prepareStatement(getBuildings);
-	
-	ResultSet building = ps.executeQuery(); 
-   	
-out.println("<table class = 'gridtable' style = 'width: 100%'>");
-out.println("<tr> <th>Name</th></tr>");
-   while(building.next())
-   {
-        String name = building.getString("building_name");
-        out.println("<tr> <td>"+name+"</td><a href = 'building.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>View</a></td></tr>");
-   }
-   
-out.println("</table>");
-} 
-   catch (SQLException e)
-{
-	out.println("ERROR:"+e.getMessage());
-}
-finally
-{
-	if(ps != null)
-		ps.close();
-	
-	if(con != null)
-		con.close();
-}
-%>
