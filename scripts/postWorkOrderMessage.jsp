@@ -33,7 +33,7 @@
    ps.setInt(1, ID);
    ps.setString(2, message);
    ps.setString(3, name);
-   ps.setString(4, currentTime);
+   ps.setTimestamp(4, currentTime);
 	
 	ps.executeUpdate(); 
    	response.sendRedirect(redirectURL);   
