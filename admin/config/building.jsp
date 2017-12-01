@@ -38,15 +38,16 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-		<h5>All Rooms</h5>
+		<h4>Building Details</h4>
+		<b>Name: </b><br>
+		<b>Quiet building: </b><br>
+	</div>
+	
+	<div class = "container" style = "margin-top: 40px;">
+		<h5>Rooms</h5>
 		<table class = "u-full-width">
-			<tr><td><b>Number</b></td><td><b>Building</b></td><td><b>Available Space</b></td></tr>
-			<tr>
-				<td>233</td><td>That one building with the bricks</td><td>0/2</td>
-				<td>
-					<a href = "" class = "button">View</button> 
-				</td>
-			</tr>
+			<tr><td><b>Number</b></td><td><b>Style</b></td><td><b></b></td></tr>
+			<tr><td>435</td><td>Extra Small</td></tr>
 		</table>
 	</div>
 	

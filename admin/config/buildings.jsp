@@ -44,7 +44,7 @@
 			<tr>
 				<td>That one building with the bricks</td>
 				<td>
-					<a href = "" class = "button u-pull-right">View</button> 
+					<a href = "building.jsp" class = "button u-pull-right">View</button> 
 				</td>
 			</tr>
 		</table>
