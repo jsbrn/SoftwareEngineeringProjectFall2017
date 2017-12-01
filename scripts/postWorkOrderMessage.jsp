@@ -5,7 +5,7 @@
    HttpSession sess = request.getSession();
    String name = (String)sess.getAttribute("name");
    String type = (String)sess.getAttribute("userType");
-   String idString = request.getParameter("idHolder");
+   String idString = request.getParameter("workOrderID");
    int ID = Integer.parseInt(idString);
    String message = request.getParameter("msg");
    String deleteInfo = "INSERT INTO messages (workOrderID, messageText, author, timeSent) VALUES (?, ?, ?, ?)";
@@ -14,11 +14,11 @@
    
       if(type.equals("students"))
    {
-    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/workorder.jsp";
+    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/workorder.jsp?workOrderID="+ID;
    }
    else if (type.equals("managers"))
    {
-    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/workorder.jsp";
+    redirectURL = "http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/workorder.jsp?workOrderID="+ID;
    }
    
    java.sql.Connection con = null;
