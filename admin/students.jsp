@@ -60,9 +60,9 @@
    	out.println("<tr>");
    while(students.next())
    {
-        String id = students.getString("messageText");
-        String fname = students.getString("author");
-        String lname = students.getString("time");
+        String id = students.getString("s_id");
+        String fname = students.getString("fname");
+        String lname = students.getString("lname");
 	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td>");
 	if( students.getString("assigned_room").equals("yes"))
 	{
