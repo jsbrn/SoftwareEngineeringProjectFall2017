@@ -6,7 +6,7 @@
    String text = request.getParameter("noteText");
    String priority = request.getParameter("priority");
    String subject = request.getParameter("subject");
-   String setInfo = "INSERT INTO notes (ID, noteText, priority, subject) VALUES (?, ?, ?, ?)";
+   String setInfo = "INSERT INTO notes (ID, noteText, priority, subject, status) VALUES (?, ?, ?, ?, ?)";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
@@ -21,6 +21,7 @@
    ps.setString(2, text);
    ps.setString(3, priority);
    ps.setString(4, subject);
+   ps.setString(5, "pending");
 	
    ps.executeUpdate();
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/index.jsp");
