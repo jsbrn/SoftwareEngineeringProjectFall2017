@@ -20,7 +20,7 @@
    ps.setString(1, "global");
    ps.setString(2, msg);
    ps.setString(3, name);
-   ps.setTimeStamp(4, currentTime);
+   ps.setTimestamp(4, currentTime);
 	
 	ps.executeUpdate(); 
    	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/manager/index.jsp");   
