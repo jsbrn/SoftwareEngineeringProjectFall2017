@@ -31,7 +31,7 @@
 				<div class="u-full-width">
 					<label for="msg">Send a message...</label>
 					<textarea class="u-full-width" placeholder="Enter your message..." id="msg" name="msg"></textarea>
-					<% out.println("<input class='button-primary' value='"+workOrderID+"' type='submit'>");%>
+					<% out.println("<input class='button-primary' name = 'idHolder' value='"+workOrderID+"' type='submit'>");%>
 				</div>
 			</div>
 		</form>
