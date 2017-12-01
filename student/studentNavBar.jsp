@@ -13,10 +13,10 @@
 				<a href = "index.jsp" class = "button">News Feed</a>
                 <% if (sess.getAttribute("studentType").equals("yes"))
                    {
-                        out.println("<a href = "workorders.jsp" class = "button">Your Work Orders</a>");
+                        out.println("<a href = 'workorders.jsp' class = 'button'>Your Work Orders</a>");
                    }
                    else
-                        out.println("<a href = "applications.jsp" class = "button">Your Application</a>");
+                        out.println("<a href = 'applications.jsp' class = 'button'>Your Application</a>");
                    %>
 				
 				<a href = "../index.html" class = "button">Sign out</a>
