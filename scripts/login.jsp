@@ -1,6 +1,7 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
+   HttpSession sess = request.getSession();
    String userType = null;
    String idField = null;
    String redirectURL = null;
@@ -38,7 +39,6 @@
         out.println("Error: incorrect username or password");
    }
    else{
-        HttpSession sess = request.getSession();
         String id = rs.getString(idField);
         String name = rs.getString("fname");
         if(userType.equals("students"))
@@ -46,7 +46,7 @@
         String sType = rs.getString("assigned_room");
         sess.setAttribute("studentType", sType);
    }
-   
+   	sess.setAttribute("userType", userType);
         sess.setAttribute("ID", id);
         sess.setAttribute("name", name);
         response.sendRedirect(redirectURL);   
