@@ -59,7 +59,7 @@
 				String time = messages.getString("timeSent");
 				
 				//input display stuff here
-				out.println("<table class = "u-full-width">");
+				out.println("<table class = 'u-full-width'>");
 				out.println("<tr><td></td><td><p><b>"+author+"</b>: "+text+"</p></td><td>"+time+"</td></tr>");
 				out.println("</table>");
 		   }
