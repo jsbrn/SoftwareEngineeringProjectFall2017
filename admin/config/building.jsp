@@ -56,14 +56,12 @@
 	
 	ResultSet building = ps.executeQuery(); 
    	
-		out.println("<b>Name: </b><br>");
-		out.println("<b>Quiet building: </b><br>")
    while(building.next())
    {
         String name = building.getString("building_name");
 	String type = building.getString("quietBuilding");
         out.println("<b>Name: "+name+"</b><br>");
-	out.println("<b>Quiet building:"+type+" </b><br>")
+	out.println("<b>Quiet building:"+type+" </b><br>");
    }
    
 } 
