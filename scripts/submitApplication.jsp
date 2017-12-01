@@ -87,6 +87,7 @@
             
         insertIntoRoom.executeUpdate();
         update.executeUpdate();
+	status = "accepted";
    }
    
 	
