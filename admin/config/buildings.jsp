@@ -62,7 +62,10 @@ out.println("<tr> <th>Name</th></tr>");
    while(building.next())
    {
         String name = building.getString("building_name");
-        out.println("<tr> <td>"+name+"</td><td><a href = 'building.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>View</a></td><td><a href = 'addbuilding.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>+</a></td><td><a href = '../../scripts/deleteBuilding.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>X</a></td></tr>");
+        out.println("<tr> 
+        	<td>"+name+"</td><td><a href = 'building.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>View</a></td>
+        	<td><a href = '../../scripts/deleteBuilding.jsp?buildingName="+name+"' name = 'buildingName' class = 'button'>X</a></td>
+        </tr>");
    }
    
 out.println("</table>");
