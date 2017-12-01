@@ -76,7 +76,7 @@
 		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
 		   
 		   
-		   PreparedStatement ps = null;
+		   PreparedStatement pr = null;
 		   PreparedStatement orders = null;
 		   
 		   try
