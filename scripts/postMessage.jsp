@@ -1,6 +1,6 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
-<%@ page import - "java.util.Date" %>
+<%@ page import = "java.util.Date" %>
 <%
    HttpSession sess = request.getSession();
    String name = (String)sess.getAttribute("name");
