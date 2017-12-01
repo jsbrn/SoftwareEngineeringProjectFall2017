@@ -42,7 +42,7 @@
 			<!--GENERATE THE NEWS FEED ENTRIES-->
 			<%
 			   String workOrderID = request.getParameter("workOrderID");
-			   String getMessages = "SELECT messageText, author, time FROM messages WHERE w_id = 'global'";
+			   String getMessages = "SELECT messageText, author, timeSent FROM messages WHERE w_id = 'global'";
 			   
 			   java.sql.Connection con = null;
 			   PreparedStatement ps = null;
@@ -79,16 +79,6 @@
 					con.close();
 			}
 			%>
-		
-			<tr>
-				<td><img src = "../css/admin.png"></img></td>
-				<td>
-					<p>
-						<b>[NEWS FEED ENTRY TITLE]</b> - <i>[timestamp]</i><br>
-						There will be scheduled maintenance. It's just the wei things go.
-					</p>
-				</td>
-			</tr>
 		</table>
 	</div>
 	</div>
