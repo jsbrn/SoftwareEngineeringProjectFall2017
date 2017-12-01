@@ -26,12 +26,12 @@
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 10px;">
 		<h4>Conversation</h4>
 		<!--submit new message-->
-		<% out.println("<form action='../scripts/postWorkOrderMessage.jsp?workOrderID="+workOrderID+">"); %>
+		<form action="../scripts/postWorkOrderMessage.jsp">
 			<div class="row">
 				<div class="u-full-width">
 					<label for="msg">Send a message...</label>
 					<textarea class="u-full-width" placeholder="Enter your message..." id="msg" name="msg"></textarea>
-					<input class='button-primary' value='Send Message' type='submit'>
+					<% out.println("<input class='button-primary' value='"+workOrderID+"' type='submit'>");%>
 				</div>
 			</div>
 		</form>
