@@ -10,12 +10,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 </head>
 <body>
-    
-	<!--UNIVERSITY LOGO-->
-	<div class = 'container nobg'>
-		<center><img src = "../css/logo.png"></img></center>
-	</div>
-
 	
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 0px;">
 		<h4>News Feed</h4>
