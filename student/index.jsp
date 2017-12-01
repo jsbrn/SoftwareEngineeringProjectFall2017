@@ -58,7 +58,7 @@
 <%@ page import ="javax.sql.*" %>
 <%
    String workOrderID = request.getParameter("workOrderID");
-   String getMessages = "SELECT messageText, author, time WHERE w_id = 'global'";
+   String getMessages = "SELECT messageText, author, time FROM messages WHERE w_id = 'global'";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
