@@ -4,7 +4,7 @@
    HttpSession sess = request.getSession();
    String ID = (String)sess.getAttribute("ID");
    String roomNum = request.getParameter("roomNum");
-   String building = request.getParameter("building");
+   String buildingType = request.getParameter("buildingType");
    String style = request.getParameter("style");
    String specialRequest = request.getParameter("customField");
    int inYear = null;
@@ -14,7 +14,8 @@
    String insertInfo = "INSERT INTO applications VALUES (?, ?, ?, ?, ?, ?)";
    String assignRoom = "INSERT INTO residents VALUES(?, ?)";
    String updateStudent = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?"
-   String findRoom = "SELECT roomID FROM rooms WHERE style = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomId)";
+   String findBuilding = "SELECT building_name WHERE quietBuilding = ?";
+   String findRoom = "SELECT roomID FROM rooms WHERE style = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
    String getYearLevel = "SELECT in_year FROM students WHERE s_id = ?"
    
    java.sql.Connection con = null;
@@ -41,8 +42,33 @@
         {
             style = "Basic Single"
         }
-        PreparedStatement emptyRooms = con.prepareStatement(findRooms);
+   
+        PreparedStatement emptyRooms = null;
+        String buildingName = null;
+   
+        if(buildingType == "yes" || buildingType == "no")
+        {
+            PreparedStatement kindOfBuilding = con.prepareSatement(findBuilding);
+            kindOfBuilding.setString(1, buildingType);
+            
+            ResultSet building = kindOfBuilding.executeQuery();
+            if(building.next())
+            {
+                buildingName = building.getString("building_name");
+                findRooms = "SELECT roomID FROM rooms WHERE style = ? AND building = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
+            }
+        }
+
+        
+        
+   
+        emptyRooms = con.prepareStatement(findRooms);
         emptyRooms.setString(1, style);
+   
+        if(buildingName != null)
+        {
+            emptyRooms.setString(2, buildingName);
+        }
         
         ResultSet rooms = emptyRooms.executeQuery();
         
