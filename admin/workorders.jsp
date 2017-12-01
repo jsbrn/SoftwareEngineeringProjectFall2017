@@ -56,16 +56,15 @@
 			ResultSet rs=ps.executeQuery();
 			
 		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-			out.println("<tr> <th>Work Order #</th> <th>Student ID</th> <th> Subject </th> <th>Note Text</th> <th> Priority </th> </tr>");
+			out.println("<tr> <th>Work Order #</th> <th>Student ID</th> <th> Subject </th> <th> Priority </th> </tr>");
 		   while(rs.next())
 		   {
 				String num = rs.getString("noteNum");
 				String studentID = rs.getString("ID");
-				String text = rs.getString("noteText");
 				String priority = rs.getString("priority");
 				String subject = rs.getString("subject");
 
-				out.println("<tr> <td>"+num+"</td><td>"+studentID+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td></tr>");
+				out.println("<tr> <td>"+num+"</td><td>"+studentID+"</td> <td>"+subject+"</td> <td>"+priority+"</td><td><a href = 'workorder.jsp?num="+num+"' name = 'workOrderID' class = 'button'>View</submit></td></tr>");
 		   }
 		   out.println("</table>");
 		} 

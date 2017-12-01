@@ -39,13 +39,14 @@
 		   
 		   ResultSet workOrders = orders.executeQuery();
 		   
-		   while(workOrders.next())
-		{
+		   workOrders.next();
 			String subject = workOrders.getString("subject");
 			int num = workOrders.getInt("noteNum");
 			String desc = workOrders.getString("noteText");
-			out.println("<b>Subject:</b> "+subject+"<br> <b>ID: </b>"+num+"<br> <b>Description: </b>"+desc+"</p>");
-		}
+            String status = workOrders.getString("status");
+            String ID = workOrders.getString("ID");
+            String priority = workOrders.getString("priority");
+               out.println("<b>Student ID: </b>"+ID+"<br><b>Subject:</b> "+subject+"<br> <b>ID: </b>"+num+"<br> <b>Description: </b>"+desc+"<br><b>Status: </b>"+status+"<br><b>Priority: </b>"+priority+"</p>");
 		   
 		} 
 		   catch (SQLException e)
