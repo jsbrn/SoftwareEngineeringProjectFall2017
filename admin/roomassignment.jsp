@@ -39,7 +39,7 @@
 
 	<div class = "container" style = "margin-top: 40px;">
         <% String id = request.getParameter("studentID"); 
-		out.println("<form action = '../scripts/assignRoom.jsp?student = '"+id+"' name = 'student>");
+		out.println("<form action = '../scripts/assignRoom.jsp?student = '"+id+"' name = 'student'>");
 	%>
 		<h5>Assign a room</h5>
         <select name = 'roomID'>
