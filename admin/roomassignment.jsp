@@ -39,7 +39,7 @@
 
 	<div class = "container" style = "margin-top: 40px;">
         <% String id = request.getParameter("studentID");
-           out.println("<form action = '../scripts/assignRoom.jsp?student='"+id+"' name = 'student'>"); %>
+           <form>
 		<h5>Assign a room</h5>
         <select name = 'roomID'>
 		<% 
@@ -77,7 +77,7 @@
 		}
            %>
             </select>
-		<input type = "submit" value = "Assign" />
+		<% out.println("<a href = '../scripts/assignRoom.jsp?student='"+id+"' name = 'student'> class = 'button'>Assign</a>"); %>
             </form>
 	</div>
 	
