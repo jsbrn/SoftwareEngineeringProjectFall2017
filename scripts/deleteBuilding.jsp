@@ -21,7 +21,7 @@
      while(rs.next())
     {
         int roomID = rs.getInt("roomID");
-        deleteRoom(con, roomID, out);
+        deleteRoom(con, roomID);
     }
      
     PreparedStatement delete = con.prepareStatement(deleteBuilding);
