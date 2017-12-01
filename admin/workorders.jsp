@@ -60,7 +60,7 @@
 				String num = rs.getString("noteNum");
 				String studentID = rs.getString("ID");
 				String text = rs.getString("noteText");
-				String priority = rs.getString("priority);
+				String priority = rs.getString("priority");
 				String subject = rs.getString("subject");
 
 				out.println("<tr> <td>"+num+"</td><td>"+studentID+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td></tr>");
