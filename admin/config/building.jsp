@@ -81,9 +81,10 @@ finally
 	</div>
 	
 	<div class = "container" style = "margin-top: 40px;">
+		<a href = '../newroom.jsp' class = 'button'>Add New Room</a>
 		<h5>Rooms</h5>
-		<a href = '../addroom.jsp' class = 'button'>Add New Room</a>
 		<table class = "u-full-width">
+		<th> <tr> Room ID </tr> <tr> Room # </tr> <tr> Building </tr> <tr> Style </tr> </th>
 			<%
    String getRooms = "SELECT * FROM rooms WHERE building = ?";
    
@@ -97,7 +98,6 @@ finally
 	
 	ResultSet rooms = fr.executeQuery(); 
    
-   out.println("<th> <tr> Room ID </tr> <tr> Room # </tr> <tr> Building </tr> <tr> Style </tr> </th>");
    while(rooms.next())
    {
         int roomNum = rooms.getInt("roomNum");
