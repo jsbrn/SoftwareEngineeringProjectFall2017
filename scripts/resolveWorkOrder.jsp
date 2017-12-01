@@ -18,7 +18,7 @@
     ps.setString(1, "resolved");
     ps.setString(1, workOrderID);
 	
-   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/"+(as_admin ? "admin" : "student")+"/workorder.jsp?num=.jsp");   
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/"+(as_admin ? "admin" : "student")+"/workorder.jsp?num="+workOrderID");   
 } 
    catch (SQLException e)
 {
