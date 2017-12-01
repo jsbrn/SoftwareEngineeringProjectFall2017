@@ -68,6 +68,7 @@
 			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
 		   ps = con.prepareStatement(getInfo);
+		   ps.setString(1, studentID);
 			
 			ResultSet rs=ps.executeQuery(); 
 			
