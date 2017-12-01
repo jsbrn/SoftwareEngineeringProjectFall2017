@@ -40,8 +40,8 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Application Details</h4>
 		<%
-           String ID = request.getParameter("ID");
-		   String getInfo = "Select * FROM applications WHERE ID = ?";
+           int ID = Integer.parseInt(request.getParameter("ID"));
+		   String getInfo = "Select * FROM applications WHERE applicationNum = ?";
 		   
 		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
@@ -57,7 +57,7 @@
 			ResultSet rs=ps.executeQuery(); 
 			
            rs.next();
-           String applicationNum = rs.getString("applicationNum");
+           int applicationNum = rs.getInt("applicationNum");
            String requested_style = rs.getString("requested_style");
            String currentStatus = rs.getString("currentStatus");
            
