@@ -17,7 +17,7 @@
 		<%
            String ID = request.getParameter("ID");
 	   int idINT = Integer.parseInt(ID);
-		   String getInfo = "Select * FROM applications WHERE ID = ?";
+		   String getInfo = "Select * FROM applications WHERE applicationNum = ?";
 		   
 		   java.sql.Connection con = null;
 		   PreparedStatement ps = null;
