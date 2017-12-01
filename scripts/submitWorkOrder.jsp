@@ -24,7 +24,7 @@
    ps.setString(5, "pending");
 	
    ps.executeUpdate();
-   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/index.jsp");
+   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/student/workorders.jsp");
 } 
    catch (SQLException e)
 {

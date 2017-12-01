@@ -71,13 +71,6 @@
 						   %>
 					</select>
 					
-					<label for="year">What year are you going into?</label>
-					<select class = "u-full-width">
-						<option>First Year</option>
-						<option>Second Year</option>
-						<option>Third Year</option>
-						<option>Fourth Year</option>
-					</select>
 					
 					<input class="button-primary" value="Submit your application" type="submit">
 				</div>
