@@ -55,7 +55,7 @@
             if(building.next())
             {
                 buildingName = building.getString("building_name");
-                findRooms = "SELECT roomID FROM rooms WHERE style = ? AND building = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
+                findRoom = "SELECT roomID FROM rooms WHERE style = ? AND building = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
             }
         }
 
