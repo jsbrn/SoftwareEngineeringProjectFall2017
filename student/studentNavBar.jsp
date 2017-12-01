@@ -11,7 +11,7 @@
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
 				<a href = "index.jsp" class = "button">News Feed</a>
-                <% if ((String) sess.getAttribute("assigned_room") == "yes")
+                <% if (sess.getAttribute("studentType").equals("yes"))
                    {
                         out.println("<a href = "workorders.jsp" class = "button">Your Work Orders</a>");
                    }
