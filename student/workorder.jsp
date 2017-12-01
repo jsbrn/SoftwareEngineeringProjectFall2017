@@ -76,6 +76,8 @@
 			if(con != null)
 				con.close();
 		}
+		
+		out.println("<p name = 'idHolder' value = "+workOrderID+"></p>");
 		%>
 		
 	</div>
