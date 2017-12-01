@@ -3,13 +3,15 @@
 <%
    HttpSession sess = request.getSession();
    String ID = (String)sess.getAttribute("ID");
-   String roomNum = request.getParameter("roomNum");
    String buildingType = request.getParameter("buildingType");
    String style = request.getParameter("style");
    //String specialRequest = request.getParameter("customField");
    int inYear = 0;
    int inputRoom = 0;
    String status = "pending";
+   
+   out.println(ID + " " + buildingType + " " + style);
+   
    
    String insertInfo = "INSERT INTO applications (ID, requested_style, currentStatus, quiet_house) VALUES (?, ?, ?, ?)";
    String assignRoom = "INSERT INTO residents VALUES(?, ?)";
