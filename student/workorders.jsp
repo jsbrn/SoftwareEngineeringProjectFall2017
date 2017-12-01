@@ -55,8 +55,7 @@
 <%@ page import ="javax.sql.*" %>		
 
 <%
-        HttpSession sess = request.getSession();
-        String studentID = (String)sess.getAttribute("name");
+        String studentID = (String)sess.getAttribute("ID");
 		   String getInfo = "Select * FROM notes WHERE ID = ?";
 		   
 		   java.sql.Connection con = null;
