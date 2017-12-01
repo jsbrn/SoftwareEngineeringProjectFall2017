@@ -62,7 +62,7 @@
 		   while(rs.next())
 		   {
 			int room = rs.getInt("roomID");
-				out.println("<option value = '"+room+"'>"+room+"</option>");
+				out.println("<option value = '"+room+"'>Room "+room+"</option>");
 		   }
 		} 
 		   catch (SQLException e)
