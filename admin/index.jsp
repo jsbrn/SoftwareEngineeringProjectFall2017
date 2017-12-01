@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ page import ="java.sql.*" %>
+<%@ page import ="javax.sql.*" %>
 <html lang = "en">
 <head>
     <meta charset = "utf-8">
