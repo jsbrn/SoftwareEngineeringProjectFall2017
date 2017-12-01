@@ -16,15 +16,14 @@
 	Class.forName("com.mysql.jdbc.Driver"); 
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 
-    ps = con.prepareStatement(setResident);
+    ps = con.prepareStatement(changeResident);
     ps.setString(1, ID);
     ps.executeUpdate();
 
-    assignRoom = con.prepareStatement(insertInfo);
-    assignRoom.setString(1, sID);
-    assignRoom.setString(2, roomID);
+    deleteCall = con.prepareStatement(deleteStudent);
+    deleteCall.setString(1, ID);
         
-    assignRoom.executeUpdate();
+    deleteCall.executeUpdate();
    
    response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/scripts/manager.jsp");
    
