@@ -77,7 +77,7 @@
 				con.close();
 		}
 		
-		out.println("<p name = 'idHolder' value = "+workOrderID+"></p>");
+		out.println("<input name = 'idHolder' value = "+workOrderID+"/>");
 		%>
 		
 	</div>
