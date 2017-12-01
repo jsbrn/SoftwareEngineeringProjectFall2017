@@ -87,8 +87,6 @@
 		finally
 		{
 			
-			if(con != null)
-				con.close();
 		}
 		%>
 	<a class = "button">Mark as resolved</a>
