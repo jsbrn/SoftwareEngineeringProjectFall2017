@@ -41,7 +41,7 @@
         <% String id = request.getParameter("studentID");
            out.println("<form action = '../scripts/assignRoom.jsp?studentID='"+id+"' name = 'studentID'>"); %>
 		<h5>Assign a room</h5>
-        <select name = 'building'>
+        <select name = 'roomID'>
 		<% 
            String getOptions = "SELECT roomID FROM rooms";
            
