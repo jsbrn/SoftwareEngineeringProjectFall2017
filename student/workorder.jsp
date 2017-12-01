@@ -13,6 +13,7 @@
 <body>
 
 	<!--GET WORK ORDER DETAILS-->
+	<% String workOrderID = request.getParameter("workOrderID");%>
 	<%
            String ID = request.getParameter("ID");
 		   String getInfo = "Select * FROM applications WHERE ID = ?";
@@ -93,7 +94,6 @@
 	<a class = "button">Mark as resolved</a>
 	</div>
 	
-	<% String workOrderID = request.getParameter("workOrderID");%>
 	<div class = "container" style = "margin-top: 40px; padding-bottom: 10px;">
 		<h4>Conversation</h4>
 		<!--submit new message-->
