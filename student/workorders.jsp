@@ -40,7 +40,7 @@
 					String text = rs.getString("noteText");
 					String priority = rs.getString("priority");
 					String subject = rs.getString("subject");
-					out.println("<tr> <td>"+num+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td><td><a class = 'button'>View</a></td></tr>");
+					out.println("<tr> <td>"+num+"</td> <td>"+subject+"</td> <td>"+text+"</td> <td>"+priority+"</td><td><a name = 'workOrderID' value = '"+num+"' class = 'button'>View</a></td></tr>");
 			   }
 			   out.println("</table>");
 			} 
