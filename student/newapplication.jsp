@@ -16,6 +16,7 @@
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Apply to Residence</h4>
+		<a href = "https://www.lakeheadu.ca/current-students/residence" class = 'button'>Residence/Housing Information</a>
 		<h6>Please fill out the following form. It contains some questions to help ensure you are given
 			a room that works best for you.</h6>
 		<form action="../scripts/submitApplication.jsp">
