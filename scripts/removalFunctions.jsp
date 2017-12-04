@@ -2,23 +2,25 @@
 <%@ page import ="javax.sql.*" %>
     
         <%!
+	//function to remove a student from their room
         public void removeStudent(String residentID, java.sql.Connection con)
         {
            try
         {
+	//deletes student from room and updates their information
             String removeResident = "DELETE FROM residents WHERE residentID = ?";
             String updateStudent = "UPDATE students SET assigned_room = 'no' WHERE s_id = ?";
             PreparedStatement remove = con.prepareStatement(removeResident);
-		    remove.setString(1, residentID);
-		    remove.executeUpdate();
+	    remove.setString(1, residentID);
+	    remove.executeUpdate();
 		
-		    PreparedStatement update = con.prepareStatement(updateStudent);
-		    update.setString(1, residentID);
+	    PreparedStatement update = con.prepareStatement(updateStudent);
+	    update.setString(1, residentID);
             update.executeUpdate();
         }
         catch (SQLException e)
         {
-            
+            e.getMessage();
         }
         }
         %>
@@ -47,7 +49,7 @@
         }
         catch (Exception e)
         {
-            
+            e.getMessage();
         }
         }
         %>
