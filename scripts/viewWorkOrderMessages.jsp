@@ -8,34 +8,33 @@
    PreparedStatement ps = null;
    
    try
-{
+   {
 	Class.forName("com.mysql.jdbc.Driver"); 
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 	
-   ps = con.prepareStatement(getMessages);
-   ps.setString(1, workOrderID);
+   	ps = con.prepareStatement(getMessages);
+   	ps.setString(1, workOrderID);
 	
 	ResultSet messages = ps.executeQuery(); 
    	
-   while(messages.next())
-   {
-        String text = messages.getString("messageText");
-        String author = messages.getString("author");
-       	TimeStamp time = messages.getTimeStamp("timeSent");
-        
-        //input display stuff here
-   }
-} 
+	//prints message, author and time sent
+   	while(messages.next())
+   	{
+        	String text = messages.getString("messageText");
+        	String author = messages.getString("author");
+       		TimeStamp time = messages.getTimeStamp("timeSent");
+  	 }
+   } 
    catch (SQLException e)
-{
+   {
 	out.println("ERROR:"+e.getMessage());
-}
-finally
-{
+    }
+    finally
+    {
 	if(ps != null)
 		ps.close();
 	
 	if(con != null)
 		con.close();
-}
+    }
 %>
