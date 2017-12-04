@@ -51,7 +51,7 @@
 							ps = con.prepareStatement(getStyles);
 							
 							ResultSet rs=ps.executeQuery(); 
-						   
+						   //gets all the types of room styles
 						   while(rs.next())
 						   {
 								String style = rs.getString("roomStyle");
