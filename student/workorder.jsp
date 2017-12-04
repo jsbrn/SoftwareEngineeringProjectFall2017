@@ -13,12 +13,15 @@
 <body>
 
 	<!--GET WORK ORDER DETAILS-->
-	<% String workOrderID = request.getParameter("workOrderID");%>
+	<% 
+	//gets the id of the given work order
+	String workOrderID = request.getParameter("workOrderID");%>
 
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Work Order Details</h4>
 		<p>
-			<%
+	<%
+		//queries for getting messages and work order information
 		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ? ORDER BY timeSent DESC";
 		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
 		   
@@ -29,7 +32,7 @@
 		   try
 		{
 		Class.forName("com.mysql.jdbc.Driver"); 
-	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");
+		con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");
 			
 		   pr = con.prepareStatement(getMessages);
 		   pr.setString(1, workOrderID);
@@ -38,24 +41,20 @@
 		   orders.setString(1, workOrderID);
 		   
 		   ResultSet workOrders = orders.executeQuery();
-		   
+		   //gets work order information and displays it
 		   workOrders.next();
 			String subject = workOrders.getString("subject");
 			int num = workOrders.getInt("noteNum");
 			String desc = workOrders.getString("noteText");
-            String status = workOrders.getString("status");
-            String ID = workOrders.getString("ID");
-            String priority = workOrders.getString("priority");
-               out.println("<b>Student ID: </b>"+ID+"<br><b>Subject:</b> "+subject+"<br> <b>ID: </b>"+num+"<br> <b>Description: </b>"+desc+"<br><b>Status: </b>"+status+"<br><b>Priority: </b>"+priority+"</p>");
+            		String status = workOrders.getString("status");
+            		String ID = workOrders.getString("ID");
+            		String priority = workOrders.getString("priority");
+               		out.println("<b>Student ID: </b>"+ID+"<br><b>Subject:</b> "+subject+"<br> <b>ID: </b>"+num+"<br> <b>Description: </b>"+desc+"<br><b>Status: </b>"+status+"<br><b>Priority: </b>"+priority+"</p>");
 			out.println("<a href = 'workorder.jsp?workOrderID="+num+"&admin=false' class = 'button'>Mark as resolved</a>");
 		} 
 		   catch (SQLException e)
 		{
 			out.println("ERROR:"+e.getMessage());
-		}
-		finally
-		{
-			
 		}
 		%>
 	</div>
@@ -75,7 +74,7 @@
 		<%
 					
 			ResultSet messages = pr.executeQuery(); 
-			
+			//gets message information and displays in form
 		   while(messages.next())
 		   {
 				String text = messages.getString("messageText");
