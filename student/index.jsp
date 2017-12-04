@@ -17,6 +17,7 @@
 		<table class = "u-full-width">
 			<!--GENERATE THE NEWS FEED ENTRIES-->
 			<%
+			//gets information about global messages
 			   String getMessages = "SELECT messageText, author, timeSent FROM messages WHERE workOrderID IS NULL ORDER BY timeSent DESC";
 			   
 			   java.sql.Connection con = null;
@@ -32,6 +33,7 @@
 				ResultSet messages = ps.executeQuery(); 
 				
 				int size = 0;
+				//displays message information in the news feed
 			   while(messages.next())
 			   {
 					String text = messages.getString("messageText");
@@ -42,6 +44,7 @@
 					out.println("</tr>");
 					size++;
 			   }
+			   //if news feed is empty
 			   if (size == 0) out.println("Nothing to see here.");
 			} 
 			   catch (SQLException e)
