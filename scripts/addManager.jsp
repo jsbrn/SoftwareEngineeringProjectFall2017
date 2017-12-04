@@ -1,11 +1,13 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
+   //gets all information fields for manager
    String ID = request.getParameter("m_id");
    String fname = request.getParameter("fname");
    String lname = request.getParameter("lname");
    String email = request.getParameter("email");
    String password = request.getParameter("password");
+   //inserts into managers table
    String insertInfo = "INSERT INTO managers VALUES (?, ?, ?, ?, ?)";
    
    java.sql.Connection con = null;
@@ -16,12 +18,12 @@
 	Class.forName("com.mysql.jdbc.Driver"); 
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 	
-   ps = con.prepareStatement(insertInfo);
-   ps.setString(1, ID);
-   ps.setString(2, fname);
-   ps.setString(3, lname);
-   ps.setString(4, email);
-   ps.setString(5, password);
+   	ps = con.prepareStatement(insertInfo);
+   	ps.setString(1, ID);
+   	ps.setString(2, fname);
+   	ps.setString(3, lname);
+   	ps.setString(4, email);
+   	ps.setString(5, password);
 	
 	ps.executeUpdate(); 
    	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/config/users.jsp");   
