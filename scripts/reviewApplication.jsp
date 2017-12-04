@@ -5,8 +5,10 @@
    String ID = request.getParameter("appID");
    boolean accepted = false;
    
+   //if accepted application
    if(request.getParameter("accept") != null)
    {
+   //update student and application information
         status = "accepted";
         addToRoom = "UPDATE rooms SET resident_id = ? WHERE roomNum = ? AND building = ?";
         getStudent = "SELECT * FROM applications WHERE applicationNum = ?";
