@@ -41,7 +41,7 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h5>Pending Applications</h5>
 		<%
-
+		   //queries information about pending applications
 		   String getInfo = "Select * FROM applications WHERE currentStatus = 'pending'";
 		   
 		   java.sql.Connection con = null;
@@ -49,15 +49,16 @@
 		   
 		   try
 		{
-			Class.forName("com.mysql.jdbc.Driver"); 
-			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
+		   Class.forName("com.mysql.jdbc.Driver"); 
+		   con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
 		   ps = con.prepareStatement(getInfo);
 			
-			ResultSet rs=ps.executeQuery(); 
+		   ResultSet rs=ps.executeQuery(); 
 			
 		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
-			out.println("<tr> <th>Application #</th> <th> Student ID </th> <th>Room Type</th> <th> Quiet Building</th> </tr>");
+		   out.println("<tr> <th>Application #</th> <th> Student ID </th> <th>Room Type</th> <th> Quiet Building</th> </tr>");
+		   //prints info into table
 		   while(rs.next())
 		   {
 				int num = rs.getInt("applicationNum");
