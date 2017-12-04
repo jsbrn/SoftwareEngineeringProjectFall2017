@@ -41,6 +41,7 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Work Orders</h4>
 		<%
+		   //queries for notes that are pending action
 		   String getInfo = "Select * FROM notes WHERE status = ?";
 		   
 		   java.sql.Connection con = null;
@@ -56,10 +57,11 @@
 			
 			ResultSet rs=ps.executeQuery();
 			
-		   out.println("<table class = 'gridtable' style = 'width: 100%'>");
+		        out.println("<table class = 'gridtable' style = 'width: 100%'>");
 			out.println("<tr> <th>Work Order #</th> <th>Student ID</th> <th> Subject </th> <th> Priority </th> </tr>");
-		   while(rs.next())
-		   {
+		   	//prints information to the table
+		        while(rs.next())
+		   	{
 				String num = rs.getString("noteNum");
 				String studentID = rs.getString("ID");
 				String priority = rs.getString("priority");
