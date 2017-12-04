@@ -16,8 +16,10 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Your Work Orders</h4>
 		<%
+			//gets student's id
 			String studentID = (String)sess.getAttribute("ID");
-			   String getInfo = "Select * FROM notes WHERE ID = ?";
+			//query to get a particular note for the given id
+			String getInfo = "Select * FROM notes WHERE ID = ?";
 			   
 			   java.sql.Connection con = null;
 			   PreparedStatement ps = null;
@@ -29,8 +31,9 @@
 				
 			   ps = con.prepareStatement(getInfo);
 			   ps.setString(1, studentID);
-				
-				ResultSet rs=ps.executeQuery(); 
+			
+			   //prints the information about the results of the query into a table
+			   ResultSet rs=ps.executeQuery(); 
 			   out.println("<table class = 'gridtable' style = 'width: 100%'>");
 				out.println("<tr> <th>Work Order #</th> <th> Subject </th> <th>Note Text</th> <th> Priority </th> <th> </th> </tr>");
 			   while(rs.next())
