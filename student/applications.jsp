@@ -16,7 +16,9 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Your Applications</h4>
 		<%
+		   //gets student id from the session
 		   String ID = (String)sess.getAttribute("ID");
+		   //gets the information from the student's id
 		   String getInfo = "Select applicationNum, ID, currentStatus FROM applications WHERE ID = ?";
 		   
 		   java.sql.Connection con = null;
@@ -30,13 +32,16 @@
 		   ps = con.prepareStatement(getInfo);
 		   ps.setString(1, ID);
 			
-			ResultSet rs=ps.executeQuery(); 
-			
+		   ResultSet rs=ps.executeQuery(); 
+		   
+		   //print information in a table
+		   
 		   out.println("<table class = 'u-full-width'>");
-           out.println("<tr> <th>Application #</th> <th>Status</th> <th></th></tr>");
+                   out.println("<tr> <th>Application #</th> <th>Status</th> <th></th></tr>");
+		   
 		   while(rs.next())
 		   {
-                String studentID = rs.getString("ID");
+                		String studentID = rs.getString("ID");
 				int applicationNum = rs.getInt("applicationNum");
 				String status = rs.getString("currentStatus");
            
@@ -57,7 +62,7 @@
 			if(con != null)
 				con.close();
 		}
-		
+		//if you do not have a room assigned, have the option to make a new application
 		if(sess.getAttribute("studentType").equals("no"))
 			out.println("<a href = 'newapplication.jsp' class = 'button'>Submit new application</a>");
 		%>
