@@ -1,18 +1,18 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
+//gets information about application
    HttpSession sess = request.getSession();
    String ID = (String)sess.getAttribute("ID");
    String buildingType = request.getParameter("buildingType");
    String style = request.getParameter("style");
-   //String specialRequest = request.getParameter("customField");
    int inYear = 0;
    int inputRoom = 0;
    String status = "pending";
    
    out.println(ID + " " + buildingType + " " + style);
    
-   
+   //checks for available rooms and inserts student in
    String insertInfo = "INSERT INTO applications (ID, requested_style, currentStatus, quiet_house) VALUES (?, ?, ?, ?)";
    String assignRoom = "INSERT INTO residents VALUES(?, ?)";
    String updateStudent = "UPDATE students SET assigned_room = 'yes' WHERE s_id = ?";
@@ -30,16 +30,16 @@
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");
 	
    
-   //if(specialRequest.isEmpty())
-   //{
         PreparedStatement year = con.prepareStatement(getYearLevel);
         year.setString(1, ID);
         ResultSet results = year.executeQuery();
         while(results.next())
         {
+	    //gets student's year level
             inYear = results.getInt("in_year");
-        //}
+        }
    
+   	//automatically assigns first years to a single room
         if(inYear == 1)
         {
             style = "Basic Single";
@@ -47,7 +47,7 @@
    
         PreparedStatement emptyRooms = null;
         String buildingName = null;
-   
+   	//if specified building type it looks for a sepecific building of that type
         if(buildingType == "yes" || buildingType == "no")
         {
             PreparedStatement kindOfBuilding = con.prepareStatement(findBuilding);
@@ -56,6 +56,7 @@
             ResultSet building = kindOfBuilding.executeQuery();
             if(building.next())
             {
+	    	//inserts into the first toom of that building
                 buildingName = building.getString("building_name");
                 findRoom = "SELECT roomID FROM rooms WHERE style = ? AND building = ? AND NOT EXISTS (SELECT roomID FROM residents WHERE rooms.roomID = residents.roomID)";
             }
@@ -79,6 +80,7 @@
             inputRoom = rooms.getInt("roomID");
         }
    
+   	//update student information
         PreparedStatement insertIntoRoom = con.prepareStatement(assignRoom);
 	insertIntoRoom.setInt(1, inputRoom);
         insertIntoRoom.setString(2, ID);
