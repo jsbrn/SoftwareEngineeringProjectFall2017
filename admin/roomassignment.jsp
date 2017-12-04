@@ -39,26 +39,28 @@
 	</div>
 
 	<div class = "container" style = "margin-top: 40px;">
-        <% String id = request.getParameter("studentID"); 
-		out.println("<form action = '../scripts/assignRoom.jsp'>");
+        <% 
+	   String id = request.getParameter("studentID"); 
+	   out.println("<form action = '../scripts/assignRoom.jsp'>");
 	%>
-		<h5>Assign a room</h5>
+	<h5>Assign a room</h5>
         <select name = 'roomID'>
-		<% 
+	<% 
+	   //query for getting all room id's from the room table
            String getOptions = "SELECT roomID FROM rooms";
            
            java.sql.Connection con = null;
-		   PreparedStatement ps = null;
+           PreparedStatement ps = null;
            
            try
 		{
-			Class.forName("com.mysql.jdbc.Driver"); 
-			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
+		   Class.forName("com.mysql.jdbc.Driver"); 
+		   con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
 		   ps = con.prepareStatement(getOptions);
 			
-			ResultSet rs=ps.executeQuery(); 
-			
+		   ResultSet rs=ps.executeQuery(); 
+		   //prints the information into dropdown box
 		   while(rs.next())
 		   {
 			int room = rs.getInt("roomID");
@@ -79,6 +81,7 @@
 		}
            %>
             </select>
+		//button that holds the id value
 		<% out.println("<input type = 'submit' name = 'student' value = '"+id+"'/>"); %>
             </form>
 	</div>
