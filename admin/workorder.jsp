@@ -41,32 +41,33 @@
 	<div class = "container" style = "margin-top: 40px;">
 		<h4>Work Orders</h4>
 		<%
-           int noteNum = Integer.parseInt(request.getParameter("num"));
-		   String getInfo = "Select * FROM notes WHERE noteNum = ?";
+		//gets note id
+           	int noteNum = Integer.parseInt(request.getParameter("num"));
+		//queries for specific note
+		String getInfo = "Select * FROM notes WHERE noteNum = ?";
 		   
-		   java.sql.Connection con = null;
-		   PreparedStatement ps = null;
+		java.sql.Connection con = null;
+		PreparedStatement ps = null;
 		   
-		   try
+		try
 		{
 			Class.forName("com.mysql.jdbc.Driver"); 
 			con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password"); 
 			
 		   	ps = con.prepareStatement(getInfo);
 			ps.setInt(1, noteNum);
-           
-           
 			
 			ResultSet rs=ps.executeQuery();
 			
-           rs.next();
-           String ID = rs.getString("ID");
-           String noteText = rs.getString("noteText");
-           String priority = rs.getString("priority");
-           String subject = rs.getString("subject");
-           String status = rs.getString("status");
+			//prints work order information
+           		rs.next();
+           		String ID = rs.getString("ID");
+           		String noteText = rs.getString("noteText");
+           		String priority = rs.getString("priority");
+           		String subject = rs.getString("subject");
+           		String status = rs.getString("status");
            
-       out.println("<p><b>Work Order Number:</b>"+noteNum+"<br><b>Student ID: </b>"+ID+"<br><b>Message: </b>"+noteText+"<br><b>Priority:</b>"+priority+"<br><b>Subject: </b>"+subject+"<br><b>Status: </b>"+status+"<br></p></a>");
+       			out.println("<p><b>Work Order Number:</b>"+noteNum+"<br><b>Student ID: </b>"+ID+"<br><b>Message: </b>"+noteText+"<br><b>Priority:</b>"+priority+"<br><b>Subject: </b>"+subject+"<br><b>Status: </b>"+status+"<br></p></a>");
 		out.println("<a href = 'workorder.jsp?workOrderID="+noteNum+"&admin=true' class = 'button'>Mark as resolved</a>");
 		} 
 		   catch (SQLException e)
@@ -99,6 +100,7 @@
 		</form>
 		
 		<%
+		   //queries for messages and work orders
 		   String getMessages = "SELECT messageText, author, timeSent  FROM messages WHERE workOrderID = ?  ORDER BY timeSent DESC";
 		   String getWorkOrders = "SELECT * FROM notes WHERE noteNum = ?";
 		   
@@ -110,8 +112,8 @@
 		   
 		   try
 		{
-			Class.forName("com.mysql.jdbc.Driver"); 
-			conn = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+		   Class.forName("com.mysql.jdbc.Driver"); 
+		   conn = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 			
 		   pps = conn.prepareStatement(getMessages);
 		   pps.setString(1, workOrderID);
@@ -119,8 +121,8 @@
 		   orders = conn.prepareStatement(getWorkOrders);
 		   orders.setString(1, workOrderID);
 			
-			ResultSet messages = pps.executeQuery(); 
-			
+		   ResultSet messages = pps.executeQuery(); 
+		   //prints message information
 		   while(messages.next())
 		   {
 				String text = messages.getString("messageText");
