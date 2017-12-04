@@ -26,9 +26,11 @@
         %>
     
     <%!
+    	//deletes a room
         public void deleteRoom(java.sql.Connection con, int roomID)
         {
         try{
+	    //checks for students in that room and removes them
             String checkForResident = "SELECT residentID FROM residents WHERE roomID = ?";
             String deleteInfo = "DELETE FROM rooms WHERE roomID = ?";
         
