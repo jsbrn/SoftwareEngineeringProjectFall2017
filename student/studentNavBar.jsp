@@ -15,10 +15,13 @@
 		<div class = "row">
 			<div class = "twelve columns u-pull-right">
 				<a href = "index.jsp" class = "button">News Feed</a>
+		//if a student has already been assigned a room
                 <% if (sess.getAttribute("studentType").equals("yes"))
                    {
+		   //display work orders link
                         out.println("<a href = 'workorders.jsp' class = 'button'>Your Work Orders</a>");
                    }
+		   //otherwise display applications link
                    else
                         out.println("<a href = 'applications.jsp' class = 'button'>Your Application</a>");
                    %>
