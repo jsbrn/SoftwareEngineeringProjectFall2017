@@ -12,21 +12,21 @@
    PreparedStatement deleteCall = null;
    
    try
-{
+   {
 	Class.forName("com.mysql.jdbc.Driver"); 
 	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 
-    ps = con.prepareStatement(changeResident);
-    ps.setString(1, ID);
-    ps.executeUpdate();
+    	ps = con.prepareStatement(changeResident);
+    	ps.setString(1, ID);
+    	ps.executeUpdate();
 
-    deleteCall = con.prepareStatement(deleteStudent);
-    deleteCall.setString(1, ID);
+    	deleteCall = con.prepareStatement(deleteStudent);
+    	deleteCall.setString(1, ID);
         
-    deleteCall.executeUpdate();
+    	deleteCall.executeUpdate();
    
-   response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/students.jsp");
- }  
+   	response.sendRedirect("http://35.183.2.143:8080/SoftwareEngineeringProjectFall2017/admin/students.jsp");
+    }  
    catch (SQLException e)
 {
 	out.println("ERROR:"+e.getMessage());
