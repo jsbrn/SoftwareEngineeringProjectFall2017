@@ -45,26 +45,29 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
+//queries information about all students
    String getStudents = "SELECT * FROM students";
    
    java.sql.Connection con = null;
    PreparedStatement ps = null;
    
    try
-{
-	Class.forName("com.mysql.jdbc.Driver"); 
-	con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
+  {
+    Class.forName("com.mysql.jdbc.Driver"); 
+    con = DriverManager.getConnection("jdbc:mysql://cs3415proj.cowuyyafmbq3.ca-central-1.rds.amazonaws.com:3306/cs3415proj","user","password");  
 	
-   ps = con.prepareStatement(getStudents);
+    ps = con.prepareStatement(getStudents);
 	
-	ResultSet students = ps.executeQuery(); 
-   	out.println("<tr>");
-   while(students.next())
-   {
+    ResultSet students = ps.executeQuery(); 
+    out.println("<tr>");
+    //prints information into table
+    while(students.next())
+      {
         String id = students.getString("s_id");
         String fname = students.getString("fname");
         String lname = students.getString("lname");
 	out.println("<td>"+id+"</td><td>"+fname+"</td><td>"+lname+"</td>");
+	//if student has a room, put an evict button next to their name that kicks them out of their room when pressed
 	if( students.getString("assigned_room").equals("yes"))
 	{
 		PreparedStatement roomInfo = con.prepareStatement("SELECT roomID FROM residents WHERE residentID = ?");
@@ -77,6 +80,7 @@
 		}
 	}
 	else
+	//otherwise put an 'assign room' button that allows admin to assign them to a room
 	{
 		out.println("<td> <a href = 'roomassignment.jsp?studentID="+id+"'name = 'studentID'  class = 'button u-pull-right'>Assign to a room</a></td>");
 	}
